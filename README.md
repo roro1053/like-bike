@@ -1,24 +1,53 @@
-# README
+# アプリケーション名
+「Bike-like」
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+アプリケーション概要
 
-Things you may want to cover:
+URL
 
-* Ruby version
 
-* System dependencies
+テスト用アカウント
 
-* Configuration
+利用方法
 
-* Database creation
+目指した課題解決
 
-* Database initialization
+* 用途や種類が多すぎる。性能や価格もピンキリなので、選べない
 
-* How to run the test suite
+* アイテムの必要性や重要度がわからない
 
-* Services (job queues, cache servers, search engines, etc.)
+* 通勤用の道具になってしまい、使用頻度が上がらない。
 
-* Deployment instructions
+洗い出した要件
 
-* ...
+* ユーザー管理機能
+
+* 新規投稿機能
+
+* 投稿一覧
+
+* いいね機能
+
+* 投稿詳細表示機能
+
+* コメント機能
+
+* 投稿編集機能
+
+* 投稿削除機能
+
+* 投稿検索機能
+
+* 自転車検索機能
+
+* アイテム検索機能
+
+* マイページ
+
+実装した昨日についてのGIFと説明
+
+実装予定の機能
+
+データベース設計
+![ER図](https://gyazo.com/1200b99ecbf9082b2af0014199b35b79)
+ローカル環境での動作方法
