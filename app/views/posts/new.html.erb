@@ -1,3 +1,21 @@
 <div class="main-box">
-<div class="new-post-form">投稿フォーム</div>
+<div class="new-post-form">
+<%= form_with model: @post, local: true do |f| %>
+ <div class="img-upload">画像</div>
+
+<div class="click-upload">
+<p>
+クリックしてファイルをアップロード
+</p>
+ <%= f.file_field :image, class: "item-image" %>
+</div>
+
+<div class="text-box">
+<%= f.text_area :text, class: "text-content" %>
+</div>
+
+
+<%= f.submit "投稿する",class: "post-btn" %>
+<% end %>
+</div>
 </div>
