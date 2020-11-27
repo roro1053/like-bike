@@ -13,7 +13,11 @@
 
 
 <div class="right-box">
-  <div class="user-profile">user-profile</div>
+  <div class="user-profile">
+  <% if user_signed_in?%>
+  <%= link_to current_user.nickname, "#", class: "user-nickname" %>
+  <% end %>
+  </div>
     <div class="measurement">計測</div>
 </div>
 
