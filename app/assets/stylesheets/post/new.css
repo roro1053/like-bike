@@ -1,0 +1,15 @@
+.main-box{
+  background-color : lightyellow;
+  height :90vh;
+
+}
+
+.new-post-form{
+  border : 1px solid black;
+  margin-left : auto;
+  margin-right : auto;
+  margin-top : 20px;
+  margin-bottom : 20px;
+  width : 80vw;
+  
+}

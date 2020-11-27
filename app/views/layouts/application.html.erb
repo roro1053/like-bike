@@ -12,7 +12,9 @@
   <body>
 <header class="top-page-header">
   <div class="header-left">
-  　<div class="header-logo">like-bike</div>
+  　<div class="header-logo">
+  <%= link_to "like-bike", posts_path,method: :get, class: "main-menu"%>
+  </div>
 </div>
 
 <div class="header-center">
@@ -21,7 +23,9 @@
 
 <div class="header-right">
   <div class="user-name">user-name</div>
-    <div class="new-posts">new-posts</div>
+    <div class="new-posts">
+    <%= link_to "新規投稿", new_post_path,method: :get, class: "new-post" %>
+    </div>
 </div>
 </header>
     <%= yield %>
