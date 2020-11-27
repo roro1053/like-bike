@@ -1,0 +1,51 @@
+/*ヘッダーここから*/
+.top-page-header{
+  font-size :px;
+  background-color :gray;
+  height : 100px;
+  display :flex;
+}
+.header-left{
+  border : 1px solid black;
+  font-size : px;
+  height : 100px;
+  width : 30vw;
+}
+.header-center{
+  border : 1px solid black;
+  height : 100px;
+  width : 40vw;
+}
+.header-right{
+  border : 1px solid black;
+  height :100px;
+  width : 30vw;
+}
+.new-posts{
+  border :1px solid black;
+  width:100px;
+}
+/*ヘッダーここまで*/
+.top-page-footer{
+  background-color :green;
+  height :100px;
+}
+.main-box{
+  display: flex;
+}
+.reft-box{
+  background-color :lightgreen;
+  height :90vh;
+  width :27vw;
+  
+}
+.center-box{
+  background-color :lightskyblue;
+  height :90vh;
+  width :46vw;
+}
+.right-box{
+  background-color :lightyellow;
+  height :90vh;
+  width :27vw;
+}
