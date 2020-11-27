@@ -10,26 +10,49 @@
   font-size : px;
   height : 100px;
   width : 30vw;
+  display : flex;
+  align-items: center;
+}
+.header-logo{
+  border : 1px solid black;
+  margin-left : 30px;
+  padding : 10px;
 }
 .header-center{
   border : 1px solid black;
   height : 100px;
   width : 40vw;
+  display : flex;
+  align-items: center;
+  justify-content : center;
+}
+.search-form{
+  border :1px solid black;
+  padding : 10px;
+  margin: 10px;
+  width: 300px;
 }
 .header-right{
   border : 1px solid black;
   height :100px;
   width : 30vw;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.user-name{
+  border :1px solid black;
+  padding : 10px;
+  margin-left: 30px;
 }
 .new-posts{
-  border :1px solid black;
-  width:100px;
+  border : 1px solid black;
+  padding : 10px;
+  margin-right : 0px;
+  margin-left : 130px;
 }
 /*ヘッダーここまで*/
-.top-page-footer{
-  background-color :green;
-  height :100px;
-}
+
 .main-box{
   display: flex;
 }
@@ -39,13 +62,51 @@
   width :27vw;
   
 }
+.map{
+  border : 1px solid black;
+  height : 175px;
+  width : 175px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top : 300px;
+}
 .center-box{
   background-color :lightskyblue;
   height :90vh;
   width :46vw;
 }
+.list-posts{
+  border : 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top :10px;
+  width :42vw;
+}
 .right-box{
   background-color :lightyellow;
   height :90vh;
   width :27vw;
+  
 }
+.user-profile{
+  border : 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top : 20px;
+  height :300px;
+  width : 24vw;
+}
+.measurement{
+border : 1px solid black;
+margin-left: auto;
+margin-right: auto;
+margin-top:100px;
+height : 175px;
+width : 175px;
+}
+/*フッターここから*/
+.top-page-footer{
+  background-color :green;
+  height :100px;
+}
+/*フッターここまで*/
