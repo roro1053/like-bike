@@ -4,6 +4,7 @@
   background-color :gray;
   height : 100px;
   display :flex;
+  
 }
 .header-left{
   border : 1px solid black;
@@ -55,26 +56,64 @@
 
 .main-box{
   display: flex;
+  overflow: scroll;
 }
 .reft-box{
   background-color :lightgreen;
   height :90vh;
   width :27vw;
-  
+  overflow: scroll;
 }
 .map{
   border : 1px solid black;
   height : 175px;
   width : 175px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 100px;
+  margin-right: ;
   margin-top : 300px;
+  position: fixed;
 }
+/*真ん中ここから*/
 .center-box{
   background-color :lightskyblue;
   height :90vh;
   width :46vw;
+  
 }
+.post-index{
+  border : 1px solid black;
+  margin : 10px;
+  display : ;
+}
+.post-text-created-at{
+  display : flex;
+  justify-content: space-between;
+  margin-bottom : 10px;
+  font-size : 18px;
+}
+.post-text{
+  margin-left : 15px;
+}
+.post-user-nickname{
+  margin-left : 10px;
+  margin-bottom : 10px;
+  margin-top : 10px;
+  font-size : 13px;
+}
+.post-created-at{
+  margin-right : 15px;
+}
+.post-image{
+  margin-left : auto;
+  margin-right : auto;
+  margin-bottom : 10px;
+  display : flex;
+  justify-content: center;
+}
+.post-img{
+  
+}
+/*真ん中ここまで*/
 .list-posts{
   border : 1px solid black;
   margin-left: auto;
@@ -95,18 +134,28 @@
   margin-top : 20px;
   height :300px;
   width : 24vw;
+  display : flex;
+  
+}
+.user-profile-menu{
+  border : 1px solid black;
+  margin-right : auto;
+  margin-left : 60px;
+  position: fixed;
 }
 .measurement{
 border : 1px solid black;
-margin-left: auto;
-margin-right: auto;
-margin-top:100px;
+margin-left: 100px;
+margin-right : ;
+margin-bottom : px;
+margin-top : 50px;
 height : 175px;
 width : 175px;
+position: fixed;
 }
 /*フッターここから*/
 .top-page-footer{
   background-color :green;
-  height :100px;
+  height :50px;
 }
 /*フッターここまで*/
