@@ -1,6 +1,7 @@
 <div class="main-box">
 <div class="new-post-form">
 <%= form_with model: @post, local: true do |f| %>
+ <%= render 'shared/error_messages', model: f.object %>
  <div class="img-upload">画像</div>
 
 <div class="click-upload">
