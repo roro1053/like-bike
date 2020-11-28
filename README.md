@@ -1,10 +1,11 @@
 # アプリケーション名
-「Bike-like」
+「like-bike」
 
 アプリケーション概要
 
-URL
 
+
+# URL https://like-bike.herokuapp.com/
 
 テスト用アカウント
 

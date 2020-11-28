@@ -1,0 +1,161 @@
+/*ヘッダーここから*/
+.top-page-header{
+  font-size :px;
+  background-color :gray;
+  height : 100px;
+  display :flex;
+  
+}
+.header-left{
+  border : 1px solid black;
+  font-size : px;
+  height : 100px;
+  width : 30vw;
+  display : flex;
+  align-items: center;
+}
+.header-logo{
+  border : 1px solid black;
+  margin-left : 30px;
+  padding : 10px;
+}
+.header-center{
+  border : 1px solid black;
+  height : 100px;
+  width : 40vw;
+  display : flex;
+  align-items: center;
+  justify-content : center;
+}
+.search-form{
+  border :1px solid black;
+  padding : 10px;
+  margin: 10px;
+  width: 300px;
+}
+.header-right{
+  border : 1px solid black;
+  height :100px;
+  width : 30vw;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.user-name{
+  border :1px solid black;
+  padding : 10px;
+  margin-left: 30px;
+}
+.new-posts{
+  border : 1px solid black;
+  padding : 10px;
+  margin-right : 0px;
+  margin-left : 130px;
+}
+/*ヘッダーここまで*/
+
+.main-box{
+  display: flex;
+  overflow: scroll;
+}
+.reft-box{
+  background-color :lightgreen;
+  height :90vh;
+  width :27vw;
+  overflow: scroll;
+}
+.map{
+  border : 1px solid black;
+  height : 175px;
+  width : 175px;
+  margin-left: 100px;
+  margin-right: ;
+  margin-top : 300px;
+  position: fixed;
+}
+/*真ん中ここから*/
+.center-box{
+  background-color :lightskyblue;
+  height :90vh;
+  width :46vw;
+  
+}
+.post-index{
+  border : 1px solid black;
+  margin : 10px;
+  display : ;
+}
+.post-text-created-at{
+  display : flex;
+  justify-content: space-between;
+  margin-bottom : 10px;
+  font-size : 18px;
+}
+.post-text{
+  margin-left : 15px;
+}
+.post-user-nickname{
+  margin-left : 10px;
+  margin-bottom : 10px;
+  margin-top : 10px;
+  font-size : 13px;
+}
+.post-created-at{
+  margin-right : 15px;
+}
+.post-image{
+  margin-left : auto;
+  margin-right : auto;
+  margin-bottom : 10px;
+  display : flex;
+  justify-content: center;
+}
+.post-img{
+  
+}
+/*真ん中ここまで*/
+.list-posts{
+  border : 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top :10px;
+  width :42vw;
+}
+.right-box{
+  background-color :lightyellow;
+  height :90vh;
+  width :27vw;
+  
+}
+.user-profile{
+  border : 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top : 20px;
+  height :300px;
+  width : 24vw;
+  display : flex;
+  
+}
+.user-profile-menu{
+  border : 1px solid black;
+  margin-right : auto;
+  margin-left : 60px;
+  position: fixed;
+}
+.measurement{
+border : 1px solid black;
+margin-left: 100px;
+margin-right : ;
+margin-bottom : px;
+margin-top : 50px;
+height : 175px;
+width : 175px;
+position: fixed;
+}
+/*フッターここから*/
+.top-page-footer{
+  background-color :green;
+  height :50px;
+}
+/*フッターここまで*/
