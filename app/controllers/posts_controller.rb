@@ -24,9 +24,14 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    redirect_to root_path unless user_signed_in? && current_user.id == @post.user_id
 
-    redirect_to root_path if @post.destroy
+   unless user_signed_in? && current_user.id == @post.user_id
+      render :index 
+    end
+
+    if @post.destroy
+      redirect_to root_path 
+    end
   end
 
 private
