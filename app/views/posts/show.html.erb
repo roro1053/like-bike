@@ -1,0 +1,20 @@
+<div class="show-box">show-box
+  <div class="show-content"><%= link_to "HOME", root_path %>
+    <div class="show-user-name"><%= @post.user.nickname %></div>
+
+ <div class="show-post-text-created-at">
+  <div class="show-post-text"><%= @post.text %></div>
+    <div class="show-post-created-at"><%= @post.created_at %></div>
+ </div>
+
+ <div class="show-post-image"><%= image_tag @post.image.variant(resize: '1000x1000'), class: "show-image" if @post.image.attached? %></div>
+
+ <div class="show-action-menu">
+  <div class="show-action-comment">comment</div>
+    <div class="show-action-edit-btn">edit-btn</div>
+    <div class="show-action-destroy">destroy-btn</div>
+ </div>
+  </div>
+
+  <div class="show-commnet-content">show-comment</div>
+</div>

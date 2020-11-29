@@ -78,7 +78,7 @@
   background-color :lightskyblue;
   height :90vh;
   width :46vw;
-  
+  overflow: scroll;
 }
 .post-index{
   border : 1px solid black;
@@ -113,6 +113,14 @@
 .post-img{
   
 }
+.action-menu{
+  display : flex;
+  border : 1px solid black;
+}
+.action-show{
+  border : 1px solid black;
+}
+
 /*真ん中ここまで*/
 .list-posts{
   border : 1px solid black;
