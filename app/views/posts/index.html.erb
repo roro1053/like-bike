@@ -22,8 +22,9 @@
    <%= image_tag post.image.variant(resize: '550x500'), class: "post-img" if post.image.attached? %>
    </div>
    <% end %>
-   <div class="action-menu">
-   <div class="action-show">action-show</div>acition-menu
+   <div class="action-menu">action-menu
+   <div class="action-show">action-show</div>
+   <div class="action-destroy"><%= link_to '削除', post_path(post.id), method: :delete, class:'post-destroy' %></div>
    </div>
    </div>
    <% end %>
