@@ -24,7 +24,9 @@
    <% end %>
    <div class="action-menu">action-menu
    <div class="action-show">action-show</div>
+   <% if user_signed_in? %>
    <div class="action-destroy"><%= link_to '削除', post_path(post.id), method: :delete, class:'post-destroy' %></div>
+   <% end %>
    </div>
    </div>
    <% end %>
