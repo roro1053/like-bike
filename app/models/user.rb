@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :posts
-
-  validates :nickname, presence: true
+  has_one_attached :image
+  
+  validates :nickname, presence: true,
+                       length: { maximum: 40 }
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze },
+                       length: { minimum: 6 }
+  validates :profile,  length: { maximum: 150 }
 end

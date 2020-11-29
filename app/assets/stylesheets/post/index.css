@@ -139,9 +139,10 @@
 }
 .user-profile-menu{
   border : 1px solid black;
-  margin-right : auto;
+  margin-right : 90px;
   margin-left : 60px;
   position: fixed;
+  word-break: break-all;
 }
 .measurement{
 border : 1px solid black;
