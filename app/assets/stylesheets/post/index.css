@@ -57,6 +57,8 @@
 .main-box{
   display: flex;
   overflow: scroll;
+  height : 90vh;
+  background-color : lightsalmon;
 }
 .reft-box{
   background-color :lightgreen;

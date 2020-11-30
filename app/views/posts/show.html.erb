@@ -1,5 +1,6 @@
 <div class="show-box">show-box
-  <div class="show-content"><%= link_to "HOME", root_path %>
+  <div class="show-content">
+  <p class="back-home-btn"><%= link_to "HOME", root_path %></p>
     <div class="show-user-name"><%= @post.user.nickname %></div>
 
  <div class="show-post-text-created-at">
@@ -22,4 +23,5 @@
   </div>
 
   <div class="show-commnet-content">show-comment</div>
+  <p class="back-home-btn"><%= link_to "戻る", root_path %></p>
 </div>
