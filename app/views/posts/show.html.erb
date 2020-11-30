@@ -12,7 +12,11 @@
  <div class="show-action-menu">
   <div class="show-action-comment">comment</div>
     <div class="show-action-edit-btn">edit-btn</div>
-    <div class="show-action-destroy">destroy-btn</div>
+     <% if user_signed_in? %>
+     <% if current_user.id == @post.user_id %>
+    <div class="show-action-destroy"><%= link_to '削除', post_path(@post.id), method: :delete, class:'post-destroy' %></div>
+    <% end %>
+     <% end %>
  </div>
   </div>
 

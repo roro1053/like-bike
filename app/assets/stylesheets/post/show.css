@@ -33,7 +33,7 @@
   border : 1px solid black;
   margin : 20px;
   display : flex;
-  
+
 }
 .show-image{
   margin-right : auto;
@@ -51,6 +51,7 @@
 }
 .show-action-edit-btn{
   border : 1px solid black;
+  margin-right : 20px;
   
 }
 .show-action-destroy{

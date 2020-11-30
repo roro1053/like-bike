@@ -115,12 +115,15 @@
 }
 .action-menu{
   display : flex;
+  justify-content: space-between;
   border : 1px solid black;
 }
 .action-show{
   border : 1px solid black;
 }
-
+.action-destroy{
+  border : 1px solid black;
+}
 /*真ん中ここまで*/
 .list-posts{
   border : 1px solid black;
