@@ -57,6 +57,8 @@
 .main-box{
   display: flex;
   overflow: scroll;
+  height : 90vh;
+  background-color : lightsalmon;
 }
 .reft-box{
   background-color :lightgreen;
@@ -78,21 +80,22 @@
   background-color :lightskyblue;
   height :90vh;
   width :46vw;
-  overflow: scroll;
+  
 }
 .post-index{
   border : 1px solid black;
   margin : 10px;
   display : ;
+  
 }
 .post-text-created-at{
-  display : flex;
-  justify-content: space-between;
   margin-bottom : 10px;
   font-size : 18px;
+  word-break: break-all;
 }
 .post-text{
   margin-left : 15px;
+  margin-bottom : 20px;
 }
 .post-user-nickname{
   margin-left : 10px;
@@ -102,6 +105,7 @@
 }
 .post-created-at{
   margin-right : 15px;
+  margin-left : 315px; 
 }
 .post-image{
   margin-left : auto;
@@ -118,7 +122,7 @@
   justify-content: space-between;
   border : 1px solid black;
 }
-.action-show{
+.action-edit{
   border : 1px solid black;
 }
 .action-destroy{
@@ -151,7 +155,7 @@
 .user-profile-menu{
   border : 1px solid black;
   margin-right : 90px;
-  margin-left : 60px;
+  margin-left : 120px;
   position: fixed;
   word-break: break-all;
 }

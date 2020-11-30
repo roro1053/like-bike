@@ -1,5 +1,6 @@
 <div class="show-box">show-box
-  <div class="show-content"><%= link_to "HOME", root_path %>
+  <div class="show-content">
+  <p class="back-home-btn"><%= link_to "HOME", root_path %></p>
     <div class="show-user-name"><%= @post.user.nickname %></div>
 
  <div class="show-post-text-created-at">
@@ -11,9 +12,10 @@
 
  <div class="show-action-menu">
   <div class="show-action-comment">comment</div>
-    <div class="show-action-edit-btn">edit-btn</div>
+    
      <% if user_signed_in? %>
      <% if current_user.id == @post.user_id %>
+    <div class="show-action-edit-btn"><%= link_to "編集",edit_post_path(@post.id),method: :get, class: "post-edit"  %></div>
     <div class="show-action-destroy"><%= link_to '削除', post_path(@post.id), method: :delete, class:'post-destroy' %></div>
     <% end %>
      <% end %>
@@ -21,4 +23,5 @@
   </div>
 
   <div class="show-commnet-content">show-comment</div>
+  <p class="back-home-btn"><%= link_to "戻る", root_path %></p>
 </div>

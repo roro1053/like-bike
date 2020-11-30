@@ -2,6 +2,7 @@
   background-color : lightyellow;
   height : 90vh;
   overflow: scroll;
+  
 }
 .show-content{
   border : 1px solid black;
@@ -11,9 +12,13 @@
   height : 80vh;
   overflow: scroll;
 }
+.back-home-btn{
+  text-align: center;
+}
 .show-user-name{
   border : 1px solid black;
   margin : 20px;
+  text-align: center;
 }
 
 .show-post-text-created-at{
@@ -24,10 +29,11 @@
 .show-post-text{
   border : 1px solid black;
   margin : 20px;
+  word-break: break-all;
 }
 .show-post-created-at{
   border : 1px solid black;
-  margin : 20px 20px 20px 10px;
+  margin : 20px 20px 20px 850px;
 }
 .show-post-image{
   border : 1px solid black;
