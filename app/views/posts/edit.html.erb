@@ -1,18 +1,19 @@
-<div class="edit-content">edit-content
-<div class="edit-form"><%= link_to "HOME", root_path %>
+<div class="edit-content"><%= link_to "HOME", root_path %>
+<div class="edit-form">
 <%= form_with model: @post, local: true do |f| %>
  <%= render 'shared/error_messages', model: f.object %>
 
 
 <div class="text-box">
-<p>
+<p class="comment-sentence">
 コメント
 </P>
 <%= f.text_area :text, class: "text-content", placeholder:"※最大150字まで", maxlength:"150" %>
 </div>
 
 <div class="click-upload">
-<p>
+<p class="image-sentence">画像</p>
+<p class="comment-sentence">
 クリックしてファイルをアップロード
 </p>
  <%= f.file_field :image, class: "item-image" %>

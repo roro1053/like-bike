@@ -78,12 +78,13 @@
   background-color :lightskyblue;
   height :90vh;
   width :46vw;
-  overflow: scroll;
+  
 }
 .post-index{
   border : 1px solid black;
   margin : 10px;
   display : ;
+  
 }
 .post-text-created-at{
   margin-bottom : 10px;
@@ -92,7 +93,7 @@
 }
 .post-text{
   margin-left : 15px;
-  
+  margin-bottom : 20px;
 }
 .post-user-nickname{
   margin-left : 10px;
@@ -102,7 +103,7 @@
 }
 .post-created-at{
   margin-right : 15px;
-  margin-left : 280px; 
+  margin-left : 315px; 
 }
 .post-image{
   margin-left : auto;
@@ -152,7 +153,7 @@
 .user-profile-menu{
   border : 1px solid black;
   margin-right : 90px;
-  margin-left : 60px;
+  margin-left : 120px;
   position: fixed;
   word-break: break-all;
 }
