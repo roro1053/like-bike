@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show,:search]
   before_action :set_post, only: [:edit, :show, :update, :destroy]
 
 
@@ -47,6 +47,11 @@ class PostsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def search
+    
+    @posts = Post.search(params[:keyword]).includes(:user).order('created_at DESC')
   end
 
 private
