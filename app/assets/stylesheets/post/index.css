@@ -86,13 +86,13 @@
   display : ;
 }
 .post-text-created-at{
-  display : flex;
-  justify-content: space-between;
   margin-bottom : 10px;
   font-size : 18px;
+  word-break: break-all;
 }
 .post-text{
   margin-left : 15px;
+  
 }
 .post-user-nickname{
   margin-left : 10px;
@@ -102,6 +102,7 @@
 }
 .post-created-at{
   margin-right : 15px;
+  margin-left : 280px; 
 }
 .post-image{
   margin-left : auto;
