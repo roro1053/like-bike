@@ -9,4 +9,12 @@ class Post < ApplicationRecord
   def was_attached?
     self.image.attached?
   end
+
+  def self.search(search)
+    if search != ""
+      Post.where('text LIKE(?)', "%#{search}%")
+    else
+      Post.all
+    end
+  end
 end
