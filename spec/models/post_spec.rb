@@ -36,7 +36,7 @@ RSpec.describe Post, type: :model do
       it "imageは存在するが、textが151文字以上だと投稿できない" do
         @post.text = "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901"
         @post.valid?
-        expect(@post.errors.full_messages).to include(["Text is too long (maximum is 150 characters)")
+        expect(@post.errors.full_messages).to include("Text is too long (maximum is 150 characters)")
       end
     end
   end
