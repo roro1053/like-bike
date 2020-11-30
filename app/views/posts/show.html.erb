@@ -11,9 +11,10 @@
 
  <div class="show-action-menu">
   <div class="show-action-comment">comment</div>
-    <div class="show-action-edit-btn">edit-btn</div>
+    
      <% if user_signed_in? %>
      <% if current_user.id == @post.user_id %>
+    <div class="show-action-edit-btn"><%= link_to "編集",edit_post_path(@post.id),method: :get, class: "post-edit"  %></div>
     <div class="show-action-destroy"><%= link_to '削除', post_path(@post.id), method: :delete, class:'post-destroy' %></div>
     <% end %>
      <% end %>
