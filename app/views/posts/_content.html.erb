@@ -37,8 +37,15 @@
 <div class="right-box">
   <div class="user-profile">
   <% if user_signed_in?%>
+  
   <div class="user-profile-menu">
-  <%= link_to current_user.nickname, "#", class: "user-nickname" %>
+  <span>
+  <ul>
+  <li>
+  <%= link_to current_user.nickname, user_path(current_user.id),method: :get, class: "user-nickname" %>
+  </li>
+  </ul>
+  <span>
   </div>
   <% end %>
   </div>
