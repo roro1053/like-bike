@@ -9,7 +9,7 @@
   <% @posts.each do |post| %>
   <div class="post-index">
   <div class="post-user-nickname">
-   <p><%= post.user.nickname %></p>
+   <p><%= link_to post.user.nickname, user_path(post.user_id) %></p>
    </div>
    <%= link_to "#{post_path(post.id)}" do %>
    <div class="post-text-created-at">
