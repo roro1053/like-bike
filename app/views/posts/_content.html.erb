@@ -9,7 +9,10 @@
   <% @posts.each do |post| %>
   <div class="post-index">
   <div class="post-user-nickname">
-   <p><%= post.user.nickname %></p>
+  <%= link_to user_path(post.user_id) do %>
+    <%= image_tag post.user.image.variant(resize: '30x30'), class: "post-user-img" if post.user.image.attached? %>
+   <%= post.user.nickname %>
+    <% end %>
    </div>
    <%= link_to "#{post_path(post.id)}" do %>
    <div class="post-text-created-at">
@@ -37,8 +40,16 @@
 <div class="right-box">
   <div class="user-profile">
   <% if user_signed_in?%>
+  
   <div class="user-profile-menu">
-  <%= link_to current_user.nickname, "#", class: "user-nickname" %>
+  <span>
+  <ul>
+  <li>
+  <%= image_tag current_user.image.variant(resize: '70x70'), class: "user-img" if current_user.image.attached? %>
+  <%= link_to current_user.nickname, user_path(current_user.id),method: :get, class: "user-nickname" %>
+  </li>
+  </ul>
+  <span>
   </div>
   <% end %>
   </div>

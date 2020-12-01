@@ -107,6 +107,7 @@
   margin-bottom : 10px;
   margin-top : 10px;
   font-size : 13px;
+  display : flex;
 }
 .post-created-at{
   margin-right : 15px;
@@ -154,13 +155,12 @@
   margin-top : 20px;
   height :300px;
   width : 24vw;
-  display : flex;
-  
+  display : flex; 
 }
 .user-profile-menu{
   border : 1px solid black;
   margin-right : 90px;
-  margin-left : 120px;
+  margin-left : 40px;
   position: fixed;
   word-break: break-all;
 }
