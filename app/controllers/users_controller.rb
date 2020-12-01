@@ -6,4 +6,8 @@ def show
   @posts = user.posts.includes(:user).order('created_at DESC')
 end
 
+def edit
+  @user = User.find(params[:id])
+end
+
 end
