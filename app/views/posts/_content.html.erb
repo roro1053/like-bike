@@ -9,7 +9,10 @@
   <% @posts.each do |post| %>
   <div class="post-index">
   <div class="post-user-nickname">
-   <p><%= link_to post.user.nickname, user_path(post.user_id) %></p>
+  <%= link_to user_path(post.user_id) do %>
+    <%= image_tag post.user.image.variant(resize: '30x30'), class: "post-user-img" if post.user.image.attached? %>
+   <%= post.user.nickname %>
+    <% end %>
    </div>
    <%= link_to "#{post_path(post.id)}" do %>
    <div class="post-text-created-at">
@@ -42,6 +45,7 @@
   <span>
   <ul>
   <li>
+  <%= image_tag current_user.image.variant(resize: '70x70'), class: "user-img" if current_user.image.attached? %>
   <%= link_to current_user.nickname, user_path(current_user.id),method: :get, class: "user-nickname" %>
   </li>
   </ul>
