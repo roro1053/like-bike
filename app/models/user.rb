@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :posts
   has_one_attached :image
-  
+ 
   validates :nickname, presence: true,
                        length: { maximum: 40 }
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze },

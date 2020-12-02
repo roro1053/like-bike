@@ -30,6 +30,23 @@
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
+<div class="fiald">
+   <%= f.label :nickname %><br />
+   <%= f.text_area :nickname,placeholder:"最大40文字まで", maxlength:"40" %>
+  </div>
+
+  <div class="fiald">
+   <%= f.label :profile %><br />
+   <%= f.text_area :profile, placeholder:"※任意  最大150字まで",maxlength:"150"  %>
+  </div>
+
+  <div class="click-upload">
+<p>
+プロフィール画像 ※任意
+</p>
+ <%= f.file_field :image, class: "item-image" %>
+</div>
+
 
   <div class="actions">
     <%= f.submit "Update" %>

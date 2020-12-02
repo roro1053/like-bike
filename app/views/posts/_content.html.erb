@@ -42,14 +42,15 @@
   <% if user_signed_in?%>
   
   <div class="user-profile-menu">
-  <span>
-  <ul>
-  <li>
-  <%= image_tag current_user.image.variant(resize: '70x70'), class: "user-img" if current_user.image.attached? %>
+<%= image_tag current_user.image.variant(resize: '70x70'), class: "user-img" if current_user.image.attached? %>
   <%= link_to current_user.nickname, user_path(current_user.id),method: :get, class: "user-nickname" %>
+  <ul class="user-menu">
+  <li>
+  <%= link_to "プロフィールを編集", edit_user_registration_path(current_user.id),method: :get %>
+  
+
   </li>
   </ul>
-  <span>
   </div>
   <% end %>
   </div>
