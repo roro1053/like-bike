@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(comment_params)
+    
     if @comment.valid?
       @comment.save
     redirect_to "/posts/#{@comment.post.id}"

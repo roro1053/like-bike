@@ -1,14 +1,14 @@
 <div class="show-box">show-box
   <div class="show-content">
-  <p class="back-home-btn"><%= link_to "HOME", root_path %></p>
+    <p class="back-home-btn"><%= link_to "HOME", root_path %></p>
     <div class="show-user-name"><%= link_to @post.user.nickname,user_path(@post.user_id) %></div>
 
- <div class="show-post-text-created-at">
-  <div class="show-post-text"><%= @post.text %></div>
-    <div class="show-post-created-at"><%= @post.created_at %></div>
- </div>
+         <div class="show-post-text-created-at">
+          <div class="show-post-text"><%= @post.text %></div>
+          <div class="show-post-created-at"><%= @post.created_at %></div>
+        </div>
 
- <div class="show-post-image"><%= image_tag @post.image.variant(resize: '1000x1000'), class: "show-image" if @post.image.attached? %></div>
+          <div class="show-post-image"><%= image_tag @post.image.variant(resize: '1000x1000'), class: "show-image" if @post.image.attached? %></div>
 
  <div class="show-action-menu">
   <div class="show-action-comment">
@@ -16,15 +16,15 @@
   <%= f.text_area :text, placeholder: "コメントする", rows: "2" %>
 
    <div class="img-upload">画像</div>
-<div class="click-upload">
-<p class="comment-sentence">
-クリックしてファイルをアップロード
-</p>
- <%= f.file_field :image, class: "item-image" %>
-</div>
-  <%= f.submit "SEND" %>
-   <% end %>
-  </div>
+      <div class="click-upload">
+          <p class="comment-sentence">
+          クリックしてファイルをアップロード
+        </p>
+       <%= f.file_field :image, class: "item-image" %>
+          </div>    
+        <%= f.submit "SEND" %>
+        <% end %>
+    </div>
     
      <% if user_signed_in? %>
      <% if current_user.id == @post.user_id %>
@@ -35,6 +35,19 @@
  </div>
   </div>
 
-  <div class="show-commnet-content">show-comment</div>
+                  <div class="show-commnet-content">
+                      <h4>コメント一覧</h4>
+                     <% if @comments.present? %>
+                     <% @comments.each do |comment| %>
+                    
+                     <p>
+                     <%= link_to comment.user.nickname,"/users/#{comment.user_id}"%>
+                     <%= comment.text %>
+                       <%= image_tag comment.image.variant(resize: '1000x1000'), class: "comment-image" if comment.image.attached? %>
+                     </p>
+                      <% end %>
+                       <% end%>
+                   </div>
+
   <p class="back-home-btn"><%= link_to "戻る", root_path %></p>
 </div>

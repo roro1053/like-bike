@@ -23,6 +23,7 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
+    @comments = @post.comments.includes(:user).order('created_at DESC')
   end
 
   def destroy
