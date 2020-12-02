@@ -12,6 +12,11 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+  end
+
+
   private 
   def comment_params
     params.require(:comment).permit(:text,:image).merge(user_id: current_user.id, post_id: params[:post_id])
