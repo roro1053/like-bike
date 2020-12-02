@@ -11,7 +11,20 @@
  <div class="show-post-image"><%= image_tag @post.image.variant(resize: '1000x1000'), class: "show-image" if @post.image.attached? %></div>
 
  <div class="show-action-menu">
-  <div class="show-action-comment">comment</div>
+  <div class="show-action-comment">
+  <%= form_with(model: [@post,@comment], local: true) do |f| %>
+  <%= f.text_area :text, placeholder: "コメントする", rows: "2" %>
+
+   <div class="img-upload">画像</div>
+<div class="click-upload">
+<p class="comment-sentence">
+クリックしてファイルをアップロード
+</p>
+ <%= f.file_field :image, class: "item-image" %>
+</div>
+  <%= f.submit "SEND" %>
+   <% end %>
+  </div>
     
      <% if user_signed_in? %>
      <% if current_user.id == @post.user_id %>
