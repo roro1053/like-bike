@@ -2,12 +2,13 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(comment_params)
-    
     if @comment.valid?
       @comment.save
     redirect_to "/posts/#{@comment.post.id}"
     else 
-      root_path 
+      @post = @comment.post
+      @comments = @post.comments
+      render "posts/show"
     end
   end
 
