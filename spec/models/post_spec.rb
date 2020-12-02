@@ -18,6 +18,10 @@ RSpec.describe Post, type: :model do
         @post.image = nil
         expect(@post).to be_valid
       end
+      it "textが150字以内なら投稿できる" do
+        @post.text = "123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"
+        expect(@post).to be_valid
+      end
     end
 
     context "新規投稿がうまくいかない時" do
