@@ -7,13 +7,22 @@
           <div class="show-post-text"><%= @post.text %></div>
           <div class="show-post-created-at"><%= @post.created_at %></div>
         </div>
-
-          <div class="show-post-image"><%= image_tag @post.image.variant(resize: '1000x1000'), class: "show-image" if @post.image.attached? %></div>
+   </div>
+          <div class="show-post-image"><%= image_tag @post.image.variant(resize: '700x700'), class: "show-image" if @post.image.attached? %></div>
 
  <div class="show-action-menu">
+     <% if user_signed_in? %>
+     <% if current_user.id == @post.user_id %>
+    <div class="show-action-edit-btn"><%= link_to "編集",edit_post_path(@post.id),method: :get, class: "post-edit"  %></div>
+    <div class="show-action-destroy"><%= link_to '削除', post_path(@post.id), method: :delete, class:'post-destroy' %></div>
+    <% end %>
+     <% end %>
+ </div>
+ 
+
   <div class="show-action-comment">
   <%= form_with(model: [@post,@comment], local: true) do |f| %>
-  <%= f.text_area :text, placeholder: "コメントする", rows: "2" %>
+  <%= f.text_area :text, class: "comment-area",placeholder: "コメントする(最大150字)", rows: "5", maxlength:"150" %>
 
    <div class="img-upload">画像</div>
       <div class="click-upload">
@@ -25,29 +34,35 @@
         <%= f.submit "SEND" %>
         <% end %>
     </div>
-    
-     <% if user_signed_in? %>
-     <% if current_user.id == @post.user_id %>
-    <div class="show-action-edit-btn"><%= link_to "編集",edit_post_path(@post.id),method: :get, class: "post-edit"  %></div>
-    <div class="show-action-destroy"><%= link_to '削除', post_path(@post.id), method: :delete, class:'post-destroy' %></div>
-    <% end %>
-     <% end %>
- </div>
-  </div>
 
-                  <div class="show-commnet-content">
+                  <div class="show-commnet-lists">
                       <h4>コメント一覧</h4>
+                      </div>
+                      <div class="comment-index">
                      <% if @comments.present? %>
                      <% @comments.each do |comment| %>
-                    
-                     <p>
-                     <%= link_to comment.user.nickname,"/users/#{comment.user_id}"%>
-                     <%= comment.text %>
-                       <%= image_tag comment.image.variant(resize: '1000x1000'), class: "comment-image" if comment.image.attached? %>
-                     </p>
+                     <div class="comment-box">
+                     
+                       <%= link_to "/users/#{comment.user_id}" do %>
+                       <div class="comment-image-nickname">
+                         <div class="comment-user-image"><%= image_tag comment.user.image.variant(resize: '30x30'),class: "comment-image" if comment.user.image.attached? %></div>
+                        <div class="comment-user-nickname"><%= comment.user.nickname %></div>
+                        </div>
+                        <div class="comment-created-at"><%= comment.created_at %></div>
+                       
+                     <% end %>
+                     
+                    <div class="comment-text"><%= comment.text %></div>
+                       <div class="image-text-align"><%= image_tag comment.image.variant(resize: '300x300'), class: "comment-image" if comment.image.attached? %></div>
+                 </div>
+                      
+                  
                       <% end %>
+                      </div>
                        <% end%>
-                   </div>
+                       
+                     
 
   <p class="back-home-btn"><%= link_to "戻る", root_path %></p>
 </div>
+<%= render "shared/footer" %>

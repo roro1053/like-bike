@@ -8,8 +8,8 @@
   border : 1px solid black;
   margin-right : auto;
   margin-left : auto;
-  width : 80vw; 
-  height : 80vh;
+  width : 70vw; 
+  height : 35vh;
   overflow: scroll;
 }
 .back-home-btn{
@@ -33,11 +33,15 @@
 }
 .show-post-created-at{
   border : 1px solid black;
-  margin : 20px 20px 20px 850px;
+  margin : 20px 20px 20px 660px;
 }
 .show-post-image{
   border : 1px solid black;
-  margin : 20px;
+  width :60vw;
+  height : 55vh;
+  margin-right : auto;
+  margin-left : auto;
+  margin-top : 20px;
   display : flex;
 
 }
@@ -46,14 +50,23 @@
   margin-left : auto;
 }
 .show-action-menu{
+  width : 50vw;
   border : 1px solid black;
-  margin : 20px;
+  margin-left : auto;
+  margin-right : auto;
+  margin-top :20px;
   display : flex;
   justify-content: space-between;
 }
 .show-action-comment{
+  width : 60vw;
   border : 1px solid black;
-  margin-left : 20px;
+  margin-left : auto;
+  margin-right : auto;
+  margin-top : 20px;
+  margin-bottom : 20px;
+  text-align: center;
+  padding : 20px 0px; 
 }
 .show-action-edit-btn{
   border : 1px solid black;
@@ -64,7 +77,45 @@
   border : 1px solid black;
   margin-right : 20px;
 }
-.show-commnet-content{
-  border : 1px solid black;
+.show-commnet-lists{
   margin : 20px;
+  text-align : center;
+}
+.comment-index{
+  margin : 20px;
+}
+.comment-box{
+  margin-right : auto;
+  margin-left : auto;
+  margin-bottom : 2px;
+  border : 1px solid gray;
+  width : 55vw;
+  padding-bottom : 20px;
+}
+.comment-image-nickname{
+  margin : 20px 5px 10px 35px;
+  display : flex;
+  
+}
+.comment-user-nickname{
+  margin-top : 5px;
+  margin-left: 40px;
+  width : 500px;
+  height : 30px;
+}
+.comment-text{
+  margin : 10px 30px 10px 75px;
+  word-break: break-all;
+}
+.comment-created-at{
+ margin : 5px 10px 0px 470px;
+ 
+}
+.image-text-align{
+  text-align: center;
+}
+
+.comment-area{
+  width : 30vw; 
+  padding : 10px;
 }
