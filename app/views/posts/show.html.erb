@@ -19,7 +19,7 @@
      <% end %>
  </div>
  
-
+  <% if user_signed_in? %>
   <div class="show-action-comment">
   <%= form_with(model: [@post,@comment], local: true) do |f| %>
   <%= f.text_area :text, class: "comment-area",placeholder: "コメントする(最大150字)", rows: "5", maxlength:"150" %>
@@ -34,7 +34,7 @@
         <%= f.submit "SEND" %>
         <% end %>
     </div>
-
+<% end %>
                   <div class="show-commnet-lists">
                       <h4>コメント一覧</h4>
                       </div>
