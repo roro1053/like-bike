@@ -56,7 +56,7 @@
                        <div class="image-text-align"><%= image_tag comment.image.variant(resize: '300x300'), class: "comment-image" if comment.image.attached? %></div>
                         <% if user_signed_in? %>
                          <% if current_user.id == comment.user.id %>
-                        <div class="comment-destroy"><%= link_to "削除する",  post_comment_path(comment.id),method: :destroy %></div>
+                        <div class="comment-destroy"><%= link_to "削除する",  post_comment_path(comment.post.id, comment.id),method: :delete %></div>
                         <% end %>
                          <% end %>
                  </div>

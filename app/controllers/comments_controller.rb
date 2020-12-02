@@ -13,7 +13,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
+    @comment = Comment.find_by(id: params[:id],post_id: params[:post_id])
+    if @comment.destroy
+      redirect_to root_path 
+    end
   end
 
 
