@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-       
-        <style>
-             .row div {
-                border: 1px solid red;
-            }
 
-            div {
-                text-align: center;
-            }
-        </style>
-    </head>
-    <body>
-      
-       <div class="new-box"><%= link_to "HOME", root_path %>
+<div class="new-box"><%= link_to "HOME", root_path %>
 <div class="new-post-form">
 <%= form_with model: @item,  local: true do |f| %>
- <%# render 'shared/error_messages', model: f.object %>
+ <%= render 'shared/error_messages', model: f.object %>
 
 <div class="text-box">
 <p class="comment-sentence">
