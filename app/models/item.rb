@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   has_many :tags
+  has_many :reviews, dependent: :destroy
 
   with_options presence: true do
     validates :name
