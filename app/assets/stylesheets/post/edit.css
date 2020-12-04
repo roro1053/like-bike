@@ -31,7 +31,10 @@
   height : 200px;
   width : 600px;
 }
-
+.name-box{
+  width : 40vw;
+  padding : 20px; 
+}
 .item-image{
   margin-left : 220px;
   margin-bottom : 20px;
