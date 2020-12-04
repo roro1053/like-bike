@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'posts#index'
   resources :users, only: [:show]
-  resources :items, only: [:index,:new,:create]
+  resources :items, only: [:index,:new,:create,:show]
   resources :posts do
     collection do
       get 'search'
