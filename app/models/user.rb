@@ -6,7 +6,8 @@ class User < ApplicationRecord
   has_many :posts
   has_one_attached :image
   has_many :comments
- 
+  has_many :items
+  
   validates :nickname, presence: true,
                        length: { maximum: 40 }
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze },
