@@ -20,6 +20,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @review = Review.new
   end
 
   private

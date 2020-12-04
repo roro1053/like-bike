@@ -1,0 +1,18 @@
+<p class="wrote-reviews">レビューを書く</p>
+
+<div class="rating-box">
+  <%= form_with model: @review, url: item_reviews_path(@item),method: :post, local: true do |f| %>
+    <div class="star-rating">
+     <div class="star-rating-front">
+       ★★★★★
+        <div class="star-rating-back">
+       ★★★★★
+        </div>
+     </div>
+    </div>
+      <%= f.hidden_field :item_id, value: @item.id %>
+      <%= f.hidden_field :sucore, id: "rating-value" %>
+      <%= f.text_field :text, class: "review-text"%>
+      <%= f.submit "レビューを書く", class: "review-btn"%>
+  <% end %>
+</div>

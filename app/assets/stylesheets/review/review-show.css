@@ -1,0 +1,19 @@
+.wrote-reviews{
+  text-align: center;
+}
+.rating-box{
+  display : flex;
+  justify-content: center;
+}
+.star-rating{
+  position : relative;
+}
+.star-rating-front{
+  position : absolute;
+  top : 0;
+  left : 0;
+  color : blue;
+}
+.star-rating-back{
+  color : red;
+}
