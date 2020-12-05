@@ -1,15 +1,15 @@
 .wrote-reviews{
   text-align: center;
+  margin-top : 10px; 
 }
 .rating-box{
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 .rating {
   line-height: 1;
   color: gold;
   font-size: 24px;
-  
+  margin : 20px;
 }
 
 .rating input {
@@ -30,4 +30,14 @@
 
 .rating input:checked + label ~ label {
   color: grey;
+}
+.review-text{
+  width : 55vw; 
+  margin-left : auto;
+  margin-right : auto;
+  
+  padding : 20px;
+}
+.review-btn{
+  margin-bottom : 20px; 
 }

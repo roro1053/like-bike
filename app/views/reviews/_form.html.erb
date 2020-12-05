@@ -18,7 +18,7 @@
   </div>
   <%= f.hidden_field :item_id, value: @item.id %>
       
-  <div class="review-text"><%= f.text_area :text, rows:"5" %></div>
+  <div class="review-text"><%= f.text_area :text,class: "review-text", rows:"3",placeholder:"※最大150字まで", maxlength:"150" %></div>
   <div class="review-btn"><%= f.submit "レビューを投稿する" %></div>
   <% end %>
 </div>
