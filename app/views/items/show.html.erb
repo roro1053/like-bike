@@ -1,0 +1,24 @@
+<div class="show-box">show-box
+  <div class="show-content">
+    <p class="back-home-btn"><%= link_to "HOME", root_path %></p>
+    <div class="show-user-name"><%= link_to @item.user.nickname,user_path(@item.user_id) %></div>
+
+         <div class="show-post-text-created-at">
+          <div class="show-post-text"><%= @item.text %></div>
+          <div class="show-post-created-at"><%= @item.created_at %></div>
+        </div>
+   </div>
+          <div class="show-post-image"><%= image_tag @item.image.variant(resize: '700x700'), class: "show-image" if @item.image.attached? %></div>
+
+ <div class="show-action-menu">
+     <% if user_signed_in? %>
+     <% if current_user.id == @item.user_id %>
+    <div class="show-action-edit-btn"><%# link_to "編集",edit_post_path(@post.id),method: :get, class: "post-edit"  %></div>
+    <div class="show-action-destroy"><%# link_to '削除', post_path(@post.id), method: :delete, class:'post-destroy' %></div>
+    <% end %>
+     <% end %>
+ </div>
+
+  <%= render "reviews/form", review: @review, item: @item %>
+  <p class="back-home-btn"><%= link_to "アイテム一覧に戻る", items_path %></p>
+</div>
