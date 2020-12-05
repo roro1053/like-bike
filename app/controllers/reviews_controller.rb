@@ -11,8 +11,9 @@ class ReviewsController < ApplicationController
       render "posts/show"
     end
   end
+
   private 
   def review_params
-    params.require(:review).permit(:text,:score).merge(user_id: current_user.id, item_id: params[:item_id])
+    params.require(:review).permit(:text,).merge(user_id: current_user.id, item_id: params[:item_id],rating: params[:rating])
   end
 end
