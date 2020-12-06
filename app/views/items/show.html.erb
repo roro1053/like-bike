@@ -43,7 +43,7 @@
           <div class="review-user-nickname"><%= review.user.nickname %></div>
         </div>
         <div class="review-item-text"><%= review.text %></div>
-        <div><%= link_to %><div>
+        <%= link_to "レビューを削除する", item_review_path(review.item.id, review.id),method: :delete %>
         <%# end %>
       </div>
         <% end %>
