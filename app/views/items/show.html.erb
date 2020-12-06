@@ -6,8 +6,14 @@
          <div class="show-post-text-created-at">
           <div class="show-post-text"><%= @item.text %></div>
           <div class="show-post-created-at"><%= @item.created_at %></div>
-        </div>
-   </div>
+         </div>
+            <div class="star-rating-parent">
+             <div class="star-rating-front" style="width: <%= @item.review_score_percentage %>%">★★★★★</div>
+             <div class="star-rating-back">★★★★★</div>
+            </div>
+
+         <div class="review-score-average-count"><%= @item.avg_score %>点/5(<%= @item.reviews.count %>件のレビュー)</div>
+  </div>
           <div class="show-post-image"><%= image_tag @item.image.variant(resize: '700x700'), class: "show-image" if @item.image.attached? %></div>
 
  <div class="show-action-menu">

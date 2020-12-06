@@ -4,6 +4,22 @@
 }
 .rating-star-review-one{
 }
+.star-rating-parent{
+  position : relative;
+  width : 5em;
+  height : 1em;
+  font-size : 25px; 
+}
+.star-rating-front{
+  position : absolute;
+  top : 0;
+  left : 0;
+  overflow : hidden;
+  color : #fc3;
+}
+.star-rating-back{
+  color : #ccc;
+}
 .rating-box{
   text-align: center;
 }
