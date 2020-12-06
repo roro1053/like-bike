@@ -9,8 +9,10 @@
         </div>
           <div class="review-text-box">アイテムの評価
              <div class="star-rating-parent">
+             <% if @item.reviews.present? %>
               <div class="star-rating-front" style="width: <%= @item.review_score_percentage %>%">★★★★★</div>
               <div class="star-rating-back">★★★★★</div>
+               <% end %>
               </div>
                <div class="review-score-average-count"><%= @item.avg_score %>点(<%= @item.reviews.count %>件のレビュー)</div>
             </div>
@@ -25,8 +27,9 @@
     <% end %>
      <% end %>
  </div>
-
+  
   <%= render "reviews/form", review: @review, item: @item %>
+
   <p class="back-home-btn"><%= link_to "アイテム一覧に戻る", items_path %></p>
 
   <div class="reviews-box">

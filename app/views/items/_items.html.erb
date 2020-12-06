@@ -14,19 +14,21 @@
               <%= item.user.nickname %>
                <% end %>
             </div>
-              <%# link_to "#{item_path(item.id)}" do %>
+              <%= link_to "#{item_path(item.id)}" do %>
                 <div class="post-text-created-at">
                   <div class="post-text"><%= item.text %></div>
                 </div>
                      <div class="item-review-star-rating">
+                         <% if item.reviews.present? %>
                        <div class="item-review-star-front" style="width: <%= item.review_score_percentage %>%">★★★★★</div>
                        <div class="item-review-star-back">★★★★★</div>
+                         <% end %>
                      </div>
                       <div class="item-review-score-average-count"><%= item.avg_score %>点(<%= item.reviews.count %>件のレビュー)</div>
               <div class="post-image">
               <%= image_tag item.image.variant(resize: '550x500'), class: "post-img" if item.image.attached? %>
             </div>
-          <%# end %>
+          <% end %>
 
   <div class="action-menu">action-menu
    
