@@ -1,10 +1,19 @@
 .wrote-reviews{
   text-align: center;
   margin : 10px 0;
+ 
 }
 .rating-star-review-one{
 }
+.review-text-box{
+  margin-top : 50px;
+  text-align: center;
+}
 .star-rating-parent{
+  margin-left : auto;
+  margin-right : auto;
+  margin-top : 10px;
+  margin-bottom : 20px;
   position : relative;
   width : 5em;
   height : 1em;
@@ -20,8 +29,12 @@
 .star-rating-back{
   color : #ccc;
 }
+.review-score-average-count{
+  text-align: center;
+}
 .rating-box{
   text-align: center;
+  
 }
 .rating {
   line-height: 1;

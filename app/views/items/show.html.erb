@@ -3,17 +3,18 @@
     <p class="back-home-btn"><%= link_to "HOME", root_path %></p>
     <div class="show-user-name"><%= link_to @item.user.nickname,user_path(@item.user_id) %></div>
 
-         <div class="show-post-text-created-at">
+        <div class="show-post-text-created-at">
           <div class="show-post-text"><%= @item.text %></div>
           <div class="show-post-created-at"><%= @item.created_at %></div>
-         </div>
-            <div class="star-rating-parent">
-             <div class="star-rating-front" style="width: <%= @item.review_score_percentage %>%">★★★★★</div>
-             <div class="star-rating-back">★★★★★</div>
+        </div>
+          <div class="review-text-box">アイテムの評価
+             <div class="star-rating-parent">
+              <div class="star-rating-front" style="width: <%= @item.review_score_percentage %>%">★★★★★</div>
+              <div class="star-rating-back">★★★★★</div>
+              </div>
+               <div class="review-score-average-count"><%= @item.avg_score %>点(<%= @item.reviews.count %>件のレビュー)</div>
             </div>
-
-         <div class="review-score-average-count"><%= @item.avg_score %>点/5(<%= @item.reviews.count %>件のレビュー)</div>
-  </div>
+          </div>
           <div class="show-post-image"><%= image_tag @item.image.variant(resize: '700x700'), class: "show-image" if @item.image.attached? %></div>
 
  <div class="show-action-menu">
@@ -44,4 +45,5 @@
         <% end %>
         <% end %>
   </div>
+  <p class="back-home-btn"><%= link_to "アイテム一覧に戻る", items_path %></p>
 </div>

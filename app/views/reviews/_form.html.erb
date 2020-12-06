@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <p class="wrote-reviews">レビューを書く</p>
 
 <div class="rating-box">
@@ -25,3 +26,4 @@
   <div class="review-btn"><%= f.submit "レビューを投稿する",class: "review-btn" %></div>
   <% end %>
 </div>
+<% end %>
