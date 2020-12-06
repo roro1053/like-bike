@@ -1,6 +1,8 @@
 .wrote-reviews{
   text-align: center;
-  margin-top : 10px; 
+  margin : 10px 0;
+}
+.rating-star-review-one{
 }
 .rating-box{
   text-align: center;
@@ -48,6 +50,7 @@
   margin-left : auto;
   width : 55vw;
   text-align: center;
+  
 }
 .reviews-index{
   text-align: center;

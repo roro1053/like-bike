@@ -4,6 +4,7 @@
 
   <%= form_with model: @review, url: item_reviews_path(@item),method: :post, local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
+    <div class="rating-star-review">ランクを付ける<span class="rating-star-review-one">★</span></div>
   <div class="rating" >
     <input id="rating1" type="radio" name="rating" value= 1 checked>
     <label for="rating1">★</label>
@@ -16,8 +17,10 @@
     <input id="rating5" type="radio" name="rating" value= 5 >
     <label for="rating5">★</label>
   </div>
- 
-      
+    <div class="review-comment-nore-box">
+      <div class="revie-comment">コメント</div>
+      <div class="review-comment-note">※必須</div>
+    </div>
   <div class="review-text"><%= f.text_area :text,class: "review-text", rows:"3",placeholder:"※最大150字まで", maxlength:"150" %></div>
   <div class="review-btn"><%= f.submit "レビューを投稿する",class: "review-btn" %></div>
   <% end %>
