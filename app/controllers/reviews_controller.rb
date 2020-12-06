@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     redirect_to "/items/#{@review.item.id}"
     else 
       @item = @review.item
-      #@comments = @post.comments
+      @reviews = @item.reviews
       render "items/show"
     end
   end
