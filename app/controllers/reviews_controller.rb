@@ -1,14 +1,15 @@
 class ReviewsController < ApplicationController
 
+
   def create
     @review = Review.new(review_params)
     if @review.valid?
       @review.save
     redirect_to "/items/#{@review.item.id}"
     else 
-      @post = @comment.post
-      @comments = @post.comments
-      render "posts/show"
+      @item = @review.item
+      #@comments = @post.comments
+      render "items/show"
     end
   end
 

@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:user).order('created_at DESC')
+    
   end
 
   def new
@@ -12,7 +13,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.valid?
     @item.save
-    redirect_to root_path(@item)
+    redirect_to items_path(@item)
     else
       render :new
     end
@@ -21,6 +22,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @review = Review.new
+    @reviews = @item.reviews.includes(:user).order('created_at DESC')
   end
 
   private

@@ -1,0 +1,20 @@
+.item-review-star-rating{
+  margin : 0 10px 20px 425px;
+  position : relative;
+  width : 5em;
+  height : 1em;
+}
+.item-review-star-front{
+  position : absolute;
+  top : 0;
+  left : 0;
+  overflow : hidden;
+  color : #fc3;
+}
+.item-review-star-back{
+  color : #ccc;
+}
+.item-review-score-average-count{
+  margin : 10px 0 0 auto;
+  width : 15vw;
+}

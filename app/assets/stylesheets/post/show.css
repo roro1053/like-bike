@@ -1,8 +1,8 @@
 .show-box{
   background-color : lightyellow;
-  height : 120vh;
+  height : 150vh;
   overflow: scroll;
-  
+ 
 }
 .show-content{
   border : 1px solid black;
@@ -10,10 +10,11 @@
   margin-left : auto;
   width : 70vw; 
   height : 35vh;
-  
+  margin-bottom : 120px;
 }
 .back-home-btn{
   text-align: center;
+  margin-bottom : 20px;
 }
 .show-user-name{
   border : 1px solid black;
@@ -41,7 +42,7 @@
   height : 55vh;
   margin-right : auto;
   margin-left : auto;
-  margin-top : 20px;
+  margin-top : 200px;
   display : flex;
 
 }

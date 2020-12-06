@@ -1,9 +1,39 @@
 .wrote-reviews{
   text-align: center;
-  margin-top : 10px; 
+  margin : 10px 0;
+}
+.rating-star-review-one{
+}
+.review-text-box{
+  margin : 70px 0 30px 0;
+  text-align: center;
+}
+.star-rating-parent{
+  margin-left : auto;
+  margin-right : auto;
+  margin-top : 10px;
+  margin-bottom : 20px;
+  position : relative;
+  width : 5em;
+  height : 1em;
+  font-size : 25px; 
+}
+.star-rating-front{
+  position : absolute;
+  top : 0;
+  left : 0;
+  overflow : hidden;
+  color : #fc3;
+}
+.star-rating-back{
+  color : #ccc;
+}
+.review-score-average-count{
+  text-align: center;
 }
 .rating-box{
   text-align: center;
+  
 }
 .rating {
   line-height: 1;
@@ -41,3 +71,36 @@
   padding : 5px;
   margin-bottom : 20px; 
 }
+
+/*レビュー一覧ここから*/
+.reviews-box{
+  margin-right : auto;
+  margin-left : auto;
+  width : 55vw;
+  text-align: center;
+  
+}
+.reviews-index{
+  text-align: center;
+  border : 1px solid black;
+  margin-bottom : 20px;
+  padding : 10px;
+}
+.review-ratign-star{
+  margin-right : 20px;
+}
+.review-rating-star{
+  color : #ffcc22; 
+}
+.review-rating-user-nickname{
+  display : flex;
+  justify-content: center;
+  margin-bottom : 20px;
+}
+.review-item-text{
+  word-break: break-all;
+}
+.review-user-nickname{
+  word-break: break-all;
+}
+/*レビュー一覧ここまで*/
