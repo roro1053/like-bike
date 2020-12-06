@@ -21,4 +21,21 @@
 
   <%= render "reviews/form", review: @review, item: @item %>
   <p class="back-home-btn"><%= link_to "アイテム一覧に戻る", items_path %></p>
+
+  <div class="reviews-box">
+    <h4>レビューの一覧</h4>
+     <% if @reviews.present? %>
+      <% @reviews.each do |review| %>
+      <div class="reviews-index">
+        <div class="review-rating-user-nickname">
+          <div class="review-ratign-star"><span class="review-rating-star">★</span><%= review.rating %></div>
+          <%# link_to%>
+          <div class="review-user-nickname"><%= review.user.nickname %></div>
+        </div>
+        <div class="review-item-text"><%= review.text %></div>
+        <%# end %>
+      </div>
+        <% end %>
+        <% end %>
+  </div>
 </div>

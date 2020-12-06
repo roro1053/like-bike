@@ -41,3 +41,35 @@
   padding : 5px;
   margin-bottom : 20px; 
 }
+
+/*レビュー一覧ここから*/
+.reviews-box{
+  margin-right : auto;
+  margin-left : auto;
+  width : 55vw;
+  text-align: center;
+}
+.reviews-index{
+  text-align: center;
+  border : 1px solid black;
+  margin-bottom : 20px;
+  padding : 10px;
+}
+.review-ratign-star{
+  margin-right : 20px;
+}
+.review-rating-star{
+  color : #ffcc22; 
+}
+.review-rating-user-nickname{
+  display : flex;
+  justify-content: center;
+  margin-bottom : 20px;
+}
+.review-item-text{
+  word-break: break-all;
+}
+.review-user-nickname{
+  word-break: break-all;
+}
+/*レビュー一覧ここまで*/

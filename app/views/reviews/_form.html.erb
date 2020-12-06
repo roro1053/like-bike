@@ -3,7 +3,7 @@
 <div class="rating-box">
 
   <%= form_with model: @review, url: item_reviews_path(@item),method: :post, local: true do |f| %>
-
+    <%= render 'shared/error_messages', model: f.object %>
   <div class="rating" >
     <input id="rating1" type="radio" name="rating" value= 1 checked>
     <label for="rating1">★</label>
