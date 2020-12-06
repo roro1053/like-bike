@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
 
-
   def create
     @review = Review.new(review_params)
     if @review.valid?
@@ -8,8 +7,15 @@ class ReviewsController < ApplicationController
     redirect_to "/items/#{@review.item.id}"
     else 
       @item = @review.item
-      #@comments = @post.comments
+      @reviews = @item.reviews
       render "items/show"
+    end
+  end
+
+  def destroy
+    @review = Review.find_by(id: params[:id],item_id: params[:item_id])
+    if @review.destroy
+      redirect_to "/items/#{@review.item.id}"
     end
   end
 
