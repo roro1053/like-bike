@@ -6,8 +6,10 @@
 .rating-star-review-one{
 }
 .review-text-box{
-  margin-top : 50px;
+  margin : 50px;
   text-align: center;
+  
+
 }
 .star-rating-parent{
   margin-left : auto;

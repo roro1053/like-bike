@@ -1,6 +1,6 @@
 .show-box{
   background-color : lightyellow;
-  height : 120vh;
+  height : 150vh;
   overflow: scroll;
  
 }
@@ -42,7 +42,7 @@
   height : 55vh;
   margin-right : auto;
   margin-left : auto;
-  margin-top : 20px;
+  margin-top : 200px;
   display : flex;
 
 }
