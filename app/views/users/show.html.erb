@@ -1,3 +1,4 @@
 <div class="my-page-top"><%= "#{@nickname}さんの投稿" %></div>
+<%= link_to "#{@nickname}さんのアイテムを見る",  item_user_path %>
 <%= render "posts/content" %>
   <p class="back-home-btn"><%= link_to "戻る", root_path %></p>

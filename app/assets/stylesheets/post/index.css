@@ -62,7 +62,7 @@
 .main-box{
   display: flex;
   overflow: scroll;
-  height : 90vh;
+  height : 120vh;
   background-color : lightsalmon;
 }
 .reft-box{
@@ -177,7 +177,7 @@ position: fixed;
 }
 
 /*item-indexここから*/
-.imte-page-inform{
+.item-page-inform{
   text-align: center;
 }
 /*item-indexここまで*/

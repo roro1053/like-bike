@@ -1,4 +1,4 @@
-<div class="imte-page-inform">アイテムの一覧</div>
+<div class="item-page-inform">アイテム一覧</div>
 <div class="main-box">
   <div class="reft-box">
     <div class="map"><%= link_to "アイテム一覧", items_path %></div>
@@ -16,7 +16,8 @@
             </div>
               <%= link_to "#{item_path(item.id)}" do %>
                 <div class="post-text-created-at">
-                  <div class="post-text"><%= item.text %></div>
+                  <div class="item-name"><%= item.name%></div>
+                    <div class="post-text"><%= item.text %></div>
                 </div>
                      <div class="item-review-star-rating">
                          <% if item.reviews.present? %>
