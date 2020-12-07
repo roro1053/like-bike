@@ -4,6 +4,7 @@
     <div class="show-user-name"><%= link_to @item.user.nickname,user_path(@item.user_id) %></div>
 
         <div class="show-post-text-created-at">
+          <div class="show-item-name"><%= @item.name %> </div>
           <div class="show-post-text"><%= @item.text %></div>
           <div class="show-post-created-at"><%= @item.created_at %></div>
         </div>
@@ -18,6 +19,8 @@
             </div>
           </div>
           <div class="show-post-image"><%= image_tag @item.image.variant(resize: '700x700'), class: "show-image" if @item.image.attached? %></div>
+           <p class="back-home-btn"><%= link_to "アイテム一覧に戻る", items_path %></p>
+
 
  <div class="show-action-menu">
      <% if user_signed_in? %>
@@ -30,8 +33,7 @@
   
   <%= render "reviews/form", review: @review, item: @item %>
 
-  <p class="back-home-btn"><%= link_to "アイテム一覧に戻る", items_path %></p>
-
+ 
   <div class="reviews-box">
     <h4>レビューの一覧</h4>
      <% if @reviews.present? %>
