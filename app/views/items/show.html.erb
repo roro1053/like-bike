@@ -1,5 +1,5 @@
 <div class="show-box">show-box
-  <div class="show-content">
+  <div class="show-item-content">
     <p class="back-home-btn"><%= link_to "HOME", root_path %></p>
     <div class="show-user-name"><%= link_to @item.user.nickname,user_path(@item.user_id) %></div>
 
@@ -18,7 +18,7 @@
                <div class="review-score-average-count"><%= @item.avg_score %>点(<%= @item.reviews.count %>件のレビュー)</div>
             </div>
           </div>
-          <div class="show-post-image"><%= image_tag @item.image.variant(resize: '700x700'), class: "show-image" if @item.image.attached? %></div>
+          <div class="item-post-image"><%= image_tag @item.image.variant(resize: '700x700'), class: "show-image" if @item.image.attached? %></div>
            <p class="back-home-btn"><%= link_to "アイテム一覧に戻る", items_path %></p>
 
 
