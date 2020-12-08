@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       get 'item'
     end
   end
-  resources :items, only: [:index,:new,:create,:show] do
+  resources :items, only: [:index,:new,:create,:show,:destroy] do
     resources :reviews, only: [:index,:create,:destroy]
   end
   resources :posts do
