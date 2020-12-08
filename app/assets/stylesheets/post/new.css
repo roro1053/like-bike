@@ -33,8 +33,13 @@
 }
 .tag-form{
   width : 30vw;
-  margin : 0 auto 20px auto;
+  margin : 0 auto 10px auto;
   padding : 20px; 
-  border : 1px solid black;
+  border : 1px solid blue;
+}
+.child{
+  border-bottom : 1px solid black;
+  width : 25vw;
+  margin : 0 auto 10px auto;
 }
 /*アイテム投稿フォームここまで*/

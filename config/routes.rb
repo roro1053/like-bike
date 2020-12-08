@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     end
   end
   resources :items, only: [:index,:new,:create,:show,:destroy] do
+    collection do
+      get 'search'
+    end
     resources :reviews, only: [:index,:create,:destroy]
   end
   resources :posts do

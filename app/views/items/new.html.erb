@@ -20,7 +20,10 @@
         <%= f.file_field :image, class: "item-image" %>
     </div>
     <p>タグをつける</p>
-    <div><%= f.text_area :word,class: "tag-form", placeholder:"最大40字まで",rows:"2",maxlength:"40" %></div>
+    <div><%= f.text_area :word,class: "tag-form", id:'tag-field', placeholder:"最大40字まで",rows:"2",maxlength:"40" %>
+      <div id="search-result"></div>
+    </div>
+     
      <%= f.submit "投稿する",class: "post-btn" %>
         <div class="back-home"><%= link_to 'もどる', root_path, class:"back-btn" %></div>
         <% end %>
