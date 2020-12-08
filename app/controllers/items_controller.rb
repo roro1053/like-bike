@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item_tag).permit(:name,:text,:image).merge(user_id: current_user.id)
+    params.require(:item_tag).permit(:name,:text,:image,:word).merge(user_id: current_user.id)
   end
 
   def item_tag_params

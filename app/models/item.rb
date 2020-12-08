@@ -6,15 +6,6 @@ class Item < ApplicationRecord
   has_many :tags, through: :item_tag_relations
   has_many :reviews, dependent: :destroy
 
-  with_options presence: true do
-    validates :name
-    validates :image
-  end
-  with_options length: { maximum: 150 } do
-    validates :name
-    validates :text
-  end
-
   def avg_score
     unless self.reviews.empty?
       reviews.average(:rating).round(1).to_f
