@@ -1,7 +1,7 @@
 <div class="show-box">show-box
   <div class="show-item-content">
     <p class="back-home-btn"><%= link_to "HOME", root_path %></p>
-    <div class="show-user-name"><%= link_to @item.user.nickname,user_path(@item.user_id) %></div>
+    <div class="show-user-name"><%= link_to @item.user.nickname,item_user_path(@item.user_id) %></div>
 
         <div class="show-post-text-created-at">
           <div class="show-item-name"><%= @item.name %> </div>

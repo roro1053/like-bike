@@ -9,7 +9,7 @@
         <% @items.each do |item| %>
         <div class="post-index">
           <div class="post-user-nickname">
-            <%= link_to user_path(item.user_id) do %>
+            <%= link_to item_user_path(item.user_id) do %>
               <%= image_tag item.user.image.variant(resize: '30x30'), class: "post-user-img" if item.user.image.attached? %>
               <%= item.user.nickname %>
                <% end %>
