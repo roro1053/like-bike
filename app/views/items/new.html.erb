@@ -1,10 +1,10 @@
 
 <div class="new-box"><%= link_to "HOME", root_path %>
-  <div class="new-post-form">
-    <%= form_with model: @item,  local: true do |f| %>
+  <div class="new-item-form">
+    <%= form_with model: @item, url:  items_path,  local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
     <div class="text-box">
-      <p class="comment-sentence">名前</P>
+      <p class="comment-sentence">名前（必須）</P>
       <%= f.text_area :name, class: "name-box", placeholder:"※最大150字まで", maxlength:"150",rows: "3" %>
     </div>
 
@@ -14,11 +14,16 @@
       <%= f.text_area :text, class: "text-content", placeholder:"※最大150字まで", maxlength:"150" %>
     </div>
 
-    <div class="img-upload">画像</div>
+    <div class="img-upload">画像（必須）</div>
         <div class="click-upload">
          <p class="comment-sentence">クリックしてファイルをアップロード</p>
         <%= f.file_field :image, class: "item-image" %>
     </div>
+    <p>タグをつける</p>
+    <div><%= f.text_area :word,class: "tag-form", id:'tag-field', placeholder:"最大40字まで",rows:"2",maxlength:"40" %>
+      <div id="search-result"></div>
+    </div>
+     
      <%= f.submit "投稿する",class: "post-btn" %>
         <div class="back-home"><%= link_to 'もどる', root_path, class:"back-btn" %></div>
         <% end %>

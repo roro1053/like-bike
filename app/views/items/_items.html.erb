@@ -31,7 +31,10 @@
             </div>
              <div class="item-text-index"><%= item.text %></div>
           <% end %>
-
+              <div class="item-tag-box"><% item.tags.each do |tag| %>
+                  <div class="tag-item-word"><%= tag.word %></div>
+                   <% end%>
+                   </div>
   <div class="action-menu">action-menu
    
    <% if user_signed_in? %>
