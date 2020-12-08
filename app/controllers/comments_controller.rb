@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     @comment = Comment.create(comment_params)
@@ -14,6 +15,9 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find_by(id: params[:id],post_id: params[:post_id])
+    unless user_signed_in? && current_user.id == @comment.user_id
+      render root_path
+    end
     if @comment.destroy
       redirect_to "/posts/#{@comment.post.id}"
     end

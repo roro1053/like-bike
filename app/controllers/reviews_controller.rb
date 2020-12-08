@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     @review = Review.new(review_params)
@@ -14,6 +15,9 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find_by(id: params[:id],item_id: params[:item_id])
+    unless user_signed_in? && current_user.id == @review.user_id
+      render root_path
+    end
     if @review.destroy
       redirect_to "/items/#{@review.item.id}"
     end
