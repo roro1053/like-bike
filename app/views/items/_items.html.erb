@@ -1,6 +1,6 @@
-<div class="imte-page-inform">アイテムの一覧</div>
+<div class="item-page-inform">アイテム一覧</div>
 <div class="main-box">
-  <div class="reft-box">
+  <div class="left-box">
     <div class="map"><%= link_to "アイテム一覧", items_path %></div>
   </div>
 
@@ -16,7 +16,7 @@
             </div>
               <%= link_to "#{item_path(item.id)}" do %>
                 <div class="post-text-created-at">
-                  <div class="post-text"><%= item.text %></div>
+                  <div class="item-name"><%= item.name%></div>
                 </div>
                      <div class="item-review-star-rating">
                          <% if item.reviews.present? %>
@@ -27,7 +27,9 @@
                       <div class="item-review-score-average-count"><%= item.avg_score %>点(<%= item.reviews.count %>件のレビュー)</div>
               <div class="post-image">
               <%= image_tag item.image.variant(resize: '550x500'), class: "post-img" if item.image.attached? %>
+             
             </div>
+             <div class="item-text-index"><%= item.text %></div>
           <% end %>
 
   <div class="action-menu">action-menu

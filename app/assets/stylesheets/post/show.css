@@ -9,9 +9,21 @@
   margin-right : auto;
   margin-left : auto;
   width : 70vw; 
-  height : 35vh;
-  margin-bottom : 120px;
+  height : 37vh;
+  margin-bottom : 20px;
+  border : 1px solid black;
 }
+.show-item-content{
+  border : 1px solid black;
+  margin-right : auto;
+  margin-left : auto;
+  width : 70vw; 
+  height : 45vh;
+  margin-bottom : 20px;
+  border : 1px solid black;
+}
+
+
 .back-home-btn{
   text-align: center;
   margin-bottom : 20px;
@@ -42,9 +54,17 @@
   height : 55vh;
   margin-right : auto;
   margin-left : auto;
+  margin-top : 20px;
+  display : flex;
+}
+.item-post-image{
+  border : 1px solid black;
+  width :60vw;
+  height : 55vh;
+  margin-right : auto;
+  margin-left : auto;
   margin-top : 200px;
   display : flex;
-
 }
 .show-image{
   margin-right : auto;
@@ -124,3 +144,15 @@
   margin-left :670px;
   margin-right : 20px;
 }
+/**/
+.show-item-name{
+  text-align: center;
+  margin : 20px;
+  border : 1px solid black;
+  word-break: break-all;
+}
+.user_show-action{
+  word-break: break-all;
+  padding : 20px 20px 0px 20px;
+}
+/**/

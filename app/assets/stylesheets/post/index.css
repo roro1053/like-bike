@@ -62,22 +62,57 @@
 .main-box{
   display: flex;
   overflow: scroll;
-  height : 90vh;
+  height : 120vh;
   background-color : lightsalmon;
 }
-.reft-box{
+.left-box{
   background-color :lightgreen;
   height :90vh;
   width :27vw;
   overflow: scroll;
 }
+.user-profile-image{
+ 
+  margin : 10px;
+  width : 80px;
+}
+.user-profile-image-name{
+  display : flex;
+}
+.user-name-info-text{
+  margin-left : auto;
+  margin-right : auto;
+  width : 100px;
+  margin-top : 5px;
+}
+.user-profile-name{
+  margin-top : 7px;
+  margin-right :10px;
+  height : 50px;
+  word-break: break-all;
+}
+.user-profile-text{
+  padding : 10px;
+  word-break: break-all;
+}
+.user-profile-box{
+  height : 280px;
+  width : 330px;
+  border : 1px solid black;
+  margin-top : 20px;
+  margin-left: 40px;
+  position: fixed;
+}
+.user-profile-info-text{
+  text-align: center;
+}
 .map{
   border : 1px solid black;
-  height : 175px;
-  width : 175px;
-  margin-left: 100px;
-  margin-right: ;
-  margin-top : 300px;
+  height : 200px;
+  width : 330px;
+  margin-right : 20px;
+  margin-left : 40px;
+  margin-top : 350px;
   position: fixed;
 }
 /*真ん中ここから*/
@@ -177,8 +212,16 @@ position: fixed;
 }
 
 /*item-indexここから*/
-.imte-page-inform{
+.item-page-inform{
   text-align: center;
+}
+.item-name{
+  margin-left : 20px;
+}
+.item-text-index{
+  text-align: center;
+  word-break: break-all;
+  margin : 20px;
 }
 /*item-indexここまで*/
 
