@@ -18,7 +18,7 @@
   margin-right : auto;
   margin-left : auto;
   width : 70vw; 
-  height : 45vh;
+  height : 48vh;
   margin-bottom : 20px;
   border : 1px solid black;
 }
@@ -144,7 +144,7 @@
   margin-left :670px;
   margin-right : 20px;
 }
-/**/
+/*アイテムここから*/
 .show-item-name{
   text-align: center;
   margin : 20px;
@@ -155,4 +155,8 @@
   word-break: break-all;
   padding : 20px 20px 0px 20px;
 }
-/**/
+.show-item-tag-word{
+  margin : 10px;
+  border : 1px solid black;
+}
+/*アイテムここまで*/
