@@ -16,8 +16,8 @@ class ItemTag
 
   def save
     @item = Item.create(image: image,name: name, text: text, user_id: user_id)
-    @tag = Tag.where(word: word).first_or_initialize
-    @tag.save
+    tag = Tag.where(word: word).first_or_initialize
+    tag.save
     ItemTagRelation.create( item_id: @item.id, tag_id: tag.id)
   end
 

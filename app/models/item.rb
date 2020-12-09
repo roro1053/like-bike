@@ -18,4 +18,14 @@ class Item < ApplicationRecord
       reviews.average(:rating).round(1).to_f*100/5
     end
   end
+
+  def self.locate(locate)
+    if locate != ""
+      Item.where('text LIKE(?)', "%#{locate}%")
+      Item.where('name LIKE(?)', "%#{locate}%")
+      Item.joins(:tags).where("word LIKE (?)", "%#{locate}%").uniq
+    else
+      Item.all
+    end
+  end
 end

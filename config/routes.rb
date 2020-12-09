@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    collection do
+      get 'locate'
+    end
     resources :reviews, only: [:index,:create,:destroy]
   end
   resources :posts do

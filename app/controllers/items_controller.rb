@@ -40,6 +40,11 @@ class ItemsController < ApplicationController
       tag = Tag.where(['word LIKE ?', "%#{params[:keyword]}%"] )
       render json:{ keyword: tag }
   end
+
+  def locate
+    @items = Item.locate(params[:keyword])
+  end
+
   private
 
   def set_item
