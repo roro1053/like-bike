@@ -21,9 +21,7 @@ class Item < ApplicationRecord
 
   def self.locate(locate)
     if locate != ""
-      Item.where('text LIKE(?)', "%#{locate}%")
-      Item.where('name LIKE(?)', "%#{locate}%")
-      Item.joins(:tags).where("word LIKE (?)", "%#{locate}%").uniq
+      Item.joins(:tags).where('text LIKE(?) OR name LIKE(?) OR word LIKE(?)', "%#{locate}%","%#{locate}%","%#{locate}%")
     else
       Item.all
     end
