@@ -6,5 +6,5 @@ class Review < ApplicationRecord
     validates :text
     validates :rating
   end
-  validates :text,  length: { maximum: 150 }
+  validates :text, length: { maximum: 150 }
 end

@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :items, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  
+
   validates :nickname, presence: true,
                        length: { maximum: 40 }
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze },
@@ -16,7 +16,7 @@ class User < ApplicationRecord
   validates :profile,  length: { maximum: 150 }
 
   def self.guest
-    find_or_create_by(email: "test@com",nickname: "guest") do |user|
+    find_or_create_by(email: 'test@com', nickname: 'guest') do |user|
       user.password = SecureRandom.urlsafe_base64
     end
   end
