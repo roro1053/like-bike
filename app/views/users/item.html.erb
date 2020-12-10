@@ -1,3 +1,5 @@
+<%= render "shared/items_header" %>
+
 <div class="item-page-inform"><%= "#{@nickname}さんのアイテム"%></div>
 
     <div class="main-box">
@@ -13,15 +15,15 @@
         <div class="user-profile-info-text">プロフィール</div>
         <div class="user-profile-text"><%= @user.profile %></div>
       </div>
-    <div class="map"><%= link_to "アイテム一覧", items_path %>
+    <div class="user-details">
       <div class="user_show-action"><%= link_to "#{@nickname}さんの投稿を見る",   user_path %></div>
       <div class="user_show-action"><%= link_to "#{@nickname}さんのアイテムを見る",  item_user_path %></div>
     </div>
     
   </div>
 
-  <div class="center-box">center-box
-    <div class="list-posts">post-index
+  <div class="center-box">
+    <div class="list-posts">
         <% @items.each do |item| %>
         <div class="post-index">
           <div class="post-user-nickname">
@@ -51,7 +53,7 @@
   <div class="action-menu">action-menu
    <% if user_signed_in? %>
     <% if current_user.id == item.user_id %>
-    <div class="action-edit"><%# link_to "編集",edit_post_path(post.id),method: :get, class: "post-edit"  %></div>
+    <div class="action-edit"></div>
       <div class="action-destroy"><%= link_to '削除', item_path(item.id), method: :delete, class:'post-destroy' %></div>
       <% end %>
     <% end %>
@@ -69,16 +71,18 @@
     <%= image_tag current_user.image.variant(resize: '70x70'), class: "user-img" if current_user.image.attached? %>
       <%= link_to current_user.nickname, user_path(current_user.id),method: :get, class: "user-nickname" %>
         <ul class="user-menu">
-          <li>
-            <%= link_to "プロフィールを編集", edit_user_registration_path(current_user.id),method: :get %>
-            <%= link_to "アイテムを投稿する",  new_item_path %>
-            <%= link_to "アイテム一覧",  items_path %>
-          </li>
-        </ul>
+              <li>
+                <p class="user-menu-edit-user"><%= link_to "プロフィールを編集", edit_user_registration_path(current_user.id),method: :get %></p>
+                <p class="user-menu-item-new"><%= link_to "アイテムを投稿する",  new_item_path %></p>
+                <p class="user-menu-items"><%= link_to "投稿を見る",  user_path(current_user.id) %></p>
+                <p class="user-menu-items"><%= link_to "アイテムを見る",item_user_path(current_user.id) %></p>
+              </li>
+            </ul>
           </div>
          <% end %>
         </div>
-      <div class="measurement">計測</div>
+      <div class="measurement"></div>
     </div>
   </div>
+
 <div class="back-home"><%= link_to 'もどる', root_path, class:"back-btn" %></div>

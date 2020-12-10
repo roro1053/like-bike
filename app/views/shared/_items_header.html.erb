@@ -1,37 +1,29 @@
-<header class="top-page-header">
-  <div class="header-left">
-  　<div class="header-logo">
-  <%= link_to "like-bike", posts_path,method: :get, class: "main-menu" %>
-  </div>
-</div>
-
-<div class="header-center">
-  <div class="search-form">
-  <%= form_with(url: locate_items_path, local: true, method: :get, class: "search-form-content") do |form| %>
-  <%= form.text_field :keyword, placeholder: "アイテムを検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
-  </div>
-</div>
-
-<div class="header-right">
-  <div class="user-name">
-  <ul class="user_info">
-     <% if user_signed_in? %>
-  <li><%# link_to current_user.nickname, "#", class: "user-nickname" %></li>
-  <li><%=link_to "ログアウト",  destroy_user_session_path,method: :delete, class: "logout" %></li>
-  <% else %>
-  <li><%= link_to "ユーザー登録", new_user_registration_path,method: :get, class: "new-user" %></li>
-  <% end %>
-  </ul>
-
-  </div>
-    <div class="new-posts">
-    <% if user_signed_in? %>
-    <%= link_to "新規投稿", new_post_path,method: :get, class: "new-post" %>
-    <% else %>
-    <%= link_to "ログイン", new_user_session_path, class: "login" %>
-    <% end %>
+<header>
+  <div class="top-main-box">
+    <div class="top-main-parent">
+      <div class="header-logo-mark"><%= link_to "like-bike", root_path,method: :get %></div>
+      <div class="posts-lists"><%= link_to "投稿一覧", posts_path,method: :get, class: "main-menu" %></div>
+      <div class="items-lists"><%= link_to "アイテム一覧", items_path %></div>
+      <div class="seach-form-box">
+        <%= form_with(url: locate_items_path, local: true, method: :get, class: "search-form-content") do |form| %>
+        <%= form.text_field :keyword, placeholder: "アイテムを検索する", class: "search-input" %>
+        <%= form.submit "検索", class: "search-btn" %>
+        <% end %>
+      </div>
+        <% if user_signed_in? %>
+          <div class="posts-new-action">
+            <%= link_to "新規投稿", new_post_path,method: :get %>
+          </div>
+          <div class="items-new-action">
+            <%= link_to "アイテムを投稿", new_item_path %>
+          </div>
+          <div class="user-action-logout">
+            <%=link_to "ログアウト",  destroy_user_session_path,method: :delete, class: "logout" %>
+          </div>
+          <% else %>
+           <div class="user-action-login"><%= link_to "ログイン", new_user_session_path, class: "header-login-btn" %></div>
+           <div class="user-action-new"><%= link_to "ユーザー登録", new_user_registration_path,method: :get, class: "new-user" %></div>
+        <% end %>
     </div>
-</div>
+  </div>
 </header>

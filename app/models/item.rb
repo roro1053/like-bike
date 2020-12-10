@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   has_many :item_tag_relations
-  has_many :tags, through: :item_tag_relations
+  has_many :tags, through: :item_tag_relations,dependent: :destroy
   has_many :reviews, dependent: :destroy
 
   def avg_score
