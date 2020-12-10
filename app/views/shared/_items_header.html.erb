@@ -5,12 +5,11 @@
       <div class="posts-lists"><%= link_to "投稿一覧", posts_path,method: :get, class: "main-menu" %></div>
       <div class="items-lists"><%= link_to "アイテム一覧", items_path %></div>
       <div class="seach-form-box">
-        <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form-content") do |form| %>
-        <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+        <%= form_with(url: locate_items_path, local: true, method: :get, class: "search-form-content") do |form| %>
+        <%= form.text_field :keyword, placeholder: "アイテムを検索する", class: "search-input" %>
         <%= form.submit "検索", class: "search-btn" %>
         <% end %>
       </div>
-        
         <% if user_signed_in? %>
           <div class="posts-new-action">
             <%= link_to "新規投稿", new_post_path,method: :get %>

@@ -1,72 +1,63 @@
-<div class="show-box">show-box
+<%= render "shared/posts_header" %>
+
+<div class="show-box">
   <div class="show-content">
     <p class="back-home-btn"><%= link_to "HOME", root_path %></p>
     <div class="show-user-name"><%= link_to @post.user.nickname,user_path(@post.user_id) %></div>
 
-         <div class="show-post-text-created-at">
-          <div class="show-post-text"><%= @post.text %></div>
-          <div class="show-post-created-at"><%= @post.created_at %></div>
-        </div>
-   </div>
-          <div class="show-post-image"><%= image_tag @post.image.variant(resize: '700x700'), class: "show-image" if @post.image.attached? %></div>
+    <div class="show-post-text-created-at">
+      <div class="show-post-text"><%= @post.text %></div>
+      <div class="show-post-created-at"><%= @post.created_at %></div>
+    </div>
+  </div>
+  <div class="show-post-image"><%= image_tag @post.image.variant(resize: '700x700'), class: "show-image" if @post.image.attached? %></div>
 
- <div class="show-action-menu">
-     <% if user_signed_in? %>
-     <% if current_user.id == @post.user_id %>
+  <div class="show-action-menu">
+    <% if user_signed_in? %>
+    <% if current_user.id == @post.user_id %>
     <div class="show-action-edit-btn"><%= link_to "編集",edit_post_path(@post.id),method: :get, class: "post-edit"  %></div>
     <div class="show-action-destroy"><%= link_to '削除', post_path(@post.id), method: :delete, class:'post-destroy' %></div>
     <% end %>
-     <% end %>
- </div>
+    <% end %>
+  </div>
  
   <% if user_signed_in? %>
   <div class="show-action-comment">
-  <%= form_with(model: [@post,@comment], local: true) do |f| %>
-  <%= f.text_area :text, class: "comment-area",placeholder: "コメントする(最大150字)", rows: "5", maxlength:"150" %>
-
-   <div class="img-upload">画像</div>
+    <%= form_with(model: [@post,@comment], local: true) do |f| %> 
+    <%= f.text_area :text, class: "comment-area",placeholder: "コメントする(最大150字)", rows: "5", maxlength:"150" %>
+    <div class="img-upload">画像</div>
       <div class="click-upload">
-          <p class="comment-sentence">
-          クリックしてファイルをアップロード
-        </p>
-       <%= f.file_field :image, class: "item-image" %>
-          </div>    
+        <p class="comment-sentence">クリックしてファイルをアップロード</p>
+          <%= f.file_field :image, class: "item-image" %>
+      </div>    
         <%= f.submit "SEND" %>
         <% end %>
     </div>
-<% end %>
-                  <div class="show-commnet-lists">
-                      <h4>コメント一覧</h4>
-                      </div>
-                      <div class="comment-index">
-                     <% if @comments.present? %>
-                     <% @comments.each do |comment| %>
-                     <div class="comment-box">
-                     
-                       <%= link_to "/users/#{comment.user_id}" do %>
-                       <div class="comment-image-nickname">
-                         <div class="comment-user-image"><%= image_tag comment.user.image.variant(resize: '30x30'),class: "comment-image" if comment.user.image.attached? %></div>
-                        <div class="comment-user-nickname"><%= comment.user.nickname %></div>
-                        </div>
-                        <div class="comment-created-at"><%= comment.created_at %></div>
-                       
-                     <% end %>
-                     
-                    <div class="comment-text"><%= comment.text %></div>
-                       <div class="image-text-align"><%= image_tag comment.image.variant(resize: '300x300'), class: "comment-image" if comment.image.attached? %></div>
-                        <% if user_signed_in? %>
-                         <% if current_user.id == comment.user.id %>
-                        <div class="comment-destroy"><%= link_to "削除する",  post_comment_path(comment.post.id, comment.id),method: :delete %></div>
-                        <% end %>
-                         <% end %>
-                 </div>
-                     
-                  
-                      <% end %>
-                      </div>
-                       <% end%>
-                       
-                     
-
+    <% end %>
+      <div class="show-commnet-lists">
+        <h4>コメント一覧</h4>
+      </div>
+        <div class="comment-index">
+          <% if @comments.present? %>
+          <% @comments.each do |comment| %>
+            <div class="comment-box">
+              <%= link_to "/users/#{comment.user_id}" do %>
+                <div class="comment-image-nickname">
+                  <div class="comment-user-image"><%= image_tag comment.user.image.variant(resize: '30x30'),class: "comment-image" if comment.user.image.attached? %></div>
+                  <div class="comment-user-nickname"><%= comment.user.nickname %></div>
+                </div>
+              <div class="comment-created-at"><%= comment.created_at %></div>
+              <div class="comment-text"><%= comment.text %></div>
+              <div class="image-text-align"><%= image_tag comment.image.variant(resize: '300x300'), class: "comment-image" if comment.image.attached? %></div>
+              <% end %>
+              <% if user_signed_in? %>
+              <% if current_user.id == comment.user.id %>
+              <div class="comment-destroy"><%= link_to "削除する",  post_comment_path(comment.post.id, comment.id),method: :delete %></div>
+              <% end %>
+              <% end %>
+        </div>
+         <% end %>
+      </div> 
+      <% end%>
   <p class="back-home-btn"><% link_to "戻る", root_path %></p>
 </div>

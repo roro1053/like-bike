@@ -35,7 +35,7 @@
 <p>
 プロフィール画像 ※任意
 </p>
- <%= f.file_field :image, class: "item-image" %>
+ <%= f.file_field :image, class: "new-user-profile-image" %>
 </div>
 
   <div class="actions">
@@ -43,4 +43,5 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+ <%= link_to '簡単ログイン', users_guest_sign_in_path, method: :post %>
+<p><%= render "devise/shared/links" %></p>

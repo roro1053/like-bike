@@ -21,3 +21,17 @@
 .item-tag-word{
   padding : 10px;
 }
+.item-page-inform{
+  text-align: center;
+}
+.item-name{
+  margin-left : 20px;
+}
+.item-text-index{
+  text-align: center;
+  word-break: break-all;
+  margin : 20px;
+}
+.tag-item-word{
+  padding :7px;
+}

@@ -1,12 +1,12 @@
 .edit-content{
-  background-color : lightyellow;
+  background-color : #f0f8ff;
   height : 90vh;
   overflow: scroll;
   text-align: center;
   padding-top : 20px; 
 }
 .edit-form{
-  border : 1px solid black;
+  border : 1px solid gray;
   margin-right : auto;
   margin-left : auto;
   margin-top : 20px; 
@@ -15,10 +15,7 @@
   overflow: scroll;
 }
 .text-box{
-  
-  margin-right : 50px;
-  margin-left : 50px;
-  margin-top : 20px;
+  margin : 20px 50px 0 50px;
   padding : 20px;
 }
 

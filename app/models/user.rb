@@ -14,4 +14,10 @@ class User < ApplicationRecord
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze },
                        length: { minimum: 6 }
   validates :profile,  length: { maximum: 150 }
+
+  def self.guest
+    find_or_create_by(email: "test@com",nickname: "guest") do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
 end

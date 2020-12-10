@@ -1,0 +1,8 @@
+<%= render "shared/items_header" %>
+
+<div class="contents-row">
+<p class="seacrh-results">
+<%= "#{params[:keyword]}の検索結果"%></p>
+</div>
+<%= render "items" %>
+ <p class="back-home-btn"><%= link_to "アイテム一覧に戻る", items_path %></p>

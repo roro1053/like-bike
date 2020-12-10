@@ -1,3 +1,4 @@
+<%= render "shared/items_header" %>
 
 <div class="new-box"><%= link_to "HOME", root_path %>
   <div class="new-item-form">
@@ -25,7 +26,7 @@
     </div>
      
      <%= f.submit "投稿する",class: "post-btn" %>
-        <div class="back-home"><%= link_to 'もどる', root_path, class:"back-btn" %></div>
+        <div class="back-home"><%= link_to 'アイテム一覧に戻る', items_path, class:"back-btn" %></div>
         <% end %>
   </div>
 </div>

@@ -1,3 +1,57 @@
-.my-page-top{
+
+.user-profile-image{
+  margin : 10px;
+  width : 80px;
+}
+.user-profile-image-name{
+  display : flex;
+}
+.user-name-info-text{
+  margin-left : auto;
+  margin-right : auto;
+  width : 100px;
+  margin-top : 5px;
+}
+.user-profile-name{
+  margin-top : 7px;
+  margin-right :10px;
+  height : 50px;
+  word-break: break-all;
+}
+.user-profile-text{
+  padding : 10px;
+  word-break: break-all;
+}
+.user-profile-box{
+  height : 280px;
+  width : 23vw;
+  border : 1px solid gray;
+  margin-top : 20px;
+  margin-left: 40px;
+  position: fixed;
+}
+.user-profile-info-text{
   text-align: center;
+}
+
+.my-page-top{
+  background-color : #00ffff;
+  text-align: center;
+}
+.user-details{
+  border : 1px solid #e6e6fa;
+  height : 200px;
+  width : 23vw;
+  margin-right : 20px;
+  margin-left : 40px;
+  margin-top : 350px;
+  position: fixed;
+  background-color : #eeeeee;
+  text-align : center;
+}
+.user-details:hover{
+  background-color : white;
+}
+.item-page-inform{
+  background-color : #ff00ff;
 }
