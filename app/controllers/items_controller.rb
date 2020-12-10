@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_item, only: [:show,:destroy]
+  before_action :set_item, only: [:show, :destroy]
 
   def index
     @items = Item.includes(:user).order('created_at DESC')
@@ -26,19 +26,16 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    unless user_signed_in? && current_user.id == @item.user_id
-      render root_path
-    end
+    render root_path unless user_signed_in? && current_user.id == @item.user_id
 
-    if @item.destroy
-      redirect_to items_path
-    end
+    redirect_to items_path if @item.destroy
   end
-  
+
   def search
-      return nil if params[:keyword] == ""
-      tag = Tag.where(['word LIKE ?', "%#{params[:keyword]}%"] )
-      render json:{ keyword: tag }
+    return nil if params[:keyword] == ''
+
+    tag = Tag.where(['word LIKE ?', "%#{params[:keyword]}%"])
+    render json: { keyword: tag }
   end
 
   def locate
@@ -52,7 +49,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item_tag).permit(:name,:text,:image,:word).merge(user_id: current_user.id)
+    params.require(:item_tag).permit(:name, :text, :image, :word).merge(user_id: current_user.id)
   end
 
   def item_tag_params
