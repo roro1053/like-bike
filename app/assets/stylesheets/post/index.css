@@ -53,16 +53,26 @@ padding : 10px;
 margin-left : 20px;
 background-color : white;
 }
+.header-guesto-login{
+  margin-left : 50px; 
+}
+.btn-header-guest-login{
+  padding : 7px; 
+  border : 1px solid white;
+  color: #fff;
+  background-color: #eb6100;
+  border-radius: 100vh;
+}
 .user-action-login{
   border : 1px solid gray;
   padding : 10px;
-  margin-left : 150px;
+  margin-left : 20px;
   background-color : white;
 }
 .user-action-new{
   border : 1px solid gray;
   padding : 10px;
-  margin-left : 60px;
+  margin-left : 20px;
   background-color : white;
 }
 /*ヘッダーここまで*/

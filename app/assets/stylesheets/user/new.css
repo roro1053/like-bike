@@ -1,0 +1,23 @@
+.user-new-registration-form{
+  text-align : center;
+}
+.new-user-profile-image{
+  margin-left : 230px;
+  margin-bottom : 20px;
+}
+.field{
+  margin : 10px;
+}
+.actions{
+  margin-bottom : 20px;
+}
+.guest-login{
+margin : 25px;
+}
+.btn-guest-login{
+  padding : 7px; 
+  border : 1px solid black;
+  color: #fff;
+  background-color: #eb6100;
+  border-radius: 100vh;
+}
