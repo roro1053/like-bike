@@ -1,3 +1,4 @@
+<div class="user-new-registration-form">
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -22,5 +23,7 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
- <%= link_to '簡単ログイン', users_guest_sign_in_path, method: :post %>
+ 
+<div class="guest-login"><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post,class:"btn-guest-login" %></div>
 <p><%= render "devise/shared/links" %></p>
+</div>

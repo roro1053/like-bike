@@ -1,3 +1,6 @@
+
+<div class="user-new-registration-form">
+
 <h2>Sign up</h2>
 
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
@@ -31,17 +34,16 @@
    <%= f.text_area :profile, placeholder:"※任意  最大150字まで",maxlength:"150"  %>
   </div>
 
-<div class="click-upload">
-<p>
-プロフィール画像 ※任意
-</p>
- <%= f.file_field :image, class: "new-user-profile-image" %>
-</div>
+  <div class="click-upload">
+    <p>プロフィール画像 ※任意</p>
+    <%= f.file_field :image, class: "new-user-profile-image" %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
-<% end %>
+  <% end %>
 
- <%= link_to '簡単ログイン', users_guest_sign_in_path, method: :post %>
-<p><%= render "devise/shared/links" %></p>
+  <div class="guest-login"><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post,class:"btn-guest-login" %></div>
+  <p><%= render "devise/shared/links" %></p>
+</div>

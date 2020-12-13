@@ -21,6 +21,7 @@
             <%=link_to "ログアウト",  destroy_user_session_path,method: :delete, class: "logout" %>
           </div>
           <% else %>
+           <div class="header-guesto-login"><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post,class:"btn-header-guest-login" %></div>
            <div class="user-action-login"><%= link_to "ログイン", new_user_session_path, class: "header-login-btn" %></div>
            <div class="user-action-new"><%= link_to "ユーザー登録", new_user_registration_path,method: :get, class: "new-user" %></div>
         <% end %>
