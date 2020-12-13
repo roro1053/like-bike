@@ -10,7 +10,6 @@
         <%= form.submit "検索", class: "search-btn" %>
         <% end %>
       </div>
-        
         <% if user_signed_in? %>
           <div class="posts-new-action">
             <%= link_to "新規投稿", new_post_path,method: :get %>
