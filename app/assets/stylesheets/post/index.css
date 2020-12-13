@@ -193,7 +193,9 @@ background-color : white;
 .back-home{
   text-align: center;
 }
-
+ul {
+  list-style: none;
+}
 
 /*フッターここから*/
 .top-page-footer{
