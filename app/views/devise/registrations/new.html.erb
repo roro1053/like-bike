@@ -20,18 +20,18 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password確認 %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="fiald">
    <%= f.label :nickname %><br />
-   <%= f.text_area :nickname,placeholder:"最大40文字まで", maxlength:"40" %>
+   <%= f.text_area :nickname,placeholder:"最大40文字まで", maxlength:"40",rows:"3",class:"new-user-nickname-form" %>
   </div>
 
   <div class="fiald">
    <%= f.label :profile %><br />
-   <%= f.text_area :profile, placeholder:"※任意  最大150字まで",maxlength:"150"  %>
+   <%= f.text_area :profile, placeholder:"※任意  最大150字まで",maxlength:"150",rows:"3",class:"new-user-nickname-form"  %>
   </div>
 
   <div class="click-upload">
