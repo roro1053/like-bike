@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index,:create,:destroy]
   end
   resources :posts do
+    resource :likes, only: [:create, :destroy]
     collection do
       get 'search'
     end
