@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_many :items, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
+  has_many :likes,dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
+
   validates :nickname, presence: true,
                        length: { maximum: 40 }
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze },
