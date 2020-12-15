@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.includes(:user).order('created_at DESC')
+    @like = Like.new
   end
 
   def new
@@ -23,6 +24,7 @@ class PostsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @post.comments.includes(:user).order('created_at DESC')
+    @like = Like.new
   end
 
   def destroy

@@ -20,7 +20,9 @@
     <% end %>
     <% end %>
   </div>
- 
+  
+  <div class="posts-like-btn"><%# %></div>
+
   <% if user_signed_in? %>
   <div class="show-action-comment">
     <%= form_with(model: [@post,@comment], local: true) do |f| %> 
