@@ -8,7 +8,7 @@
         <div class="show-post-text-created-at">
           <div class="show-item-name"><%= @item.name %></div>
           <div class="show-post-text"><%= @item.text %></div>
-          <div class="show-post-created-at"><%= @item.created_at %></div>
+          <div class="show-post-created-at"><%= l @item.created_at %></div>
           <%  @item.tags.each do |tag| %>
           <div class="show-item-tag-word"><%= tag.word %></div>
           <% end %>

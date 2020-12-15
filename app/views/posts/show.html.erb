@@ -7,7 +7,7 @@
 
     <div class="show-post-text-created-at">
       <div class="show-post-text"><%= @post.text %></div>
-      <div class="show-post-created-at"><%= @post.created_at %></div>
+      <div class="show-post-created-at"><%= l @post.created_at %></div>
     </div>
   </div>
   <div class="show-post-image"><%= image_tag @post.image.variant(resize: '700x700'), class: "show-image" if @post.image.attached? %></div>
@@ -46,7 +46,7 @@
                   <div class="comment-user-image"><%= image_tag comment.user.image.variant(resize: '30x30'),class: "comment-image" if comment.user.image.attached? %></div>
                   <div class="comment-user-nickname"><%= comment.user.nickname %></div>
                 </div>
-              <div class="comment-created-at"><%= comment.created_at %></div>
+              <div class="comment-created-at"><%= l comment.created_at %></div>
               <div class="comment-text"><%= comment.text %></div>
               <div class="image-text-align"><%= image_tag comment.image.variant(resize: '300x300'), class: "comment-image" if comment.image.attached? %></div>
               <% end %>
