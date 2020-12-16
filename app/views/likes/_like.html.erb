@@ -1,0 +1,13 @@
+  <div class="posts-like-btn">
+    <% if post.like_user(current_user.id)  %>
+    <%= button_to "いいねを取り消す", post_likes_path(@post),method: :delete %>
+      <span class="heart-count">♡</span>
+      <%= post.likes_count %>
+     <%# end %>
+    <% else %>
+    <%= button_to "いいねを付ける", post_likes_path(@post),method: :post %>
+      <span class="heart-count">♡</span>
+       <%= post.likes_count %>
+     <%# end %>
+     <% end %>
+  </div>

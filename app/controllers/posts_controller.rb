@@ -25,11 +25,11 @@ class PostsController < ApplicationController
     @comment = Comment.new
     @comments = @post.comments.includes(:user).order('created_at DESC')
     @like = Like.new
+    @likes = Like.where(post_id: params[:post_id])
   end
 
   def destroy
     render :index unless user_signed_in? && current_user.id == @post.user_id
-
     redirect_to root_path if @post.destroy
   end
 

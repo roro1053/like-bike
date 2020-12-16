@@ -18,9 +18,7 @@ class User < ApplicationRecord
                        length: { minimum: 6 }
   validates :profile,  length: { maximum: 150 }
 
-  def already_liked?(post)
-    self.likes.exists?(post_id: post.id)
-  end
+ 
 
   def self.guest
     find_or_create_by(email: 'test@com', nickname: 'guest') do |user|
