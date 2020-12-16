@@ -23,6 +23,9 @@
               <% end %>
               <div class="action-menu">
                 <% if user_signed_in? %>
+                     <div id="likes_buttons_<%= post.id %>">
+                       <%= render partial: "likes/favorite", locals: { post: post } %>
+                     </div>
                   <% if current_user.id == post.user_id %>
                     <div class="action-edit"><%= link_to "編集",edit_post_path(post.id),method: :get, class: "post-edit"  %></div>
                     <div class="action-destroy"><%= link_to '削除', post_path(post.id), method: :delete, class:'post-destroy' %></div>

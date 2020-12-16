@@ -196,6 +196,10 @@ background-color : white;
 ul {
   list-style: none;
 }
+.like-btn{
+  margin-left : 10px;
+
+}
 
 /*フッターここから*/
 .top-page-footer{

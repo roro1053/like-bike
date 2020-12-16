@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.includes(:user).order('created_at DESC')
     @like = Like.new
+    @likes = Like.where(post_id: params[:post_id])
   end
 
   def new
