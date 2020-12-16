@@ -1,15 +1,11 @@
   <div class="posts-like-btn">
     <% if user_signed_in? %>
     <% if post.like_user(current_user.id)  %>
-    <%= button_to "取り消す", post_likes_path(post),method: :delete,class:"like-btn" %>
-      <span class="heart-count">♡</span>
+    <%= link_to "♡", post_likes_path(post),method: :delete,class:"like-btn" %>
       <%= post.likes_count %>
-     <%# end %>
     <% else %>
-    <%= button_to "いいね！", post_likes_path(post),method: :post,class:"like-btn" %>
-      <span class="heart-count">♡</span>
+    <%= link_to "♡", post_likes_path(post),method: :post,class:"like-btn" %>
        <%= post.likes_count %>
-     <%# end %>
      <% end %>
      <% end %>
   </div>
