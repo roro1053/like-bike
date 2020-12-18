@@ -28,7 +28,7 @@
   <% if user_signed_in? %>
   <div class="show-action-comment">
     <%= form_with(model: [@post,@comment], local: true) do |f| %> 
-     <%# render 'shared/error_messages', model: f.object %>
+     <%= render 'shared/error_messages', model: f.object %>
     <%= f.text_area :text, class: "comment-area",placeholder: "コメントする(最大150字)", rows: "5", maxlength:"150" %>
     <div class="img-upload">画像</div>
       <div class="click-upload">
