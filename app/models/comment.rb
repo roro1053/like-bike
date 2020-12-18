@@ -6,6 +6,8 @@ class Comment < ApplicationRecord
   validates :text, length: { maximum: 150 }
   validates :text, presence: true, unless: :was_attached?
 
+  
+
   def was_attached?
     image.attached?
   end
