@@ -23,7 +23,7 @@
               <% end %>
               <div class="action-menu">
                 <% if user_signed_in? %>
-                     <div id="likes_buttons_<%= post.id %>">
+                     <div id="like-of-<%= post.id %>">
                        <%= render partial: "likes/favorite", locals: { post: post } %>
                      </div>
                   <% if current_user.id == post.user_id %>

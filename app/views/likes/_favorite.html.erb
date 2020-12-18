@@ -1,11 +1,11 @@
   <div class="posts-like-btn">
     <% if user_signed_in? %>
     <% if post.like_user(current_user.id)  %>
-    <%= link_to "♡", post_likes_path(post),method: :delete,class:"like-btn" %>
-      <%= post.likes_count %>
+    <%= link_to "♡", post_likes_path(post),method: :delete,class:"like-btn", remote: true %>
+      <%= post.likes.count %>
     <% else %>
-    <%= link_to "♡", post_likes_path(post),method: :post,class:"like-btn" %>
-       <%= post.likes_count %>
+    <%= link_to "♡", post_likes_path(post),method: :post,class:"like-btn", remote: true %>
+       <%= post.likes.count %>
      <% end %>
      <% end %>
   </div>
