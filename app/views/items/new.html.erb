@@ -2,7 +2,7 @@
 
 <% content_for(:body_attributes) %>
     
-<div class="new-box"><%= link_to "HOME", root_path %>
+<div class="new-item-box"><%= link_to "HOME", root_path %>
   <div class="new-item-form">
     <%= form_with model: @item, url:  items_path,  local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
@@ -10,7 +10,6 @@
       <p class="comment-sentence">名前（必須）</P>
       <%= f.text_area :name, class: "name-box", placeholder:"※最大150字まで", maxlength:"150",rows: "3" %>
     </div>
-
 
     <div class="text-box">
       <p class="comment-sentence">コメント</P>
@@ -26,12 +25,9 @@
     <div><%= f.text_area :word,class: "tag-form", id:'tag-field', placeholder:"最大40字まで",rows:"2",maxlength:"40" %>
       <div id="search-result"></div>
     </div>
-     
      <%= f.submit "投稿する",class: "post-btn" %>
-        
         <% end %>
-        
   </div>
   <div class="back-home"><%= link_to 'アイテム一覧に戻る', items_path, class:"back-btn" %></div>
 </div>
-           
+

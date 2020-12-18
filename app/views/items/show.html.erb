@@ -26,8 +26,6 @@
           </div>
           <div class="item-post-image"><%= image_tag @item.image.variant(resize: '700x700'), class: "show-image" if @item.image.attached? %></div>
            
-
-
  <div class="show-action-menu">
      <% if user_signed_in? %>
      <% if current_user.id == @item.user_id %>
@@ -36,11 +34,11 @@
     <% end %>
      <% end %>
  </div>
+
  <p class="back-home-btn"><%= link_to "アイテム一覧に戻る", items_path %></p>
   
   <%= render "reviews/form", review: @review, item: @item %>
 
- 
   <div class="reviews-box">
     <h4>レビューの一覧</h4>
      <% if @reviews.present? %>

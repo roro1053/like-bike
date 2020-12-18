@@ -13,6 +13,9 @@
   <div class="show-post-image"><%= image_tag @post.image.variant(resize: '700x700'), class: "show-image" if @post.image.attached? %></div>
 
   <div class="show-action-menu">
+     <div id="like-of-<%= @post.id %>">
+      <%= render partial: "likes/like", locals: { post: @post } %>
+     </div>
     <% if user_signed_in? %>
     <% if current_user.id == @post.user_id %>
     <div class="show-action-edit-btn"><%= link_to "編集",edit_post_path(@post.id),method: :get, class: "post-edit"  %></div>
@@ -21,10 +24,6 @@
     <% end %>
   </div>
   
-     <div id="like-of-<%= @post.id %>">
-      <%= render partial: "likes/like", locals: { post: @post } %>
-     </div>
-
   <% if user_signed_in? %>
   <div class="show-action-comment">
     <%= form_with(model: [@post,@comment], local: true) do |f| %> 

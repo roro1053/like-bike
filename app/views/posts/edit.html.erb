@@ -5,7 +5,6 @@
     <%= form_with model: @post, local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
 
-
       <div class="text-box">
         <p class="comment-sentence">コメント</P>
           <%= f.text_area :text, class: "text-content", placeholder:"※最大150字まで", maxlength:"150" %>
