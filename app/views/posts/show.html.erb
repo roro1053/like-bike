@@ -22,7 +22,7 @@
   </div>
   
      <div id="like-of-<%= @post.id %>">
-      <%= render partial: "likes/like", locals: { like: @like,post: @post } %>
+      <%= render partial: "likes/like", locals: { post: @post } %>
      </div>
 
   <% if user_signed_in? %>
