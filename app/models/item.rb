@@ -6,6 +6,14 @@ class Item < ApplicationRecord
   has_many :tags, through: :item_tag_relations, dependent: :destroy
   has_many :reviews, dependent: :destroy
   
+  with_options presence: true do
+    validates :name
+    validates :image
+  end
+
+  validates :name,length: { maximum: 40 }
+  validates :text,length: { maximum: 150 } 
+
   def avg_score
     if reviews.empty?
       0.0

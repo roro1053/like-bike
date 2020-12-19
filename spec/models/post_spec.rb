@@ -6,7 +6,7 @@ RSpec.describe Post, type: :model do
   end
 
   describe '新規投稿' do
-    context '新規投稿がうまく行く時' do
+    context '新規投稿がうまくいく時' do
       it 'textとimageが存在すれば投稿できる' do
         expect(@post).to be_valid
       end

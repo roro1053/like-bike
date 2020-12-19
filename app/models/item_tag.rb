@@ -5,13 +5,11 @@ class ItemTag
   with_options presence: true do
     validates :name
     validates :image
-    # validates :word
   end
 
-  with_options length: { maximum: 150 } do
-    validates :name
-    validates :text
-  end
+  validates :name,length: { maximum: 40 }
+  validates :text,length: { maximum: 150 } 
+
 
   def save
     @item = Item.create(image: image, name: name, text: text, user_id: user_id)

@@ -2,6 +2,7 @@ FactoryBot.define do
   factory :item do
     name { 'name' }
     text { 'text' }
+   
     association :user
 
     after(:build) do |item|
