@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :post do
-    text { 'text' }
+    text { Faker::Name.initials }
     association :user
 
     after(:build) do |post|
