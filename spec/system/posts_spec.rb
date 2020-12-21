@@ -7,7 +7,7 @@ RSpec.describe "Posts", type: :system do
     @post_image = Faker::Lorem.sentence
   end
 
-  context 'ツイート投稿ができるとき'do
+  context '投稿ができるとき'do
   it 'ログインしたユーザーは新規投稿できる' do
    # トップページに移動する
     visit root_path
@@ -30,13 +30,13 @@ RSpec.describe "Posts", type: :system do
    }.to change { Post.count }.by(1)
    # トップページに遷移することを確認する 
     expect(current_path).to eq root_path
-   # トップページには先ほど投稿した内容のツイートが存在することを確認する（画像）
+   # トップページには先ほど投稿した内容の投稿が存在することを確認する（画像）
     expect(page).to have_selector".post-img"
-   # トップページには先ほど投稿した内容のツイートが存在することを確認する（テキスト）
+   # トップページには先ほど投稿した内容の投稿が存在することを確認する（テキスト）
     expect(page).to have_selector".post-text"
   end
  end
-  context 'ツイート投稿ができないとき'do
+  context '投稿ができないとき'do
   it 'ログインしていないと新規投稿ページに遷移できない' do
   # トップページに遷移する
   visit root_path
@@ -108,8 +108,8 @@ RSpec.describe '投稿編集', type: :system do
       expect(page).to have_content("#{@post1.text}+編集したテキスト")
     end
   end
-  context 'ツイート編集ができないとき' do
-    it 'ログインしたユーザーは自分以外が投稿したツイートの編集画面には遷移できない' do
+  context '投稿編集ができないとき' do
+    it 'ログインしたユーザーは自分以外の投稿の編集画面には遷移できない' do
       # 投稿1を投稿したユーザーでログインする
       visit new_user_session_path
       fill_in 'Email', with: @post1.user.email
@@ -121,7 +121,7 @@ RSpec.describe '投稿編集', type: :system do
         all(".post-index")[0]
       ).to  have_no_content('編集')
     end
-    it 'ログインしていないとツイートの編集画面には遷移できない' do
+    it 'ログインしていないと投稿の編集画面には遷移できない' do
       # トップページにいる
       visit root_path
       # 投稿1に「編集」ボタンがないことを確認する
@@ -141,8 +141,8 @@ RSpec.describe '投稿削除', type: :system do
     @post1 = FactoryBot.create(:post)
     @post2 = FactoryBot.create(:post)
   end
-  context 'ツイート削除ができるとき' do
-    it 'ログインしたユーザーは自らが投稿したツイートの削除ができる' do
+  context '投稿削除ができるとき' do
+    it 'ログインしたユーザーは自らが投稿した投稿の削除ができる' do
       # 投稿1を投稿したユーザーでログインする
       visit new_user_session_path
       fill_in 'Email', with: @post1.user.email
@@ -163,7 +163,7 @@ RSpec.describe '投稿削除', type: :system do
       expect(page).to have_no_content("#{@post1.text}")
     end
   end
-  context 'ツイート削除ができないとき' do
+  context '投稿削除ができないとき' do
     it "ログインしたユーザーは自分以外の投稿を削除できない" do
      # 投稿1を投稿したユーザーでログインする
      visit new_user_session_path
@@ -188,5 +188,59 @@ RSpec.describe '投稿削除', type: :system do
         all(".post-index")[0]
       ).to  have_no_content('削除')
     end
+  end
+end
+
+RSpec.describe '投稿詳細', type: :system do
+  before do
+    @post1 = FactoryBot.create(:post)
+    @post2 = FactoryBot.create(:post)
+  end
+  it 'ログインしたユーザーは投稿詳細ページに遷移してコメント投稿欄が表示される' do
+    # 投稿1を投稿したユーザーでログインする
+    visit new_user_session_path
+    fill_in 'Email', with: @post1.user.email
+    fill_in 'Password', with: @post1.user.password
+    find('input[name="commit"]').click
+    expect(current_path).to eq root_path
+    # 詳細ページに遷移する
+    visit  post_path(@post1)
+    # 詳細ページに投稿の内容が含まれている
+    expect(page).to have_selector("img[src$='test_image.png']")
+    expect(page).to have_content("#{@post1.text}")
+    #編集と削除ボタンがあることを確認する
+    expect(page).to have_content("編集")
+    expect(page).to have_content("削除")
+    # コメント用のフォームが存在する
+    expect(page).to have_content("クリックしてファイルをアップロード")
+  end
+  it "ログインしたユーザーは自分の投稿でない投稿詳細ページに遷移しても編集と削除が出来ない。しかし、コメント投稿欄が表示される" do
+    #投稿1を投稿したユーザーでログインする
+    visit new_user_session_path
+    fill_in 'Email', with: @post1.user.email
+    fill_in 'Password', with: @post1.user.password
+    find('input[name="commit"]').click
+    expect(current_path).to eq root_path
+    #投稿2の詳細ページに遷移する
+    visit post_path(@post2)
+    #詳細に投稿の内容が記載されている
+    expect(page).to have_selector("img[src$='test_image.png']")
+    expect(page).to have_content("#{@post2.text}")
+    #編集と削除ボタンが存在しない
+    expect(page).to have_no_content("編集")
+    expect(page).to have_no_content("削除")
+    #コメント用のフォームは存在する
+    expect(page).to have_content("クリックしてファイルをアップロード")
+  end
+  it 'ログインしていない状態で投稿詳細ページに遷移できるものの、コメント投稿欄が表示されない' do
+    # トップページに移動する
+    visit root_path
+    # 詳細ページに遷移する
+    visit post_path(@post1)
+    # 詳細ページに投稿の内容が含まれている
+    expect(page).to have_selector("img[src$='test_image.png']")
+    expect(page).to have_content("#{@post1.text}")
+    # フォームが存在しないことを確認する
+    expect(page).to have_no_content("クリックしてファイルをアップロード")
   end
 end
