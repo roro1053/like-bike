@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :item do
-    name { 'name' }
-    text { 'text' }
+    name { Faker::Name.initials }
+    text { Faker::Name.initials }
    
     association :user
 
