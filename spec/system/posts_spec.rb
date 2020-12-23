@@ -72,7 +72,7 @@ end
 
 RSpec.describe '投稿編集', type: :system do
   before do
-    @post1 = FactoryBot.create(:post)
+    @post1 = FactoryBot.create(:post) 
     @post2 = FactoryBot.create(:post)
   end
   context '投稿編集ができるとき' do

@@ -169,7 +169,7 @@ RSpec.describe 'アイテム削除', type: :system do
       #削除ボタンを確認する
       expect(page).to have_no_content "削除"
     end
-    it "ログインしていないユーザには削除ボタンが表示されない" do
+    it "ログインしていないユーザには削除ボタンが表示されない（一覧、詳細）" do
       #アイテム一覧ページに遷移する
       visit items_path
       #アイテム一覧ページに削除ボタンが表示されないことを確認する
