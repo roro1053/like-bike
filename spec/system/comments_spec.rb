@@ -40,7 +40,27 @@ RSpec.describe "Comments", type: :system do
     #コメントするフォームが存在しないことを確認する
     expect(page).to have_no_content("クリックしてファイルをアップロード")
   end
-end
+  it "誤った情報ではコメントを投稿できずに、投稿詳細ページに留まる" do
+     # ログインする
+     visit new_user_session_path
+     fill_in 'Email', with: @user.email
+     fill_in 'Password', with: @user.password
+     find('input[name="commit"]').click
+     expect(current_path).to eq root_path
+     # 投稿詳細ページに遷移する
+     visit post_path(@post)
+     # フォームに情報を入力する
+     fill_in 'comment_text', with: ""
+     # コメントを送信しても、Commentモデルのカウントが変わらないことを確認する
+     expect{
+       click_button('SEND')
+     }.to change { Comment.count }.by(0)
+     # 投稿詳細ページにとどまることを確認する
+     expect(current_path).to eq post_comments_path(@post)
+     # コメントの投稿に失敗すると、エラーメッセージが表示されることを確認する
+     expect(page).to have_selector".error-message"
+  end
+ end
 end
 
 RSpec.describe 'コメント削除', type: :system do
