@@ -9,11 +9,13 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
   root to: 'posts#index'
-  resources :users, only: [:show] do
+  resources :users do
     member do
       get 'item'
+      get :following, :followers
     end
   end
+  resources :follow_relationships, only: [:create, :destroy]
   resources :items, only: [:index,:new,:create,:show,:destroy] do
     collection do
       get 'search'

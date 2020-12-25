@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :item]
+  before_action :set_user, only: [:show, :item,:followings,:followers]
 
   def show
     @posts = @user.posts.includes(:user).order('created_at DESC')
@@ -7,6 +7,16 @@ class UsersController < ApplicationController
 
   def item
     @items = @user.items.includes(:user).order('created_at DESC')
+  end
+
+  def following
+    @users = @user.followings
+    render 'show_followings'
+  end
+
+  def followers
+    @users = @user.followers
+    render 'show_followers'
   end
 
   private
