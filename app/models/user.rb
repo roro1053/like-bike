@@ -15,10 +15,9 @@ class User < ApplicationRecord
   validates :nickname, presence: true,
                        length: { maximum: 40 }
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze },
-                       length: { minimum: 6 }
+                       length: { minimum: 6 },
+                       presence: true, on: :create
   validates :profile,  length: { maximum: 150 }
-
- 
 
   def self.guest
     find_or_create_by(email: 'test@com', nickname: 'guest') do |user|

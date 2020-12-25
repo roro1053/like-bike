@@ -59,7 +59,5 @@ end
         expect(response.body).to include "コメント一覧"
       end
     end
-
-
   end
 end
