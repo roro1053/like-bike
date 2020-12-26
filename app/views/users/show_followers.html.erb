@@ -17,6 +17,10 @@
     <div class="user-details">
       <div class="user_show-action"><%= link_to "#{@nickname}さんの投稿を見る",   user_path %></div>
       <div class="user_show-action"><%= link_to "#{@nickname}さんのアイテムを見る",  item_user_path %></div>
+        <div class="following-follower-count">
+          <div class="following-count"><%= link_to "フォロー(#{@user.followings.count})", following_user_path(@user), class: "nav-link" %></div>
+          <div class="follower-count"><%= link_to "フォロワー(#{@user.followers.count})", followers_user_path(@user), class: "nav-link" %></div>
+        </div>
       <% if user_signed_in? && @user != current_user%>
         <div id="follow_form">
           <% if current_user.following?(@user) %>
@@ -55,8 +59,6 @@
             <%= link_to current_user.nickname, user_path(current_user.id),method: :get, class: "user-nickname" %>
               <ul class="user-menu">
                 <li>
-                  <%= link_to "フォロー(#{@user.followings.count})", following_user_path(@user), class: "nav-link" %>
-                  <%= link_to "フォロワー(#{@user.followers.count})", followers_user_path(@user), class: "nav-link" %>
                   <p class="user-menu-edit-user"><%= link_to "プロフィールを編集", edit_user_registration_path(current_user.id),method: :get %></p>
                   <p class="user-menu-item-new"><%= link_to "アイテムを投稿する",  new_item_path %></p>
                   <p class="user-menu-items"><%= link_to "投稿を見る",  user_path(current_user.id) %></p>

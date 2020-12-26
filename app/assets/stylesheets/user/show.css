@@ -55,3 +55,60 @@
 .item-page-inform{
   background-color : #ff00ff;
 }
+.following-follower-count{
+  display: flex;
+  justify-content: space-between;
+  margin : 10px 10px 20px 10px;
+}
+.following-count{
+  margin-left : 30px;
+  padding : 7px;
+}
+.follower-count{
+  margin-right : 30px;
+  padding : 7px;
+}
+.following-display-text{
+  width : 11vw;
+  margin-right : auto;
+  margin-left : auto;
+  border-radius: 100vh;
+}
+.following-btn{
+  padding :7px 30px 7px 30px;
+  background-color : blue;
+  color : white;
+  border-style: none;
+  border-radius: 100vh;
+  cursor : pointer;
+}
+.following-release-btn{
+  padding :7px 30px 7px 30px;
+  background-color : red;
+  color : white;
+  border-style: none;
+  border-radius: 100vh;
+  cursor : pointer;
+}
+.follow-to-btn{
+  border : 1px solid #0000ff;
+  padding :7px 30px 7px 30px;
+  background-color : white;
+  color : #0000ff;
+  border-radius: 100vh;
+  cursor : pointer;
+}
+.follow-to-btn:hover{
+  background-color : #bcffff;
+}
+.following-display-text .following-display-hover{
+  display: none;
+  
+}
+.following-display-text:hover .following-display{
+  display: none;
+  
+}
+.following-display-text:hover .following-display-hover{
+  display: inline;
+}
