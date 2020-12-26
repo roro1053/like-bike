@@ -1,1 +1,74 @@
-フォロー　ページだよ
+<%= render "shared/posts_header" %>
+<div class="my-page-top-following"><%= "#{@nickname}さんのフォロー" %></div>
+
+<div class="main-box">
+  <div class="left-box">
+    <div class="user-profile-box">
+      <div class="user-profile-image-name">
+        <div class="user-profile-image"><%= image_tag @user.image.variant(resize: '70x70'), class: "post-user-img" if @user.image.attached? %></div>
+        <div class="user-name-info">
+          <div class="user-name-info-text">ユーザー名</div>
+          <p class="user-profile-name"><%= @user.nickname %></p>
+        </div>
+      </div>
+      <div class="user-profile-info-text">プロフィール</div>
+      <div class="user-profile-text"><%= @user.profile %></div>
+    </div>
+    <div class="user-details">
+      <div class="user_show-action"><%= link_to "#{@nickname}さんの投稿を見る",   user_path %></div>
+      <div class="user_show-action"><%= link_to "#{@nickname}さんのアイテムを見る",  item_user_path %></div>
+      <% if user_signed_in? && @user != current_user%>
+        <div id="follow_form">
+          <% if current_user.following?(@user) %>
+          <%= render "unfollow" %>
+          <% else %>
+          <%= render "follow" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="center-box">
+    <div class="list-posts">
+      <% @users.each do |user| %>
+        <div class="post-index">
+          <%= link_to user_path(user) do %>
+            <div class="follower-users">
+              <div class="follower-user-nickname-image">
+                <%= image_tag user.image.variant(resize: '60x60'), class: "follower-user-img" if user.image.attached? %>
+                <div class="follower-user-nickname"><%= user.nickname %></div>
+              </div>
+              <p class="follower-user-perofile"><%= user.profile %></p>
+            </div>
+          </div>
+          <% end%>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="right-box">
+    <div class="user-profile">
+        <% if user_signed_in?%>
+          <div class="user-profile-menu">
+            <%= image_tag current_user.image.variant(resize: '70x70'), class: "user-img" if current_user.image.attached? %>
+            <%= link_to current_user.nickname, user_path(current_user.id),method: :get, class: "user-nickname" %>
+              <ul class="user-menu">
+                <li>
+                  <%= link_to "フォロー(#{@user.followings.count})", following_user_path(@user), class: "nav-link" %>
+                  <%= link_to "フォロワー(#{@user.followers.count})", followers_user_path(@user), class: "nav-link" %>
+                  <p class="user-menu-edit-user"><%= link_to "プロフィールを編集", edit_user_registration_path(current_user.id),method: :get %></p>
+                  <p class="user-menu-item-new"><%= link_to "アイテムを投稿する",  new_item_path %></p>
+                  <p class="user-menu-items"><%= link_to "投稿を見る",  user_path(current_user.id) %></p>
+                  <p class="user-menu-items"><%= link_to "アイテムを見る",item_user_path(current_user.id) %></p>
+                </li>
+              </ul>
+          </div>
+        <% end %>
+    </div>
+  </div>
+  <div class="measurement"></div>
+</div>
+
+
+ <p class="back-home-btn"><%= link_to "戻る", root_path %></p>

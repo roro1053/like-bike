@@ -1,0 +1,38 @@
+/*フォローここから*/
+.my-page-top-following{
+  text-align: center;
+  margin :10px auto 10px auto;
+  width : 43vw;
+  padding : 7px;
+  background-color : #006600;
+  color :white;
+}
+/*フォローここまで*/
+
+/*フォロワーここから*/
+.my-page-top-follower{
+  text-align: center;
+  margin :10px auto 10px auto;
+  width : 43vw;
+  padding : 7px;
+  background-color : #d70035;
+  color :white;
+}
+.follower-user-nickname-image{
+  display: flex;
+  align-items: center;
+  font-size : 17px; 
+}
+.follower-user-nickname{
+  margin-left : 10px;
+  font-weight : bolder;
+}
+.follower-user-img{
+  margin : 10px;
+}
+.follower-user-perofile{
+  padding : 7px;
+  margin : 10px;
+}
+
+/*フォロワーここまで*/
