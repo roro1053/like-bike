@@ -1,6 +1,6 @@
 <%= render "shared/items_header" %>
 
-<div class="item-page-inform"><%= "#{@nickname}さんのアイテム"%></div>
+
 
     <div class="main-box">
       <div class="left-box">
@@ -18,11 +18,25 @@
     <div class="user-details">
       <div class="user_show-action"><%= link_to "#{@nickname}さんの投稿を見る",   user_path %></div>
       <div class="user_show-action"><%= link_to "#{@nickname}さんのアイテムを見る",  item_user_path %></div>
+        <div class="following-follower-count">
+          <div class="following-count"><%= link_to "フォロー(#{@user.followings.count})", following_user_path(@user), class: "nav-link" %></div>
+          <div class="follower-count"><%= link_to "フォロワー(#{@user.followers.count})", followers_user_path(@user), class: "nav-link" %></div>
+        </div>
+        <% if user_signed_in? && @user != current_user%>
+         <div id="follow_form">
+          <% if current_user.following?(@user) %>
+          <%= render "unfollow" %>
+          <% else %>
+          <%= render "follow" %>
+          <% end %>
+        </div>
+        <% end %>
     </div>
     
   </div>
 
   <div class="center-box">
+    <div class="item-page-inform"><%= "#{@nickname}さんのアイテム"%></div>
     <div class="list-posts">
         <% @items.each do |item| %>
         <div class="post-index">
@@ -72,6 +86,10 @@
       <%= link_to current_user.nickname, user_path(current_user.id),method: :get, class: "user-nickname" %>
         <ul class="user-menu">
               <li>
+                <div class="following-follower">
+                  <div class="current-user-following"><%= link_to "フォロー(#{current_user.followings.count})", following_user_path(current_user), class: "nav-link" %></div>
+                  <div class="current-user-follower"><%= link_to "フォロワー(#{current_user.followers.count})", followers_user_path(current_user), class: "nav-link" %></div>
+                </div>
                 <p class="user-menu-edit-user"><%= link_to "プロフィールを編集", edit_user_registration_path(current_user.id),method: :get %></p>
                 <p class="user-menu-item-new"><%= link_to "アイテムを投稿する",  new_item_path %></p>
                 <p class="user-menu-items"><%= link_to "投稿を見る",  user_path(current_user.id) %></p>
