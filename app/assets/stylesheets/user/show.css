@@ -35,6 +35,9 @@
 }
 
 .my-page-top{
+  margin :10px auto 10px auto;
+  padding : 7px;
+  width : 43vw;
   background-color : #00ffff;
   text-align: center;
 }
@@ -100,6 +103,17 @@
 }
 .follow-to-btn:hover{
   background-color : #bcffff;
+}
+.following-follower{
+  justify-content: space-between;
+  display :flex;
+  margin-top : 20px;
+}
+.current-user-following{
+  margin-left : 40px;
+}
+.current-user-follower{
+  margin-right : 40px;
 }
 .following-display-text .following-display-hover{
   display: none;

@@ -1,6 +1,5 @@
 <%= render "shared/posts_header" %>
 
-<div class="my-page-top"><%= "#{@nickname}さんの投稿" %></div>
 <div class="main-box">
   <div class="left-box">
       <div class="user-profile-box">
@@ -34,6 +33,7 @@
   </div>
 
   <div class="center-box">
+    <div class="my-page-top"><%= "#{@nickname}さんの投稿" %></div>
     <div class="list-posts">
         <% @posts.each do |post| %>
         <div class="post-index">
@@ -75,8 +75,10 @@
           <%= link_to current_user.nickname, user_path(current_user.id),method: :get, class: "user-nickname" %>
             <ul class="user-menu">
               <li>
-                <%# link_to "フォロー(#{current_user.followings.count})", following_user_path(current_user), class: "nav-link" %>
-                <%# link_to "フォロワー(#{current_user.followers.count})", followers_user_path(current_user), class: "nav-link" %>
+                <div class="following-follower">
+                  <div class="current-user-following"><%= link_to "フォロー(#{current_user.followings.count})", following_user_path(current_user), class: "nav-link" %></div>
+                  <div class="current-user-follower"><%= link_to "フォロワー(#{current_user.followers.count})", followers_user_path(current_user), class: "nav-link" %></div>
+                </div>
                 <p class="user-menu-edit-user"><%= link_to "プロフィールを編集", edit_user_registration_path(current_user.id),method: :get %></p>
                 <p class="user-menu-item-new"><%= link_to "アイテムを投稿する",  new_item_path %></p>
                 <p class="user-menu-items"><%= link_to "投稿を見る",  user_path(current_user.id) %></p>

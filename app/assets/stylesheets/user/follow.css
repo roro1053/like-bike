@@ -4,8 +4,8 @@
   margin :10px auto 10px auto;
   width : 43vw;
   padding : 7px;
-  background-color : #006600;
-  color :white;
+  background-color : #ffff7f;
+  color :black;
 }
 /*フォローここまで*/
 
@@ -15,8 +15,8 @@
   margin :10px auto 10px auto;
   width : 43vw;
   padding : 7px;
-  background-color : #d70035;
-  color :white;
+  background-color : #7fff7f;
+  color :black;
 }
 .follower-user-nickname-image{
   display: flex;

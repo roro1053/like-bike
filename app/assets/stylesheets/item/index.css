@@ -23,6 +23,9 @@
 }
 .item-page-inform{
   text-align: center;
+  margin :10px auto 10px auto;
+  width : 43vw;
+  padding : 7px;
 }
 .item-name{
   margin-left : 20px;

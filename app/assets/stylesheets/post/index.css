@@ -80,7 +80,7 @@ background-color : white;
 .main-box{
   display: flex;
   overflow: scroll;
-  height : 120vh;
+  height : 130vh;
 }
 .left-box{
   height :90vh;
