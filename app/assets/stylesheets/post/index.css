@@ -12,18 +12,26 @@
   margin-left : 30px;
   background-color : white;
 }
-
+.header-logo-mark:hover{
+  background-color : #dfdfdf;
+}
 .posts-lists{
   border : 1px solid gray;
   padding : 10px;
   margin-left : 75px;
   background-color : white;
 }
+.posts-lists:hover{
+  background-color : #dfdfdf;
+}
 .items-lists{
   border : 1px solid gray;
   padding : 10px;
   margin-left : 25px;
   background-color : white;
+}
+.items-lists:hover{
+  background-color : #dfdfdf;
 }
 .search-input{
   width : 30vw;
@@ -32,8 +40,10 @@
   background-color : #dcdcdc;
 }
 .search-btn{
+  width : 5vw;
   margin-left : 10px;
   cursor : pointer;
+  padding : 7px;
 }
 .posts-new-action{
   border : 1px solid gray;
@@ -53,15 +63,13 @@ padding : 10px;
 margin-left : 20px;
 background-color : white;
 }
-.header-guesto-login{
-  margin-left : 50px; 
-}
 .btn-header-guest-login{
   padding : 7px; 
   border : 1px solid white;
   color: #fff;
   background-color: #eb6100;
   border-radius: 100vh;
+  margin-left : 50px; 
 }
 .user-action-login{
   border : 1px solid gray;
@@ -204,11 +212,14 @@ background-color : white;
 .user-menu-profile{
   margin-left : 10px;
 }
-.user-menu-item-new{
-  margin-top : 10px;
+.user-profile-menu-image-nickname{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.user-menu-items{
-  margin : 10px 0 10px 0;
+.user-nickname{
+  font-weight: bold;
+  margin-left :10px;
 }
 .measurement{
   text-align : center;
