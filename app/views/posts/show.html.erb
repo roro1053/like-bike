@@ -17,8 +17,18 @@
     </div>
     <% if user_signed_in? %>
       <% if current_user.id == @post.user_id %>
-        <div class="show-action-edit-btn"><%= link_to "編集",edit_post_path(@post.id),method: :get, class: "post-edit"  %></div>
-        <div class="show-action-destroy"><%= link_to '削除', post_path(@post.id), method: :delete, class:'post-destroy' %></div>
+        <%= link_to edit_post_path(@post.id),method: :get do %>
+          <div class="show-action-edit-btn">
+            <i class="far fa-edit"></i>
+            編集
+          </div>
+        <% end %>
+        <%= link_to post_path(@post.id), method: :delete do %>
+          <div class="show-action-destroy">
+            <i class="fas fa-trash-alt"></i>
+            削除
+          </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
@@ -27,7 +37,7 @@
     <div class="show-action-comment">
       <div class="comment-text-info">
         <i class="far fa-comment fa-lg"></i>
-        コメントする
+        コメントを送る
       </div>
         <%= form_with(model: [@post,@comment], local: true) do |f| %> 
           <%= render 'shared/error_messages', model: f.object %>
@@ -40,7 +50,7 @@
             <p class="comment-sentence">クリックしてファイルをアップロード</p>
             <%= f.file_field :image, class: "item-image" %>
           </div>    
-          <%= f.submit "コメントする",class:"comment-send" %>
+          <%= f.submit "コメントをする",class:"comment-send" %>
         <% end %>
     </div>
   <% end %>

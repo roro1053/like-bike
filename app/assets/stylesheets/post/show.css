@@ -83,20 +83,21 @@
   margin-bottom : 20px;
   text-align: center;
   padding : 20px 0px; 
+  background-color : #eaeaea;
 }
 .show-action-edit-btn{
   margin-left : 50px;
   padding :7px;
 }
 .show-action-edit-btn:hover{
-  background-color : #e0e0e0;
+  color : blue;
 }
 .show-action-destroy{
   margin-right : 50px;
   padding : 7px;
 }
 .show-action-destroy:hover{
-  background-color :#e0e0e0;
+  color :red;
 }
 .show-commnet-lists{
   width :13vw;
@@ -127,7 +128,6 @@
 .comment-image-nickname{
   margin : 20px 5px 10px 35px;
   display : flex;
-  
 }
 .comment-user-nickname{
   margin-top : 5px;
@@ -153,6 +153,10 @@
   width : 30vw; 
   padding : 10px;
   margin-bottom : 17px;
+  background-color : #f7f7f7;
+}
+.comment-area:focus{
+  background-color : white;
 }
 .comment-destroy{
   margin-left :660px;
