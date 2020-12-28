@@ -28,23 +28,23 @@
                     <%= render partial: "likes/favorite", locals: { post: post } %>
                   </div>
                   <% if current_user.id == post.user_id %>
-                    <div class="action-edit">
-                      <%= link_to edit_post_path(post.id),method: :get do%>
+                    <%= link_to edit_post_path(post.id),method: :get do %>
+                      <div class="action-edit">
                         <i class="far fa-edit"></i>
-                        <%= "編集" %>
-                      <% end %>
-                    </div>
-                    <div class="action-destroy">
-                      <%= link_to  post_path(post.id), method: :delete do%>
+                        <div>編集</div>
+                      </div>
+                    <% end %>
+                    <%= link_to  post_path(post.id), method: :delete do %>
+                      <div class="action-destroy">
                         <i class="far fa-trash-alt"></i>
-                        <%= "削除" %>
-                      <% end %>
-                    </div>
+                        <div>削除</div>
+                      </div>
                   <% end %>
                 <% end %>
-              </div>
-          </div>
-          <% end %>
+              <% end %>
+            </div>
+        </div>
+      <% end %>
     </div>
   </div>
 
