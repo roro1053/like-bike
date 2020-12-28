@@ -253,7 +253,7 @@ background-color : white;
 }
 .measurement{
   text-align : center;
-  margin : 180px auto 50px 100px; 
+  margin : 180px auto 0px 100px; 
   width : 15vw;
   position: fixed;
 }
