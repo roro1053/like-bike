@@ -166,22 +166,18 @@ background-color : white;
   display : flex;
   justify-content: center;
 }
-
 .action-menu{
   display : flex;
   justify-content: space-between;
 }
 .action-edit{
-  display : flex;
-  width :100px;
-  margin-left : 80px;
+  margin-left : 60px;
   padding : 7px;
 }
 .action-edit:hover{
   color : blue;
 }
 .action-destroy{
-  display : flex;
   margin-right : 10px;
   padding : 7px; 
 }
