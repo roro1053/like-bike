@@ -17,8 +17,22 @@
   background-color : #f7f7f7;
 }
 .img-upload{
-  margin-bottom : 20px;
+  width : 100px;
+  display : flex;
+  margin : 0px auto 20px auto;
 }
 .post-btn{
-  margin-bottom : 20px;
+  padding : 7px 30px 7px 30px;
+  margin : 20px 0px 40px 0px;
+  border-style: none;
+  cursor: pointer;
+  background-color : #0000ff;
+  color :white;
 }
+.post-btn:hover{
+  background-color : #007fff;
+}
+.img-text{
+  margin-left : 20px;
+}
+
