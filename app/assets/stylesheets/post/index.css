@@ -39,11 +39,17 @@
   padding : 10px;
   background-color : #dcdcdc;
 }
+.search-input:focus{
+  background-color : white;
+}
 .search-btn{
   width : 5vw;
   margin-left : 10px;
   cursor : pointer;
   padding : 7px;
+}
+.search-btn:hover{
+  background-color : white;
 }
 .posts-new-action{
   border : 1px solid gray;
@@ -51,17 +57,26 @@
   margin-left : 60px;
   background-color : white;
 }
+.posts-new-action:hover{
+  background-color : #dfdfdf;
+}
 .items-new-action{
   border : 1px solid gray;
   padding : 10px;
   margin-left : 25px;
   background-color : white;
 }
+.items-new-action:hover{
+  background-color : #dfdfdf;
+}
 .user-action-logout{
 border : 1px solid gray;
 padding : 10px;
 margin-left : 20px;
 background-color : white;
+}
+.user-action-logout:hover{
+  background-color : #ffff7a;
 }
 .btn-header-guest-login{
   padding : 7px; 
@@ -77,11 +92,17 @@ background-color : white;
   margin-left : 20px;
   background-color : white;
 }
+.user-action-login:hover{
+  background-color : #dfdfdf;
+}
 .user-action-new{
   border : 1px solid gray;
   padding : 10px;
   margin-left : 20px;
   background-color : white;
+}
+.user-action-new:hover{
+  background-color : #dfdfdf;
 }
 /*ヘッダーここまで*/
 
@@ -95,12 +116,10 @@ background-color : white;
   width :27vw;
   overflow: scroll;
 }
-/*真ん中ここから*/
 .center-box{
   height :90vh;
   width :46vw;
 }
-
 .post-index{
   border : 1px solid black;
   margin : 10px; 
@@ -130,6 +149,9 @@ background-color : white;
 }
 .post-user-nickname{
   margin-left : 10px;
+}
+.post-user-nickname:hover{
+  color :blue;
 }
 .post-created-at{
   margin-right : 15px;
@@ -188,7 +210,6 @@ background-color : white;
   width : 24vw;
   display : flex; 
 }
-
 .user-profile-menu{
   padding : 5px;
   text-align : center;
@@ -200,6 +221,9 @@ background-color : white;
 }
 .user-profile-menu:hover{
   background-color : white;
+}
+.nav-link:hover{
+  color :blue;
 }
 .user-menu-edit-user{
   width :11vw;
@@ -220,6 +244,9 @@ background-color : white;
 .user-nickname{
   font-weight: bold;
   margin-left :10px;
+}
+.user-nickname:hover{
+  color :blue;
 }
 .measurement{
   text-align : center;
