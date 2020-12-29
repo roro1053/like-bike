@@ -4,9 +4,12 @@
   margin : 20px;
   word-break: break-all;
 }
-.user_show-action{
+.user-show-action{
   word-break: break-all;
   padding : 20px 20px 0px 20px;
+}
+.user-show-action:hover{
+  color :blue;
 }
 .show-item-tag-word{
   margin : 10px;
