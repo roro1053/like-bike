@@ -26,6 +26,8 @@
   margin :10px auto 10px auto;
   width : 43vw;
   padding : 7px;
+  font-weight : bolder;
+  font-size : 18px;
 }
 .item-name{
   margin-left : 20px;
