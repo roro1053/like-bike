@@ -15,3 +15,23 @@
   margin : 10px;
   padding : 6px; 
 }
+.show-item-content{
+  border : 1px solid black;
+  margin : 20px auto 20px auto;
+  width : 70vw;
+  height : 48vh;
+  background-color : blue;
+}
+.review-text-box{
+  background-color : red;
+  margin : 0px 0 30px 0;
+  text-align: center;
+}
+.show-item-image{
+  border : 1px solid black;
+  width : 60vw;
+  height : 55vh;
+  margin-right : auto;
+  margin-left : auto;
+  display : flex;
+}

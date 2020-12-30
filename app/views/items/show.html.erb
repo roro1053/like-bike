@@ -4,62 +4,58 @@
   <div class="show-item-content">
     <p class="back-home-btn"><%= link_to "HOME", root_path %></p>
     <div class="show-user-name"><%= link_to @item.user.nickname,item_user_path(@item.user_id) %></div>
-
-        <div class="show-post-text-created-at">
-          <div class="show-item-name"><%= @item.name %></div>
-          <div class="show-post-text"><%= @item.text %></div>
-          <div class="show-post-created-at"><%= l @item.created_at %></div>
-          <%  @item.tags.each do |tag| %>
-          <div class="show-item-tag-word"><%= tag.word %></div>
-          <% end %>
-          
-        </div>
-          <div class="review-text-box">アイテムの評価
-             <div class="star-rating-parent">
-             <% if @item.reviews.present? %>
-              <div class="star-rating-front" style="width: <%= @item.review_score_percentage %>%">★★★★★</div>
-              <div class="star-rating-back">★★★★★</div>
-               <% end %>
-              </div>
-               <div class="review-score-average-count"><%= @item.avg_score %>点(<%= @item.reviews.count %>件のレビュー)</div>
-            </div>
-          </div>
-          <div class="item-post-image"><%= image_tag @item.image.variant(resize: '700x700'), class: "show-image" if @item.image.attached? %></div>
-           
- <div class="show-action-menu">
-     <% if user_signed_in? %>
-     <% if current_user.id == @item.user_id %>
-    <div class="show-action-edit-btn"><%# link_to "編集",edit_post_path(@post.id),method: :get, class: "post-edit"  %></div>
-    <div class="show-action-destroy"><%= link_to '削除', item_path(@item.id), method: :delete, class:'post-destroy' %></div>
-    <% end %>
-     <% end %>
- </div>
-
- <p class="back-home-btn"><%= link_to "アイテム一覧に戻る", items_path %></p>
+    <div class="show-post-text-created-at">
+      <div class="show-item-name"><%= @item.name %></div>
+      <div class="show-post-text"><%= @item.text %></div>
+      <div class="show-post-created-at"><%= l @item.created_at %></div>
+      <% @item.tags.each do |tag| %>
+        <div class="show-item-tag-word"><%= tag.word %></div>
+      <% end %>  
+    </div>
+  </div>
+  <div class="review-text-box">アイテムの評価
+    <div class="star-rating-parent">
+      <% if @item.reviews.present? %>
+        <div class="star-rating-front" style="width: <%= @item.review_score_percentage %>%">★★★★★</div>
+        <div class="star-rating-back">★★★★★</div>
+      <% end %>
+    </div>
+    <div class="review-score-average-count"><%= @item.avg_score %>点(<%= @item.reviews.count %>件のレビュー)</div>
+  </div>
   
+  <div class="show-item-image"><%= image_tag @item.image.variant(resize: '700x700'), class: "show-image" if @item.image.attached? %></div>
+           
+  <div class="show-action-menu">
+    <% if user_signed_in? %>
+      <% if current_user.id == @item.user_id %>
+        <div class="show-action-destroy"><%= link_to '削除', item_path(@item.id), method: :delete, class:'post-destroy' %></div>
+      <% end %>
+     <% end %>
+  </div>
+
+  <p class="back-home-btn"><%= link_to "アイテム一覧に戻る", items_path %></p>
   <%= render "reviews/form", review: @review, item: @item %>
 
   <div class="reviews-box">
     <h4>レビューの一覧</h4>
-     <% if @reviews.present? %>
+    <% if @reviews.present? %>
       <% @reviews.each do |review| %>
-      <div class="reviews-index">
-        <div class="review-rating-user-nickname">
-          
-          <div class="review-ratign-star"><span class="review-rating-star">★</span><%= review.rating %></div>
-         <%= link_to item_user_path(review.user_id) do%>
-          <div class="review-user-nickname"><%= review.user.nickname %></div>
+        <div class="reviews-index">
+          <div class="review-rating-user-nickname">
+            <div class="review-ratign-star"><span class="review-rating-star">★</span><%= review.rating %></div>
+            <%= link_to item_user_path(review.user_id) do %>
+              <div class="review-user-nickname"><%= review.user.nickname %></div>
+              <div class="review-item-text"><%= review.text %></div>
+            <% end %>
+          </div>
+          <% if user_signed_in? %>
+            <% if current_user.id == review.user_id %>
+              <div class="reviews-destroy-action"><%= link_to "レビューを削除する", item_review_path(review.item.id, review.id),method: :delete %></div>
+            <% end %>
+          <% end %>
         </div>
-        <div class="review-item-text"><%= review.text %></div>
-         <% end %>
-         <% if user_signed_in? %>
-          <% if current_user.id == review.user_id %>
-        <div class="reviews-destroy-action"><%= link_to "レビューを削除する", item_review_path(review.item.id, review.id),method: :delete %></div>
-        <% end %>
-        <% end %>
-      </div>
-        <% end %>
-        <% end %>
+      <% end %>
+    <% end %>
   </div>
   <p class="back-home-btn"><%= link_to "アイテム一覧に戻る", items_path %></p>
 </div>

@@ -11,16 +11,6 @@
   border : 1px solid black;
   background-color : #f2f2f2;
 }
-.show-item-content{
-  border : 1px solid black;
-  margin-right : auto;
-  margin-left : auto;
-  width : 70vw; 
-  height : 48vh;
-  margin-top : 20px;
-  margin-bottom : 20px;
-  border : 1px solid black;
-}
 .back-home-btn{
   width :100px;
   text-align: center;
@@ -170,7 +160,6 @@
 }
 .comemnt-destroy-btn{
   margin :10px;
-
 }
 .comment-send{
   padding :7px 30px 7px 30px;

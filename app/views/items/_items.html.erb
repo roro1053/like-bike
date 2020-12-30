@@ -41,15 +41,12 @@
               <% if current_user.id == item.user_id %>
                 <div class="action-edit"></div>
                 <div class="action-destroy">
-                  <%#アイテム削除ここから%>
                   <%= link_to  item_path(item.id), method: :delete do %>
                     <div class="action-destroy">
                       <i class="far fa-trash-alt"></i>
                       削除
                     </div>
                   <% end %>
-                  <%#アイテム削除ここまで%>
-                  <%= link_to '削除', item_path(item.id), method: :delete, class:'post-destroy' %>
                 </div>
               <% end %>
             <% end %>
