@@ -1,15 +1,18 @@
 .wrote-reviews{
   text-align: center;
   margin : 10px 0;
+  font-weight: bolder;
+}
+.rating-star-review{
+  font-size : 18px;
+  font-weight: bolder;
 }
 .rating-star-review-one{
+  margin-left :5px;
   color : #fc2; 
 }
 .star-rating-parent{
-  margin-left : auto;
-  margin-right : auto;
-  margin-top : 10px;
-  margin-bottom : 20px;
+  margin : 10px auto 20px auto;
   position : relative;
   width : 5em;
   height : 1em;
@@ -43,9 +46,7 @@
   position: absolute;
   opacity: 0;
   pointer-events: none;
-  
 }
-
 .rating label {
   display: inline-block;
   cursor : pointer;
@@ -63,12 +64,30 @@
   margin-left : auto;
   margin-right : auto;
   padding : 20px;
+  background-color : #f7f7f7;
+}
+.review-text:focus{
+  background-color : white;
 }
 .review-btn{
-  padding : 5px;
-  margin-bottom : 20px; 
+  margin : 20px;
 }
-
+.review-send{
+  padding : 7px 30px 7px 30px;
+  background-color : #0000ff;
+  cursor: pointer;
+  color :white;
+  border : none;
+}
+.review-send:hover{
+  background-color : #007fff;
+}
+.review-comment-note{
+  color :gray;
+}
+.review-list{
+  font-size : 18px;
+}
 /*レビュー一覧ここから*/
 .reviews-box{
   margin-right : auto;
@@ -102,6 +121,8 @@
   word-break: break-all;
 }
 .review-user-nickname{
+  margin-right : 40px;
+  margin-bottom : 20px;
   word-break: break-all;
 }
 .reviews-destroy-action{

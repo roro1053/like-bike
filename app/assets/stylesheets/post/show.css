@@ -12,13 +12,15 @@
   background-color : #f2f2f2;
 }
 .back-home-btn{
-  width :100px;
+  width :200px;
   text-align: center;
   margin : 7px auto 7px auto;
 }
 .show-user-name{
   margin : 20px;
   text-align: center;
+  font-size :18px;
+  font-weight: bold;
 }
 .show-user-nickname:hover{
   color :blue;
@@ -34,7 +36,9 @@
   word-break: break-all;
 }
 .show-post-created-at{
-  margin : 20px 20px 0px 780px;
+  margin : 20px 20px 0px 800px;
+  font-weight: lighter;
+  font-size : 12px;
 }
 .show-post-image{
   width :60vw;

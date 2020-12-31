@@ -3,7 +3,7 @@
 <div class="show-box">
   <div class="show-item-content">
     <p class="back-home-btn"><%= link_to "HOME", root_path %></p>
-    <div class="show-user-name"><%= link_to @item.user.nickname,item_user_path(@item.user_id) %></div>
+    <div class="show-user-name"><%= link_to @item.user.nickname,item_user_path(@item.user_id),class:"show-user-nickname" %></div>
     <div class="show-post-text-created-at">
       <div class="show-item-name"><%= @item.name %></div>
       <div class="show-post-text"><%= @item.text %></div>
@@ -33,11 +33,14 @@
      <% end %>
   </div>
 
-  <p class="back-home-btn"><%= link_to "アイテム一覧に戻る", items_path %></p>
+  <p class="back-home-btn">
+    <i class="fas fa-glasses"></i>
+    <%= link_to "アイテム一覧に戻る", items_path %>
+  </p>
   <%= render "reviews/form", review: @review, item: @item %>
 
   <div class="reviews-box">
-    <h4>レビューの一覧</h4>
+    <h4 class="review-list">レビューの一覧</h4>
     <% if @reviews.present? %>
       <% @reviews.each do |review| %>
         <div class="reviews-index">
@@ -57,5 +60,8 @@
       <% end %>
     <% end %>
   </div>
-  <p class="back-home-btn"><%= link_to "アイテム一覧に戻る", items_path %></p>
+  <p class="back-home-btn">
+    <i class="fas fa-glasses"></i>
+    <%= link_to "アイテム一覧に戻る", items_path %>
+  </p>
 </div>
