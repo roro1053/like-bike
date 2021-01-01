@@ -30,18 +30,19 @@ class User < ApplicationRecord
     end
   end
 
-  #すでにフォロー済みであればture返す
   def following?(other_user)
     self.followings.include?(other_user)
   end
 
-  #ユーザーをフォローする
   def follow(other_user)
     self.following_relationships.create(following_id: other_user.id)
   end
 
-  #ユーザーのフォローを解除する
   def unfollow(other_user)
     self.following_relationships.find_by(following_id: other_user.id).destroy
+  end
+
+  def already_review?(item)
+    self.reviews.exists?(item_id: item.id)
   end
 end

@@ -1,15 +1,15 @@
-  <div class="posts-like-btn">
-    <% if user_signed_in? %>
-    <% if post.like_user(current_user.id)  %>
-    <%= link_to post_likes_path(@post),method: :delete,class:"like-btn",remote: true do %>
-      <i class="fas fa-heart icon-herat-red"></i>
-      <%= @post.likes.count %>
+<div class="posts-like-btn">
+  <% if user_signed_in? %>
+    <% if post.like_user(current_user.id) %>
+      <%= link_to post_likes_path(@post),method: :delete,class:"like-btn",remote: true do %>
+        <i class="fas fa-heart icon-herat-red"></i>
+        <%= @post.likes.count %>
       <% end %>
-    <% else %>
-    <%= link_to post_likes_path(@post),method: :post,class:"like-btn",remote: true do %>
-      <i class="far fa-heart icon-herat-gray"></i>
-       <%= @post.likes.count %>
-       <% end %>
-     <% end %>
-     <% end %>
-  </div>
+      <% else %>
+      <%= link_to post_likes_path(@post),method: :post,class:"like-btn",remote: true do %>
+        <i class="far fa-heart icon-herat-gray"></i>
+        <%= @post.likes.count %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
