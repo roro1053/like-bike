@@ -94,10 +94,8 @@
   margin-left : auto;
   width : 55vw;
   text-align: center;
-  
 }
 .reviews-index{
-  text-align: center;
   border : 1px solid #e6e6fa;
   margin-bottom : 20px;
   padding : 10px;
@@ -115,7 +113,6 @@
 .review-rating-user-nickname{
   display : flex;
   justify-content: center;
-  margin-bottom : 20px;
 }
 .review-item-text{
   word-break: break-all;
@@ -126,6 +123,10 @@
   word-break: break-all;
 }
 .reviews-destroy-action{
-  margin-left : 550px;
+  text-align : right;
+  margin-right : 20px;
+}
+.reviews-destroy-action:hover{
+  color :red;
 }
 /*レビュー一覧ここまで*/
