@@ -2,7 +2,12 @@
 
 <div class="show-box">
   <div class="show-content">
-    <p class="back-home-btn"><%= link_to "HOME", root_path %></p>
+    <%= link_to root_path do %>
+      <p class="back-home-btn">
+        <i class="fas fa-home"></i>
+        HOME
+      </p>
+    <% end %>
     <div class="show-user-name"><%= link_to @post.user.nickname,user_path(@post.user_id),class:"show-user-nickname" %></div>
     <div class="show-post-text-created-at">
       <div class="show-post-text"><%= @post.text %></div>
@@ -69,10 +74,10 @@
               <div class="comment-user-image"><%= image_tag comment.user.image.variant(resize: '30x30'),class: "comment-image" if comment.user.image.attached? %></div>
               <div class="comment-user-nickname"><%= comment.user.nickname %></div>
             </div>
-            <div class="comment-created-at"><%= l comment.created_at %></div>
-            <div class="comment-text"><%= comment.text %></div>
-            <div class="image-text-align"><%= image_tag comment.image.variant(resize: '300x300'), class: "comment-image" if comment.image.attached? %></div>
           <% end %>
+          <div class="comment-created-at"><%= l comment.created_at %></div>
+          <div class="comment-text"><%= comment.text %></div>
+          <div class="image-text-align"><%= image_tag comment.image.variant(resize: '300x300'), class: "comment-image" if comment.image.attached? %></div>
           <% if user_signed_in? %>
             <% if current_user.id == comment.user.id %>
               <div class="comment-destroy">
@@ -87,5 +92,10 @@
       <% end %>
     <% end%>
   </div> 
-  <p class="back-home-btn"><%= link_to "戻る", root_path %></p>
+  <%= link_to root_path do %>
+    <p class="back-home-btn">
+      <i class="fas fa-arrow-left"></i>
+      戻る
+    </p>
+  <% end %>
 </div>
