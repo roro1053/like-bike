@@ -25,10 +25,15 @@
   
   <div class="show-item-image"><%= image_tag @item.image.variant(resize: '700x700'), class: "show-image" if @item.image.attached? %></div>
            
-  <div class="show-action-menu">
+  <div class="show-action-item-menu">
     <% if user_signed_in? %>
       <% if current_user.id == @item.user_id %>
-        <div class="show-action-destroy"><%= link_to '削除', item_path(@item.id), method: :delete, class:'post-destroy' %></div>
+          <%= link_to item_path(@item.id), method: :delete do %>
+            <div class="show-action-item-destroy">
+              <i class="far fa-trash-alt"></i>
+              削除
+            </div>
+          <% end %>
       <% end %>
      <% end %>
   </div>
