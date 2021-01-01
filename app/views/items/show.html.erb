@@ -2,7 +2,12 @@
 
 <div class="show-box">
   <div class="show-item-content">
-    <p class="back-home-btn"><%= link_to "HOME", root_path %></p>
+    <%= link_to root_path do %>
+      <p class="back-home-btn">
+        <i class="fas fa-home"></i>
+        HOME
+      </p>
+    <% end %>
     <div class="show-user-name"><%= link_to @item.user.nickname,item_user_path(@item.user_id),class:"show-user-nickname" %></div>
     <div class="show-post-text-created-at">
       <div class="show-item-name"><%= @item.name %></div>
@@ -28,25 +33,33 @@
   <div class="show-action-item-menu">
     <% if user_signed_in? %>
       <% if current_user.id == @item.user_id %>
-          <%= link_to item_path(@item.id), method: :delete do %>
-            <div class="show-action-item-destroy">
-              <i class="far fa-trash-alt"></i>
-              削除
-            </div>
+        <div class="show-action-item-destroy">
+          <%= link_to item_path(@item.id), method: :delete ,class:"show-action-item-destroy" do %>
+            <i class="far fa-trash-alt"></i>
+            削除
           <% end %>
+        </div>
       <% end %>
      <% end %>
   </div>
 
-  <p class="back-home-btn">
-    <i class="fas fa-glasses"></i>
-    <%= link_to "アイテム一覧に戻る", items_path %>
-  </p>
+  <%= link_to items_path do %>
+    <p class="back-home-btn">
+      <i class="fas fa-arrow-left"></i>
+      アイテム一覧に戻る
+    </p>
+  <% end %>
+
   <%= render "reviews/form", review: @review, item: @item %>
 
+  <div class="review-list-box">
+      <i class="far fa-comment-dots"></i>
+      <h4 class="review-list">レビューの一覧</h4>
+  </div>
+
   <div class="reviews-box">
-    <h4 class="review-list">レビューの一覧</h4>
-    <% if @reviews.present? %>
+    
+      <% if @reviews.present? %>
       <% @reviews.each do |review| %>
         <div class="reviews-index">
           <div class="review-rating-user-nickname">
@@ -58,20 +71,22 @@
           <div class="review-item-text"><%= review.text %></div>
           <% if user_signed_in? %>
             <% if current_user.id == review.user_id %>
-              <%= link_to item_review_path(review.item.id, review.id),method: :delete do %>
-                <div class="reviews-destroy-action">
+              <div class="reviews-destroy-action">
+                <%= link_to item_review_path(review.item.id, review.id),method: :delete,class:"reviews-destroy-action" do %>
                   <i class="fas fa-trash-alt"></i>
                   レビューを削除
-                </div>
-              <% end %>
+                <% end %>
+              </div>
             <% end %>
           <% end %>
         </div>
       <% end %>
     <% end %>
   </div>
-  <p class="back-home-btn">
-    <i class="fas fa-glasses"></i>
-    <%= link_to "アイテム一覧に戻る", items_path %>
-  </p>
+  <%= link_to items_path do %>
+    <p class="back-home-btn">
+      <i class="fas fa-arrow-left"></i>
+      アイテム一覧に戻る
+    </p>
+  <% end %>
 </div>

@@ -75,12 +75,12 @@
           <% end %>
           <% if user_signed_in? %>
             <% if current_user.id == comment.user.id %>
-              <%= link_to  post_comment_path(comment.post.id, comment.id),method: :delete do %>
-                <div class="comment-destroy">
+              <div class="comment-destroy">
+                <%= link_to  post_comment_path(comment.post.id, comment.id),method: :delete,class:"comment-destroy-btn" do %>
                   <i class="fas fa-trash-alt"></i>
-                  <div class="comemnt-destroy-btn">削除する</div>
-                </div>
-              <% end %>
+                  削除する
+                <% end %>
+              </div>
             <% end %>
           <% end %>
         </div>

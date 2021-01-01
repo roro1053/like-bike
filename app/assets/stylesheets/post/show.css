@@ -16,6 +16,9 @@
   text-align: center;
   margin : 7px auto 7px auto;
 }
+.back-home-btn:hover{
+  color :blue;
+}
 .show-user-name{
   margin : 20px;
   text-align: center;
@@ -157,7 +160,7 @@
   display : flex;
   align-items: center;
 }
-.comment-destroy:hover{
+.comment-destroy-btn:hover{
   color :red;
 }
 .comemnt-destroy-btn{
