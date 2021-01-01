@@ -44,7 +44,9 @@
   </div>
 
   <div class="center-box">
-    <div class="my-page-top"><%= "#{@nickname}さんの投稿" %></div>
+    <div class="my-page-top">
+      <%= "#{@nickname}さんの投稿" %>
+    </div>
     <div class="list-posts">
       <% @posts.each do |post| %>
         <div class="post-index">
@@ -133,4 +135,9 @@
   </div>
 </div>
 
-<p class="back-home-btn"><%= link_to "戻る", root_path %></p>
+<%= link_to root_path do %>
+  <p class="back-home-btn">
+    <i class="fas fa-home"></i>
+    HOME
+  </p>
+<% end %>
