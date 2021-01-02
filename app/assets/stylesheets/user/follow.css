@@ -6,6 +6,8 @@
   padding : 7px;
   background-color : #ffff7f;
   color :black;
+  font-size :18px;
+  font-weight: bold;
 }
 /*フォローここまで*/
 
@@ -17,6 +19,8 @@
   padding : 7px;
   background-color : #7fff7f;
   color :black;
+  font-size :18px;
+  font-weight: bold;
 }
 .follower-user-nickname-image{
   display: flex;

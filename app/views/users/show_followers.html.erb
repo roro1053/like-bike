@@ -1,6 +1,7 @@
 <%= render "shared/posts_header" %>
 
 <div class="main-box">
+  <div id='target_id'></div>
   <div class="left-box">
     <div class="user-profile-box">
       <div class="user-profile-image-name">
@@ -14,8 +15,18 @@
       <div class="user-profile-text"><%= @user.profile %></div>
     </div>
     <div class="user-details">
-      <div class="user_show-action"><%= link_to "#{@nickname}さんの投稿を見る",   user_path %></div>
-      <div class="user_show-action"><%= link_to "#{@nickname}さんのアイテムを見る",  item_user_path %></div>
+     <%= link_to user_path do %>
+        <div class="user-show-action">
+          <i class="far fa-file-alt"></i>
+          <%= "#{@nickname}さんの投稿を見る" %>
+        </div>
+      <% end %>
+      <%= link_to item_user_path do %>
+        <div class="user-show-action">
+          <i class="fas fa-glasses"></i>
+          <%= "#{@nickname}さんのアイテムを見る" %>
+        </div>
+      <% end %>
         <div class="following-follower-count">
           <div class="following-count"><%= link_to "フォロー(#{@user.followings.count})", following_user_path(@user), class: "nav-link" %></div>
           <div class="follower-count"><%= link_to "フォロワー(#{@user.followers.count})", followers_user_path(@user), class: "nav-link" %></div>
@@ -53,28 +64,50 @@
 
   <div class="right-box">
     <div class="user-profile">
-        <% if user_signed_in?%>
-          <div class="user-profile-menu">
+      <% if user_signed_in?%>
+        <div class="user-profile-menu">
+          <div class="user-profile-menu-image-nickname">
             <%= image_tag current_user.image.variant(resize: '70x70'), class: "user-img" if current_user.image.attached? %>
             <%= link_to current_user.nickname, user_path(current_user.id),method: :get, class: "user-nickname" %>
-              <ul class="user-menu">
-                <li>
-                  <div class="following-follower">
-                    <div class="current-user-following"><%= link_to "フォロー(#{current_user.followings.count})", following_user_path(current_user), class: "nav-link" %></div>
-                    <div class="current-user-follower"><%= link_to "フォロワー(#{current_user.followers.count})", followers_user_path(current_user), class: "nav-link" %></div>
-                  </div>
-                  <p class="user-menu-edit-user"><%= link_to "プロフィールを編集", edit_user_registration_path(current_user.id),method: :get %></p>
-                  <p class="user-menu-item-new"><%= link_to "アイテムを投稿する",  new_item_path %></p>
-                  <p class="user-menu-items"><%= link_to "投稿を見る",  user_path(current_user.id) %></p>
-                  <p class="user-menu-items"><%= link_to "アイテムを見る",item_user_path(current_user.id) %></p>
-                </li>
-              </ul>
           </div>
-        <% end %>
+          <ul class="user-menu">
+            <li>
+              <div class="following-follower">
+                <div class="current-user-following"><%= link_to "フォロー(#{current_user.followings.count})", following_user_path(current_user), class: "nav-link" %></div>
+                <div class="current-user-follower"><%= link_to "フォロワー(#{current_user.followers.count})", followers_user_path(current_user), class: "nav-link" %></div>
+              </div>
+              <%= link_to edit_user_registration_path(current_user.id),method: :get do %>
+                <div class="user-menu-edit-user">
+                  <i class="fas fa-user-edit"></i>
+                  <div class="user-menu-profile">プロフィールを編集</div>
+                </div>
+              <% end %>
+              <%= link_to user_path(current_user.id) do %>
+                <div class="user-menu-edit-user">
+                  <i class="far fa-file"></i>
+                  <div class="user-menu-profile">投稿を見る</div>
+                </div>
+              <% end %>
+              <%= link_to item_user_path(current_user.id) do %>
+                <div class="user-menu-edit-user">
+                  <i class="fas fa-glasses"></i>
+                  <div class="user-menu-profile">アイテムを見る</div>
+                </div>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+    <div class="measurement">
+      <a href='#target_id'><i class="fas fa-angle-up fa-3x"></i></a>
     </div>
   </div>
-  <div class="measurement"></div>
 </div>
 
-
- <p class="back-home-btn"><%= link_to "戻る", root_path %></p>
+<%= link_to root_path do %>
+  <p class="back-home-btn">
+    <i class="fas fa-home"></i>
+    HOME
+  </p>
+<% end %>
