@@ -1,6 +1,12 @@
 <%= render "shared/posts_header" %>
 
-<div class="new-box"><%= link_to "HOME", root_path %>
+<div class="new-box">
+  <%= link_to root_path do %>
+    <p class="back-home-btn">
+      <i class="fas fa-home"></i>
+      HOME
+    </p>
+  <% end %>
   <div class="new-post-form">
     <%= form_with model: @post, local: true do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
@@ -16,8 +22,13 @@
         <p class="comment-sentence">クリックしてファイルをアップロード</p>
         <%= f.file_field :image, class: "item-image" %>
       </div>
-        <%= f.submit "投稿する",class: "post-btn" %>
-      <div class="back-home"><%= link_to 'もどる', root_path, class:"back-btn" %></div>
+      <%= f.submit "投稿する",class: "post-btn" %>
+      <%= link_to root_path do %>
+        <p class="back-home-btn">
+          <i class="fas fa-arrow-left"></i>
+          戻る
+        </p>
+      <% end %>
     <% end %>
   </div>
 </div>
