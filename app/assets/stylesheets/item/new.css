@@ -13,13 +13,12 @@
   margin-top : 10px;
   margin-bottom : 20px;
   width : 80vw;
-  height : 128vh; 
+  height : 139vh; 
 }
 .tag-form{
   width : 30vw;
   margin : 0 auto 10px auto;
   padding : 20px; 
-  border : 1px solid blue;
 }
 .child{
   border-bottom : 1px solid black;
