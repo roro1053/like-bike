@@ -16,12 +16,15 @@
   </head>
 
   <body>
-   <% if content_for?(:body_attributes) %>
-    <%= yield(:body_attributes) %>
-   <% end %>
+  <div
+    <% if content_for?(:body_attributes) %>
+      <%= yield(:body_attributes) %>
+    <% end %>
+  >
 <header>
 </header>
     <%= yield %>
+    </div>
      <footer class="top-page-footer">© 2020 LIKE-BIKE</footer>
   </body>
 </html>

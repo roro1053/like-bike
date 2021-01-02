@@ -1,4 +1,7 @@
-<% content_for(:body_attributes) %>
+<% content_for(:body_attributes) do %>
+  data-turbolinks="false"
+<% end %>
+
 <%= render "shared/items_header" %>
 
 <div class="new-item-box">
@@ -45,3 +48,4 @@
     </p>
   <% end %>
 </div>
+
