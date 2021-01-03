@@ -37,5 +37,13 @@
   margin-bottom : 20px;
 }
 .update-btn{
-  margin-bottom : 20px;
+  padding : 7px 30px 7px 30px;
+  margin : 0px 0px 20px 0px;
+  border-style: none;
+  cursor: pointer;
+  background-color : #0000ff;
+  color :white;
+}
+.update-btn:hover{
+  background-color : #007fff;
 }
