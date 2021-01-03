@@ -2,12 +2,7 @@
 
 <div class="show-box">
   <div class="show-content">
-    <%= link_to root_path do %>
-      <p class="back-home-btn">
-        <i class="fas fa-home"></i>
-        HOME
-      </p>
-    <% end %>
+    <%= render "shared/home" %>
     <div class="show-user-name"><%= link_to @post.user.nickname,user_path(@post.user_id),class:"show-user-nickname" %></div>
     <div class="show-post-text-created-at">
       <div class="show-post-text"><%= @post.text %></div>
@@ -92,10 +87,5 @@
       <% end %>
     <% end%>
   </div> 
-  <%= link_to root_path do %>
-    <p class="back-home-btn">
-      <i class="fas fa-arrow-left"></i>
-      戻る
-    </p>
-  <% end %>
+  <%= render "shared/home" %>
 </div>

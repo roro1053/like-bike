@@ -1,0 +1,15 @@
+<div class="list-posts">
+  <% @users.each do |user| %>
+    <div class="post-index">
+      <%= link_to user_path(user) do %>
+        <div class="follower-users">
+          <div class="follower-user-nickname-image">
+            <%= image_tag user.image.variant(resize: '60x60'), class: "follower-user-img" if user.image.attached? %>
+            <div class="follower-user-nickname"><%= user.nickname %></div>
+          </div>
+          <p class="follower-user-perofile"><%= user.profile %></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

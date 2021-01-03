@@ -2,113 +2,13 @@
 
 <div class="main-box">
   <div id='target_id'></div>
-  <div class="left-box">
-    <div class="user-profile-box">
-      <div class="user-profile-image-name">
-        <div class="user-profile-image"><%= image_tag @user.image.variant(resize: '70x70'), class: "post-user-img" if @user.image.attached? %></div>
-        <div class="user-name-info">
-          <div class="user-name-info-text">ユーザー名</div>
-          <p class="user-profile-name"><%= @user.nickname %></p>
-        </div>
-      </div>
-      <div class="user-profile-info-text">プロフィール</div>
-      <div class="user-profile-text"><%= @user.profile %></div>
-    </div>
-    <div class="user-details">
-      <%= link_to user_path do %>
-        <div class="user-show-action">
-          <i class="far fa-file-alt"></i>
-          <%= "#{@nickname}さんの投稿を見る" %>
-        </div>
-      <% end %>
-      <%= link_to item_user_path do %>
-        <div class="user-show-action">
-          <i class="fas fa-glasses"></i>
-          <%= "#{@nickname}さんのアイテムを見る" %>
-        </div>
-      <% end %>
-        <div class="following-follower-count">
-          <div class="following-count"><%= link_to "フォロー(#{@user.followings.count})", following_user_path(@user), class: "nav-link" %></div>
-          <div class="follower-count"><%= link_to "フォロワー(#{@user.followers.count})", followers_user_path(@user), class: "nav-link" %></div>
-        </div>
-      <% if user_signed_in? && @user != current_user%>
-        <div id="follow_form">
-          <% if current_user.following?(@user) %>
-          <%= render "unfollow" %>
-          <% else %>
-          <%= render "follow" %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <%= render "shared/left_box" %>
 
   <div class="center-box">
     <div class="my-page-top-following"><%= "#{@nickname}さんのフォロー" %></div>
-    <div class="list-posts">
-      <% @users.each do |user| %>
-        <div class="post-index">
-          <%= link_to user_path(user) do %>
-            <div class="follower-users">
-              <div class="follower-user-nickname-image">
-                <%= image_tag user.image.variant(resize: '60x60'), class: "follower-user-img" if user.image.attached? %>
-                <div class="follower-user-nickname"><%= user.nickname %></div>
-              </div>
-              <p class="follower-user-perofile"><%= user.profile %></p>
-            </div>
-          </div>
-          <% end%>
-      <% end %>
-    </div>
+    <%= render "shared/list_follow" %>
   </div>
-
-  <div class="right-box">
-    <div class="user-profile">
-      <% if user_signed_in?%>
-        <div class="user-profile-menu">
-          <div class="user-profile-menu-image-nickname">
-            <%= image_tag current_user.image.variant(resize: '70x70'), class: "user-img" if current_user.image.attached? %>
-            <%= link_to current_user.nickname, user_path(current_user.id),method: :get, class: "user-nickname" %>
-          </div>
-            <ul class="user-menu">
-              <li>
-                <div class="following-follower">
-                  <div class="current-user-following"><%= link_to "フォロー(#{current_user.followings.count})", following_user_path(current_user), class: "nav-link" %></div>
-                  <div class="current-user-follower"><%= link_to "フォロワー(#{current_user.followers.count})", followers_user_path(current_user), class: "nav-link" %></div>
-                </div>
-                <%= link_to edit_user_registration_path(current_user.id),method: :get do %>
-                  <div class="user-menu-edit-user">
-                    <i class="fas fa-user-edit"></i>
-                    <div class="user-menu-profile">プロフィールを編集</div>
-                  </div>
-                <% end %>
-                <%= link_to user_path(current_user.id) do %>
-                  <div class="user-menu-edit-user">
-                    <i class="far fa-file"></i>
-                    <div class="user-menu-profile">投稿を見る</div>
-                  </div>
-                <% end %>
-                <%= link_to item_user_path(current_user.id) do %>
-                  <div class="user-menu-edit-user">
-                    <i class="fas fa-glasses"></i>
-                    <div class="user-menu-profile">アイテムを見る</div>
-                  </div>
-                <% end %>
-              </li>
-            </ul>
-          </div>
-        <% end %>
-      </div>
-    <div class="measurement">
-      <a href='#target_id'><i class="fas fa-angle-up fa-3x"></i></a>
-    </div>
-  </div>
+  <%= render "shared/right_box" %>
 </div>
 
-
-<%= link_to root_path do %>
-  <p class="back-home-btn">
-    <i class="fas fa-home"></i>
-    HOME
-  </p>
-<% end %>
+<%= render "shared/home" %>

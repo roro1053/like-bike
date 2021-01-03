@@ -1,0 +1,46 @@
+<div class="list-posts">
+  <% @items.each do |item| %>
+    <div class="post-index">
+      <%= link_to item_user_path(item.user_id) do %>
+        <div class="post-user-nickname-image">
+          <%= image_tag item.user.image.variant(resize: '30x30'), class: "post-user-img" if item.user.image.attached? %>
+          <div class="post-user-nickname"><%= item.user.nickname %></div>
+        </div>
+      <% end %>
+      <%= link_to "#{item_path(item.id)}" do %>
+        <div class="post-text-created-at">
+          <div class="item-name"><%= item.name %></div>
+        </div>
+        <div class="item-review-star-rating">
+          <% if item.reviews.present? %>
+            <div class="item-review-star-front" style="width: <%= item.review_score_percentage %>%">★★★★★</div>
+            <div class="item-review-star-back">★★★★★</div>
+          <% end %>
+        </div>
+        <div class="item-review-score-average-count"><%= item.avg_score %>点(<%= item.reviews.count %>件のレビュー)</div>
+        <div class="post-image">
+          <%= image_tag item.image.variant(resize: '550x500'), class: "post-img" if item.image.attached? %>
+        </div>
+        <div class="item-text-index"><%= item.text %></div>
+      <% end %>
+      <div class="item-tag-box">
+        <% item.tags.each do |tag| %>
+          <div class="tag-item-word"><%= tag.word %></div>
+        <% end%>
+      </div>
+      <div class="action-menu">
+        <% if user_signed_in? %>
+          <% if current_user.id == item.user_id %>
+            <div class="action-edit"></div>
+            <%= link_to  item_path(item.id), method: :delete do %>
+              <div class="action-destroy">
+                <i class="far fa-trash-alt"></i>
+                削除
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

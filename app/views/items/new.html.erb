@@ -5,12 +5,7 @@
 <%= render "shared/items_header" %>
 
 <div class="new-item-box">
-  <%= link_to root_path do %>
-    <p class="back-home-btn">
-      <i class="fas fa-home"></i>
-      HOME
-    </p>
-  <% end %>
+  <%= render "shared/home" %>
   <div class="new-item-form">
     <%= form_with model: @item, url:  items_path,  local: true do |f| %>
       <%= render 'shared/error_messages', model: f.object %>

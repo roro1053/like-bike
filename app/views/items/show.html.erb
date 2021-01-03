@@ -2,12 +2,7 @@
 
 <div class="show-box">
   <div class="show-item-content">
-    <%= link_to root_path do %>
-      <p class="back-home-btn">
-        <i class="fas fa-home"></i>
-        HOME
-      </p>
-    <% end %>
+    <%= render "shared/home" %>
     <div class="show-user-name"><%= link_to @item.user.nickname,item_user_path(@item.user_id),class:"show-user-nickname" %></div>
     <div class="show-post-text-created-at">
       <div class="show-item-name"><%= @item.name %></div>

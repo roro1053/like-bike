@@ -11,93 +11,9 @@
       </p>
     </div>
     <div class="item-page-inform">アイテム一覧</div>
-    <div class="list-posts">
-      <% @items.each do |item| %>
-        <div class="post-index">
-          <%= link_to item_user_path(item.user_id) do %>
-            <div class="post-user-nickname-image">
-              <%= image_tag item.user.image.variant(resize: '30x30'), class: "post-user-img" if item.user.image.attached? %>
-              <div class="post-user-nickname"><%= item.user.nickname %></div>
-            </div>
-          <% end %>
-          <%= link_to "#{item_path(item.id)}" do %>
-            <div class="post-text-created-at">
-              <div class="item-name"><%= item.name %></div>
-            </div>
-            <div class="item-review-star-rating">
-              <% if item.reviews.present? %>
-                <div class="item-review-star-front" style="width: <%= item.review_score_percentage %>%">★★★★★</div>
-                <div class="item-review-star-back">★★★★★</div>
-              <% end %>
-            </div>
-            <div class="item-review-score-average-count"><%= item.avg_score %>点(<%= item.reviews.count %>件のレビュー)</div>
-            <div class="post-image">
-              <%= image_tag item.image.variant(resize: '550x500'), class: "post-img" if item.image.attached? %>
-            </div>
-            <div class="item-text-index"><%= item.text %></div>
-          <% end %>
-          <div class="item-tag-box">
-            <% item.tags.each do |tag| %>
-              <div class="tag-item-word"><%= tag.word %></div>
-            <% end%>
-          </div>
-          <div class="action-menu">
-            <% if user_signed_in? %>
-              <% if current_user.id == item.user_id %>
-                <div class="action-edit"></div>
-                  <%= link_to  item_path(item.id), method: :delete do %>
-                    <div class="action-destroy">
-                      <i class="far fa-trash-alt"></i>
-                      削除
-                    </div>
-                  <% end %>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
+    <%= render "shared/list_items" %>
   </div>
-
-  <div class="right-box">
-    <div class="user-profile">
-      <% if user_signed_in?%>
-        <div class="user-profile-menu">
-          <%= image_tag current_user.image.variant(resize: '70x70'), class: "user-img" if current_user.image.attached? %>
-          <%= link_to current_user.nickname, user_path(current_user.id),method: :get, class: "user-nickname" %>
-          <ul class="user-menu">
-            <li>
-              <div class="following-follower">
-                <div class="current-user-following"><%= link_to "フォロー(#{current_user.followings.count})", following_user_path(current_user), class: "nav-link" %></div>
-                <div class="current-user-follower"><%= link_to "フォロワー(#{current_user.followers.count})", followers_user_path(current_user), class: "nav-link" %></div>
-              </div>
-              <%= link_to edit_user_registration_path(current_user.id),method: :get do %>
-                <div class="user-menu-edit-user">
-                  <i class="fas fa-user-edit"></i>
-                  <div class="user-menu-profile">プロフィールを編集</div>
-                </div>
-              <% end %>
-                <%= link_to user_path(current_user.id) do %>
-                <div class="user-menu-edit-user">
-                  <i class="far fa-file"></i>
-                  <div class="user-menu-profile">投稿を見る</div>
-                </div>
-              <% end %>
-              <%= link_to item_user_path(current_user.id) do %>
-                <div class="user-menu-edit-user">
-                  <i class="fas fa-glasses"></i>
-                  <div class="user-menu-profile">アイテムを見る</div>
-                </div>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      <% end %>
-    </div>
-    <div class="measurement">
-       <a href='#items_id'><i class="fas fa-angle-up fa-3x"></i></a>
-    </div>
-  </div>
+  <%= render "shared/right_box" %>
 </div>
 <%= link_to items_path do %>
   <p class="back-home-btn">

@@ -1,0 +1,40 @@
+<div class="left-box">
+  <div class="user-profile-box">
+    <div class="user-profile-image-name">
+      <div class="user-profile-image"><%= image_tag @user.image.variant(resize: '70x70'), class: "post-user-img" if @user.image.attached? %></div>
+      <div class="user-name-info">
+        <div class="user-name-info-text">ユーザー名</div>
+        <p class="user-profile-name"><%= @user.nickname %></p>
+      </div>
+    </div>
+    <div class="user-profile-info-text">プロフィール</div>
+    <div class="user-profile-text"><%= @user.profile %></div>
+  </div>
+  <div class="user-details">
+    <%= link_to user_path do %>
+      <div class="user-show-action">
+        <i class="far fa-file-alt"></i>
+        <%= "#{@nickname}さんの投稿を見る" %>
+      </div>
+    <% end %>
+    <%= link_to item_user_path do %>
+      <div class="user-show-action">
+        <i class="fas fa-glasses"></i>
+        <%= "#{@nickname}さんのアイテムを見る" %>
+      </div>
+    <% end %>
+    <div class="following-follower-count">
+      <div class="following-count"><%= link_to "フォロー(#{@user.followings.count})", following_user_path(@user), class: "nav-link" %></div>
+      <div class="follower-count"><%= link_to "フォロワー(#{@user.followers.count})", followers_user_path(@user), class: "nav-link" %></div>
+    </div>
+    <% if user_signed_in? && @user != current_user%>
+      <div id="follow_form">
+        <% if current_user.following?(@user) %>
+          <%= render "unfollow" %>
+          <% else %>
+          <%= render "follow" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
