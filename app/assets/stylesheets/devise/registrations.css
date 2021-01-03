@@ -1,9 +1,10 @@
 .input-form{
-  padding :7px;
+  width : 29vw;
+  padding : 7px 10px;
 }
 .input-information{
-  font-weight: bold;
-  margin :20px;
+  font-weight : bold;
+  margin-right : 10px;
 }
 .log-in-page{
   font-weight: bold;
@@ -17,6 +18,11 @@
   height : 96vh;
   background-color : #e7e7e7;
 }
+.user-new-registration-new-form{
+  text-align : center;
+  height : 135vh;
+  background-color : #e7e7e7;
+}
 .log-in-form{
   padding : 7px;
 }
@@ -26,4 +32,18 @@
   border : 1px solid #e7e7e7;
   width :55vw;
   background-color : white;
+}
+.input-information-note{
+  width : 29vw;
+  display : flex;  
+  margin : 0px auto 10px auto;
+}
+.comment-note{
+  padding : 2px 5px;
+  color :white;
+  background-color : red;
+}
+.comment-note-any{
+  padding : 2px 5px;
+  background-color : #c0c0c0;
 }

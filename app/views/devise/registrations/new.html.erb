@@ -1,49 +1,70 @@
 
-<div class="user-new-registration-form">
+<div class="user-new-registration-new-form">
 
-<h2>Sign up</h2>
+<h2 class="log-in-page">新規登録</h2>
 
-<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="input-form-box">
+  <div class="log-in-user-information">ユーザー情報入力</div>
+  <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field">
+      <div class="input-information-note">
+        <%= f.label :メールアドレス, class:"input-information" %><br />
+        <div class="comment-note">必須</div>
+      </div>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"",class:"input-form"  %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 文字以上の英字と数字を含めて下さい)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password",placeholder:"6文字以上の半角英数字"  %>
-  </div>
+    <div class="field">
+      <div class="input-information-note">
+        <%= f.label :パスワード, class:"input-information" %><br />
+        <div class="comment-note">必須</div>
+      </div>
+      <%= f.password_field :password, autocomplete: "new-password",placeholder:"6文字以上の半角英字と数字",class:"input-form" %>
+      <div class="review-comment-note">※英字と数字の両表を含め設定して下さい</div>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <div class="input-information-note">
+        <%= f.label :パスワード確認, class:"input-information"%><br />
+        <div class="comment-note">必須</div>
+      </div>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"同じパスワードを入力して下さい",class:"input-form"  %>
+    </div>
 
-  <div class="fiald">
-   <%= f.label :nickname %><br />
-   <%= f.text_area :nickname,placeholder:"最大40文字まで", maxlength:"40",rows:"3",class:"new-user-nickname-form" %>
-  </div>
+    <div class="fiald">
+      <div class="input-information-note">
+        <%= f.label :ユーザーネーム, class:"input-information" %><br />
+        <div class="comment-note">必須</div>
+      </div>
+      <%= f.text_area :nickname,placeholder:"最大40文字まで", maxlength:"40",rows:"1",class:"new-user-nickname-form",class:"input-form"  %>
+      
+    </div>
 
-  <div class="fiald">
-   <%= f.label :profile %><br />
-   <%= f.text_area :profile, placeholder:"※任意  最大150字まで",maxlength:"150",rows:"3",class:"new-user-nickname-form"  %>
-  </div>
+    <div class="fiald">
+      <div class="input-information-note">
+        <%= f.label :プロフィール, class:"input-information" %><br />
+        <div class="comment-note-any">任意</div>
+      </div>
+      <%= f.text_area :profile, placeholder:"最大150字まで",maxlength:"150",rows:"4",class:"new-user-nickname-form",class:"input-form"   %>
+    </div>
 
-  <div class="click-upload">
-    <p>プロフィール画像 ※任意</p>
-    <%= f.file_field :image, class: "new-user-profile-image" %>
-  </div>
+    <div class="click-upload">
+      <div class="input-information-note">
+        <div class="input-information">プロフィール画像</div>
+        <div class="comment-note-any">任意</div>
+      </div>
+      <%= f.file_field :image, class: "new-user-profile-image" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "登録する" %>
-  </div>
+    <div class="actions">
+      <%= f.submit "登録する", class:"log-in-btn" %>
+    </div>
   <% end %>
+</div>
 
   <div class="guest-login"><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post,class:"btn-guest-login" %></div>
   <p><%= render "devise/shared/links" %></p>
+  
 </div>
