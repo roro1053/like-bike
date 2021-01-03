@@ -3,5 +3,27 @@
 }
 .input-information{
   font-weight: bold;
-  
+  margin :20px;
+}
+.log-in-page{
+  font-weight: bold;
+}
+.log-in-user-information{
+  font-size : 20px;
+  font-weight: bold;
+  padding :7px;
+}
+.user-new-registration-form{
+  height : 96vh;
+  background-color : #e7e7e7;
+}
+.log-in-form{
+  padding : 7px;
+}
+.input-form-box{
+  padding :30px 0;
+  margin :50px auto 0 auto;
+  border : 1px solid #e7e7e7;
+  width :55vw;
+  background-color : white;
 }

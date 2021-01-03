@@ -1,29 +1,39 @@
 <div class="user-new-registration-form">
-<h2>ログイン</h2>
+  <h2 class="log-in-page">ログイン</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :メールアドレス,class:"input-information" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"input-form" %>
-  </div>
+  <div class="input-form-box">
+    <div class="log-in-user-information">ユーザー情報入力</div>
 
-  <div class="field">
-    <%= f.label :パスワード,class:"input-information" %><br />
-    <%= f.password_field :password, autocomplete: "current-password",class:"input-form" %>
-  </div>
+    <div class="log-in-form">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.label :メールアドレス,class:"input-information" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"input-form" %>
+        </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
+        <div class="field">
+          <%= f.label :パスワード,class:"input-information" %><br />
+          <%= f.password_field :password, autocomplete: "current-password",class:"input-form" %>
+        </div>
 
-  <div class="actions">
-    <%= f.submit "ログイン", class:"log-in-btn" %>
-  </div>
-<% end %>
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+
+        <div class="actions">
+          <%= f.submit "ログイン", class:"log-in-btn" %>
+        </div>
+      <% end %>
  
-<div class="guest-login"><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post,class:"btn-guest-login" %></div>
-<p><%= render "devise/shared/links" %></p>
+      <div class="guest-login">
+        <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post,class:"btn-guest-login" %>
+      </div>
+      <p>
+        <%= render "devise/shared/links" %>
+      </p>
+    </div>
+  </div>
 </div>
