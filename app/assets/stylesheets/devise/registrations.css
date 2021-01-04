@@ -1,5 +1,5 @@
 .input-form{
-  width : 29vw;
+  width : 30vw;
   padding : 7px 10px;
 }
 .input-information{
@@ -23,6 +23,11 @@
   height : 135vh;
   background-color : #e7e7e7;
 }
+.user-new-registration-edit-form{
+  text-align : center;
+  height : 152vh;
+  background-color : #e7e7e7;
+}
 .log-in-form{
   padding : 7px;
 }
@@ -34,7 +39,7 @@
   background-color : white;
 }
 .input-information-note{
-  width : 29vw;
+  width : 30vw;
   display : flex;  
   margin : 0px auto 10px auto;
 }
@@ -42,8 +47,20 @@
   padding : 2px 5px;
   color :white;
   background-color : red;
+  margin-right : 10px;
 }
 .comment-note-any{
   padding : 2px 5px;
   background-color : #c0c0c0;
+  margin-right : 10px;
+}
+.edit-user-profile-btn {
+  color : white;
+  background-color : #0000ff;
+  padding :10px 50px;
+  border-style: none;
+  cursor : pointer;
+ }
+.edit-user-profile-btn:hover{
+  background-color : #007fff;
 }

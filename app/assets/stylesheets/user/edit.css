@@ -1,13 +1,4 @@
-.edit-user-profile-btn {
- color : white;
- background-color:red;
- padding :10px 20px;
- border-style: none;
- cursor : pointer;
-}
-.edit-user-profile-btn:hover{
-  background-color:blue;
-}
+
 .devise-action-edit-btn{
   
 }
