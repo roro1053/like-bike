@@ -11,8 +11,8 @@ RSpec.describe "Reviews", type: :system do
       it "ログインしたユーザーはレビューを投稿できる" do
       # ログインする
       visit new_user_session_path
-      fill_in 'Email', with: @user.email
-      fill_in 'Password', with: @user.password
+      fill_in 'user_email', with: @user.email
+      fill_in 'user_password', with: @user.password
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       # アイテム一覧ページに遷移する
@@ -52,8 +52,8 @@ RSpec.describe "Reviews", type: :system do
       it "誤った情報ではレビューが投稿できずにアイテム詳細ページに留まる" do
         # ログインする
         visit new_user_session_path
-        fill_in 'Email', with: @user.email
-        fill_in 'Password', with: @user.password
+        fill_in 'user_email', with: @user.email
+        fill_in 'user_password', with: @user.password
         find('input[name="commit"]').click
         expect(current_path).to eq root_path
         # アイテム一覧ページに遷移する
@@ -84,8 +84,8 @@ RSpec.describe 'レビュー削除', type: :system do
         it "レビューを投稿したユーザーはレビューを駆除できる" do
           # ログインする
           visit new_user_session_path
-          fill_in 'Email', with: @user.email
-          fill_in 'Password', with: @user.password
+          fill_in 'user_email', with: @user.email
+          fill_in 'user_password', with: @user.password
           find('input[name="commit"]').click
           expect(current_path).to eq root_path
           # アイテム一覧ページに遷移する
@@ -96,16 +96,16 @@ RSpec.describe 'レビュー削除', type: :system do
           fill_in 'review_text', with: @review.text
           # レビューを投稿する
           expect{
-            click_button('レビューを投稿する')
+            click_button('レビューを投稿')
           }.to change { Review.count }.by(1)
           # アイテム詳細ページに投稿したレビューが存在することを確認する
           expect(page).to have_selector ".review-rating-star"
           expect(page).to have_content @review.text
           # レビュー削除ボタンがあることを確認する
-          expect(page).to have_content "レビューを削除する"
+          expect(page).to have_content "レビューを削除"
           # レビューを削除するとReveiwモデルのレコードが1減ることを確認する
           expect{
-            click_on('レビューを削除する')
+            click_on('レビューを削除')
           }.to change { Review.count }.by(-1)
           # アイテム詳細ページに遷移することを確認する
           expect(current_path).to eq item_path(@item)
@@ -117,8 +117,8 @@ RSpec.describe 'レビュー削除', type: :system do
         it "レビューをしたユーザーでなければ削除ボタンが表示されない" do
           # ログインする
           visit new_user_session_path
-          fill_in 'Email', with: @item.user.email
-          fill_in 'Password', with: @item.user.password
+          fill_in 'user_email', with: @item.user.email
+          fill_in 'user_password', with: @item.user.password
           find('input[name="commit"]').click
           expect(current_path).to eq root_path
           # アイテム一覧ページに遷移する
@@ -129,19 +129,19 @@ RSpec.describe 'レビュー削除', type: :system do
           fill_in 'review_text', with: @review.text
           # レビューを投稿する
           expect{
-          click_button('レビューを投稿する')
+          click_button('レビューを投稿')
           }.to change { Review.count }.by(1)
           # アイテム詳細ページに投稿したレビューが存在することを確認する
           expect(page).to have_selector ".review-rating-star"
           expect(page).to have_content @review.text
           # レビュー削除ボタンがあることを確認する
-          expect(page).to have_content "レビューを削除する"
+          expect(page).to have_content "レビューを削除"
           # ログアウトする
           click_on('ログアウト')
           # 別のユーザーでログインする
           visit new_user_session_path
-          fill_in 'Email', with: @user.email
-          fill_in 'Password', with: @user.password
+          fill_in 'user_email', with: @user.email
+          fill_in 'user_password', with: @user.password
           find('input[name="commit"]').click
           expect(current_path).to eq root_path
           # アイテム一覧ページに遷移する
@@ -156,13 +156,13 @@ RSpec.describe 'レビュー削除', type: :system do
           expect(page).to have_selector ".review-rating-star"
           expect(page).to have_content @review.text
           # レビュー削除ボタンが存在しないことを確認する
-          expect(page).to have_no_content "レビューを削除する"
+          expect(page).to have_no_content "レビューを削除"
         end
       it "ログインしていないユーザーには削除ボタンが表示されない" do
           # ログインする
           visit new_user_session_path
-          fill_in 'Email', with: @item.user.email
-          fill_in 'Password', with: @item.user.password
+          fill_in 'user_email', with: @item.user.email
+          fill_in 'user_password', with: @item.user.password
           find('input[name="commit"]').click
           expect(current_path).to eq root_path
           # アイテム一覧ページに遷移する
@@ -179,7 +179,7 @@ RSpec.describe 'レビュー削除', type: :system do
           expect(page).to have_selector ".review-rating-star"
           expect(page).to have_content @review.text
           # レビュー削除ボタンがあることを確認する
-          expect(page).to have_content "レビューを削除する"
+          expect(page).to have_content "レビューを削除"
           #ログアウトする
           click_on('ログアウト')
           # アイテム一覧ページに遷移する
@@ -194,7 +194,7 @@ RSpec.describe 'レビュー削除', type: :system do
           expect(page).to have_selector ".review-rating-star"
           expect(page).to have_content @review.text
           # レビュー削除ボタンが存在しないことを確認する
-          expect(page).to have_no_content "レビューを削除する"
+          expect(page).to have_no_content "レビューを削除"
         end
   end
 end
