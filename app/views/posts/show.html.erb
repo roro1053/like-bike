@@ -9,8 +9,9 @@
       <div class="show-post-created-at"><%= l @post.created_at %></div>
     </div>
   </div>
-  <div class="show-post-image"><%= image_tag @post.image.variant(resize: '700x700'), class: "show-image" if @post.image.attached? %></div>
-
+  <% if @post.image.attached? %>
+    <div class="show-post-image"><%= image_tag @post.image.variant(resize: '700x700'), class: "show-image"  %></div>
+  <% end %>
   <div class="show-action-menu">
     <div id="like-of-<%= @post.id %>">
       <%= render partial: "likes/like", locals: { post: @post } %>
