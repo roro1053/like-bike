@@ -12,8 +12,8 @@ RSpec.describe "Items", type: :system do
     visit root_path
     #ログインする
     visit new_user_session_path
-    fill_in 'Email', with: @user.email
-    fill_in 'Password', with: @user.password
+    fill_in 'user_email', with: @user.email
+    fill_in 'user_password', with: @user.password
     find('input[name="commit"]').click
     expect(current_path).to eq root_path
     #アイテム投稿ページへのリンクを確認する
@@ -51,8 +51,8 @@ RSpec.describe "Items", type: :system do
     visit root_path
     #ログインする
     visit new_user_session_path
-    fill_in 'Email', with: @user.email
-    fill_in 'Password', with: @user.password
+    fill_in 'user_email', with: @user.email
+    fill_in 'user_password', with: @user.password
     find('input[name="commit"]').click
     expect(current_path).to eq root_path
     #アイテム投稿ページへのリンクを確認する
@@ -86,8 +86,8 @@ RSpec.describe 'アイテム削除', type: :system do
     it "アイテムを投稿したユーザーはアイテムを削除できる（一覧）" do
       #アイテム1を投稿したユーザーでログインする
       visit new_user_session_path
-      fill_in 'Email', with: @item1.user.email
-      fill_in 'Password', with: @item1.user.password
+      fill_in 'user_email', with: @item1.user.email
+      fill_in 'user_password', with: @item1.user.password
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       # アイテム一覧に遷移する
@@ -109,8 +109,8 @@ RSpec.describe 'アイテム削除', type: :system do
     it "アイテムを投稿したユーザーはアイテムを削除できる（詳細）" do
       #アイテム1を投稿したユーザーでログインする
       visit new_user_session_path
-      fill_in 'Email', with: @item1.user.email
-      fill_in 'Password', with: @item1.user.password
+      fill_in 'user_email', with: @item1.user.email
+      fill_in 'user_password', with: @item1.user.password
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       # アイテム一覧に遷移する
@@ -139,8 +139,8 @@ RSpec.describe 'アイテム削除', type: :system do
     it "アイテムを投稿したユーザーでなければ削除ボタンが表示されない(一覧)" do
       #アイテム1を投稿したユーザーでログインする
       visit new_user_session_path
-      fill_in 'Email', with: @item1.user.email
-      fill_in 'Password', with: @item1.user.password
+      fill_in 'user_email', with: @item1.user.email
+      fill_in 'user_password', with: @item1.user.password
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       # アイテム一覧に遷移する
@@ -154,8 +154,8 @@ RSpec.describe 'アイテム削除', type: :system do
     it "アイテムを投稿したユーザーでなければ削除ボタンが表示されない(詳細)" do
       #アイテム1を投稿したユーザーでログインする
       visit new_user_session_path
-      fill_in 'Email', with: @item1.user.email
-      fill_in 'Password', with: @item1.user.password
+      fill_in 'user_email', with: @item1.user.email
+      fill_in 'user_password', with: @item1.user.password
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       # アイテム一覧に遷移する
@@ -190,8 +190,8 @@ RSpec.describe 'アイテム詳細', type: :system do
     it "ログインしたユーザーにはレビュー投稿欄が表示される" do
       # ログインする
       visit new_user_session_path
-      fill_in 'Email', with: @item.user.email
-      fill_in 'Password', with: @item.user.password
+      fill_in 'user_email', with: @item.user.email
+      fill_in 'user_password', with: @item.user.password
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       # アイテム一覧ページに遷移する
@@ -227,8 +227,8 @@ RSpec.describe 'アイテム検索', type: :system do
     it "ログインしたユーザーはアイテムを検索できる" do
       # ログインする
       visit new_user_session_path
-      fill_in 'Email', with: @user.email
-      fill_in 'Password', with: @user.password
+      fill_in 'user_email', with: @user.email
+      fill_in 'user_password', with: @user.password
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       # アイテムページに遷移する
@@ -291,8 +291,8 @@ RSpec.describe 'アイテム検索', type: :system do
     it "ログインしていないユーザーが検索するとログインページに遷移する" do
       # ログインする
       visit new_user_session_path
-      fill_in 'Email', with: @user.email
-      fill_in 'Password', with: @user.password
+      fill_in 'user_email', with: @user.email
+      fill_in 'user_password', with: @user.password
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       # アイテムページに遷移する
