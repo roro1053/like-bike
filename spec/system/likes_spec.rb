@@ -12,8 +12,8 @@ RSpec.describe "Likes", type: :system do
       visit root_path
       # ログインする
       visit new_user_session_path
-      fill_in 'Email', with: @user.email
-      fill_in 'Password', with: @user.password
+      fill_in 'user_email', with: @user.email
+      fill_in 'user_password', with: @user.password
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       # 投稿一覧にいいねボタンが存在することを確認する
@@ -34,8 +34,8 @@ RSpec.describe "Likes", type: :system do
       visit root_path
       # ログインする
       visit new_user_session_path
-      fill_in 'Email', with: @user.email
-      fill_in 'Password', with: @user.password
+      fill_in 'user_email', with: @user.email
+      fill_in 'user_password', with: @user.password
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       # 詳細ページに遷移する
@@ -56,7 +56,7 @@ RSpec.describe "Likes", type: :system do
   end
   
   context "いいねできない時" do
-    it "ログインしていないユーザーにはいいねボタンが常時されない（一覧、詳細）" do
+    it "ログインしていないユーザーにはいいねボタンが表示されない（一覧、詳細）" do
       # トップページに遷移する
       visit root_path
       # いいねボタンが表示されないことを確認する
