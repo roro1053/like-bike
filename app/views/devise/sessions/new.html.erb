@@ -6,14 +6,20 @@
 
     <div class="log-in-form">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      
+
         <div class="field">
-          <%= f.label :メールアドレス,class:"input-information" %><br />
+          <div class="input-information-note">
+            <%= f.label :メールアドレス,class:"input-information" %><br />
+            <div class="comment-note">必須</div>
+          </div>
           <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"input-form" %>
         </div>
 
         <div class="field">
-          <%= f.label :パスワード,class:"input-information" %><br />
+          <div class="input-information-note">
+            <%= f.label :パスワード,class:"input-information" %><br />
+            <div class="comment-note">必須</div>
+          </div>
           <%= f.password_field :password, autocomplete: "current-password",class:"input-form" %>
         </div>
 
