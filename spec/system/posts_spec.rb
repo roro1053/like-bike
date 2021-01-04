@@ -13,8 +13,8 @@ RSpec.describe "Posts", type: :system do
     visit root_path
    # ログインする
     visit new_user_session_path
-    fill_in 'Email', with: @user.email
-    fill_in 'Password', with: @user.password
+    fill_in 'user_email', with: @user.email
+    fill_in 'user_password', with: @user.password
     find('input[name="commit"]').click
     expect(current_path).to eq root_path
    # 新規投稿ページへのリンクがあることを確認する
@@ -49,8 +49,8 @@ RSpec.describe "Posts", type: :system do
     visit root_path
     #ログインする
     visit new_user_session_path
-    fill_in 'Email', with: @user.email
-    fill_in 'Password', with: @user.password
+    fill_in 'user_email', with: @user.email
+    fill_in 'user_password', with: @user.password
     find('input[name="commit"]').click
     expect(current_path).to eq root_path
     #投稿ページに移動する
@@ -79,8 +79,8 @@ RSpec.describe '投稿編集', type: :system do
     it 'ログインしたユーザーは自分が投稿した投稿の編集ができる' do
       # 投稿1を投稿したユーザーでログインする
       visit new_user_session_path
-      fill_in 'Email', with: @post1.user.email
-      fill_in 'Password', with: @post1.user.password
+      fill_in 'user_email', with: @post1.user.email
+      fill_in 'user_password', with: @post1.user.password
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       # 投稿1に「編集」ボタンがあることを確認する
@@ -112,8 +112,8 @@ RSpec.describe '投稿編集', type: :system do
     it 'ログインしたユーザーは自分以外の投稿の編集画面には遷移できない' do
       # 投稿1を投稿したユーザーでログインする
       visit new_user_session_path
-      fill_in 'Email', with: @post1.user.email
-      fill_in 'Password', with: @post1.user.password
+      fill_in 'user_email', with: @post1.user.email
+      fill_in 'user_password', with: @post1.user.password
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       # 投稿2に「編集」ボタンがないことを確認する
@@ -145,8 +145,8 @@ RSpec.describe '投稿削除', type: :system do
     it 'ログインしたユーザーは自らが投稿した投稿の削除ができる' do
       # 投稿1を投稿したユーザーでログインする
       visit new_user_session_path
-      fill_in 'Email', with: @post1.user.email
-      fill_in 'Password', with: @post1.user.password
+      fill_in 'user_email', with: @post1.user.email
+      fill_in 'user_password', with: @post1.user.password
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       # 投稿1に「削除」ボタンがあることを確認する
@@ -167,8 +167,8 @@ RSpec.describe '投稿削除', type: :system do
     it "ログインしたユーザーは自分以外の投稿を削除できない" do
      # 投稿1を投稿したユーザーでログインする
      visit new_user_session_path
-      fill_in 'Email', with: @post1.user.email
-      fill_in 'Password', with: @post1.user.password
+      fill_in 'user_email', with: @post1.user.email
+      fill_in 'user_password', with: @post1.user.password
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
      # 投稿2に「削除」ボタンが無いことを確認する
@@ -199,8 +199,8 @@ RSpec.describe '投稿詳細', type: :system do
   it 'ログインしたユーザーは投稿詳細ページに遷移してコメント投稿欄が表示される' do
     # 投稿1を投稿したユーザーでログインする
     visit new_user_session_path
-    fill_in 'Email', with: @post1.user.email
-    fill_in 'Password', with: @post1.user.password
+    fill_in 'user_email', with: @post1.user.email
+    fill_in 'user_password', with: @post1.user.password
     find('input[name="commit"]').click
     expect(current_path).to eq root_path
     # 詳細ページに遷移する
@@ -217,8 +217,8 @@ RSpec.describe '投稿詳細', type: :system do
   it "ログインしたユーザーは自分の投稿でない投稿詳細ページに遷移しても編集と削除が出来ない。しかし、コメント投稿欄が表示される" do
     #投稿1を投稿したユーザーでログインする
     visit new_user_session_path
-    fill_in 'Email', with: @post1.user.email
-    fill_in 'Password', with: @post1.user.password
+    fill_in 'user_email', with: @post1.user.email
+    fill_in 'user_password', with: @post1.user.password
     find('input[name="commit"]').click
     expect(current_path).to eq root_path
     #投稿2の詳細ページに遷移する
