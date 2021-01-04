@@ -11,8 +11,8 @@ RSpec.describe "Comments", type: :system do
   it 'ログインしたユーザーはツイート詳細ページでコメント投稿できる' do
     # ログインする
     visit new_user_session_path
-    fill_in 'Email', with: @user.email
-    fill_in 'Password', with: @user.password
+    fill_in 'user_email', with: @user.email
+    fill_in 'user_password', with: @user.password
     find('input[name="commit"]').click
     expect(current_path).to eq root_path
     # 投稿詳細ページに遷移する
@@ -22,7 +22,7 @@ RSpec.describe "Comments", type: :system do
     attach_file "comment_image", "public/images/test_image.png"
     # コメントを送信すると、Commentモデルのカウントが1上がることを確認する
     expect{
-      click_button('SEND')
+      click_button('コメントをする')
     }.to change { Comment.count }.by(1)
     # 詳細ページにリダイレクトされることを確認する
     expect(current_path).to eq post_path(@post)
@@ -43,8 +43,8 @@ RSpec.describe "Comments", type: :system do
   it "誤った情報ではコメントを投稿できずに、投稿詳細ページに留まる" do
      # ログインする
      visit new_user_session_path
-     fill_in 'Email', with: @user.email
-     fill_in 'Password', with: @user.password
+     fill_in 'user_email', with: @user.email
+     fill_in 'user_password', with: @user.password
      find('input[name="commit"]').click
      expect(current_path).to eq root_path
      # 投稿詳細ページに遷移する
@@ -53,7 +53,7 @@ RSpec.describe "Comments", type: :system do
      fill_in 'comment_text', with: ""
      # コメントを送信しても、Commentモデルのカウントが変わらないことを確認する
      expect{
-       click_button('SEND')
+       click_button('コメントをする')
      }.to change { Comment.count }.by(0)
      # 投稿詳細ページにとどまることを確認する
      expect(current_path).to eq post_comments_path(@post)
@@ -74,8 +74,8 @@ RSpec.describe 'コメント削除', type: :system do
     it "コメントしたユーザーなら削除できる" do
       #コメント1を投稿したユーザーがログインする
       visit new_user_session_path
-      fill_in 'Email', with: @comment.user.email
-      fill_in 'Password', with: @comment.user.password
+      fill_in 'user_email', with: @comment.user.email
+      fill_in 'user_password', with: @comment.user.password
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       #投稿の詳細ページに遷移する
@@ -85,7 +85,7 @@ RSpec.describe 'コメント削除', type: :system do
       attach_file "comment_image", "public/images/test_image.png"
       # コメントを送信すると、Commentモデルのカウントが1上がることを確認する
       expect{
-        click_button('SEND')
+        click_button('コメントをする')
       }.to change { Comment.count }.by(1)
       # 詳細ページにリダイレクトされることを確認する
       expect(current_path).to eq post_path(@post)
@@ -108,8 +108,8 @@ RSpec.describe 'コメント削除', type: :system do
     it "コメントしたユーザー以外には削除ボタンが表示されない" do
        #コメント1を投稿したユーザーがログインする
        visit new_user_session_path
-       fill_in 'Email', with: @comment.user.email
-       fill_in 'Password', with: @comment.user.password
+       fill_in 'user_email', with: @comment.user.email
+       fill_in 'user_password', with: @comment.user.password
        find('input[name="commit"]').click
        expect(current_path).to eq root_path
        #投稿の詳細ページに遷移する
@@ -119,7 +119,7 @@ RSpec.describe 'コメント削除', type: :system do
        attach_file "comment_image", "public/images/test_image.png"
        # コメントを送信すると、Commentモデルのカウントが1上がることを確認する
        expect{
-         click_button('SEND')
+         click_button('コメントをする')
        }.to change { Comment.count }.by(1)
        # 詳細ページにリダイレクトされることを確認する
        expect(current_path).to eq post_path(@post)
@@ -132,8 +132,8 @@ RSpec.describe 'コメント削除', type: :system do
        click_link('ログアウト')
        #別のユーザーでログインする
        visit new_user_session_path
-       fill_in 'Email', with: @user.email
-       fill_in 'Password', with: @user.password
+       fill_in 'user_email', with: @user.email
+       fill_in 'user_password', with: @user.password
        find('input[name="commit"]').click
        expect(current_path).to eq root_path
        #投稿詳細ページにアクセスする
@@ -147,8 +147,8 @@ RSpec.describe 'コメント削除', type: :system do
     it "ログアウトユーザーには削除ボタンが表示されない" do
       #コメント1を投稿したユーザーがログインする
       visit new_user_session_path
-      fill_in 'Email', with: @comment.user.email
-      fill_in 'Password', with: @comment.user.password
+      fill_in 'user_email', with: @comment.user.email
+      fill_in 'user_password', with: @comment.user.password
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       #投稿の詳細ページに遷移する
@@ -158,7 +158,7 @@ RSpec.describe 'コメント削除', type: :system do
       attach_file "comment_image", "public/images/test_image.png"
       # コメントを送信すると、Commentモデルのカウントが1上がることを確認する
       expect{
-        click_button('SEND')
+        click_button('コメントをする')
       }.to change { Comment.count }.by(1)
       # 詳細ページにリダイレクトされることを確認する
       expect(current_path).to eq post_path(@post)
