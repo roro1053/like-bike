@@ -1,6 +1,6 @@
 .new-box{
   background-color: #f0f8ff;
-  height :120vh;
+  height :100vh;
   text-align: center;
   padding-top : 20px;
   overflow: scroll;
@@ -13,7 +13,7 @@
   margin-top : 20px;
   margin-bottom : 20px;
   width : 80vw;
-  height : 105vh; 
+  height : 88vh; 
   background-color : #f7f7f7;
 }
 .img-upload{
@@ -34,5 +34,8 @@
 }
 .img-text{
   margin-left : 20px;
+  font-weight: bold;
 }
-
+.comment-sentence{
+  font-weight: bold;
+}

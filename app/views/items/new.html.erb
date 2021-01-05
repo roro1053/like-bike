@@ -10,29 +10,26 @@
     <%= form_with model: @item, url:  items_path,  local: true do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
       <div class="item-text-box">
-        <div class="comment-sentence">名前</div>
+        <div class="item-comment-sentence">名前</div>
         <div class="item-comment-note">必須</div>
       </div>
         <%= f.text_area :name, class: "name-box", placeholder:"※最大40字まで", maxlength:"40",rows: "3" %>
       
 
       <div class="item-text-box">
-        <div class="comment-sentence">コメント</div>
+        <div class="item-comment-sentence">コメント</div>
         <div class="item-comment-note-any">任意</div>
       </div>
-        <%= f.text_area :text, class: "text-content", placeholder:"※最大150字まで", maxlength:"150" %>
+      <%= f.text_area :text, class: "text-content", placeholder:"※最大150字まで", maxlength:"150" %>
       
       <div class="item-text-box">
-      
-        
         <i class="fas fa-camera fa-2x"></i>
-        <div class="comment-sentence">画像</div>
+        <div class="item-comment-sentence">画像</div>
         <div class="item-comment-note">必須</div>
-        </div>
-    
+      </div>
       
       <div class="click-upload">
-        <p class="comment-sentence">クリックしてファイルをアップロード</p>
+        <p class="item-comment-sentence">クリックしてファイルをアップロード</p>
         <%= f.file_field :image, class: "item-image" %>
       </div>
       <p>タグをつける</p>
