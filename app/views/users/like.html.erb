@@ -1,0 +1,15 @@
+<%= render "shared/posts_header" %>
+
+<div class="main-box">
+  <div id='target_id'></div>
+  <%= render "shared/left_box" %>
+
+  <div class="center-box">
+    <div class="my-page-top">
+      <%= "#{@nickname}さんのいいねした投稿" %>
+    </div>
+     <%= render "shared/list_likes" %>
+  </div>
+  <%= render "shared/right_box" %>
+</div>
+<%= render "shared/home" %>
