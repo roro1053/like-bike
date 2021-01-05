@@ -30,6 +30,12 @@
                 <div class="user-menu-profile">アイテムを見る</div>
               </div>
             <% end %>
+            <%= link_to likes_user_path(current_user.id) do %>
+              <div class="user-menu-edit-user">
+                <i class="fas fa-glasses"></i>
+                <div class="user-menu-profile">いいねを見る</div>
+              </div>
+            <% end %>
           </li>
         </ul>
       </div>

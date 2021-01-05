@@ -9,6 +9,8 @@ class UsersController < ApplicationController
     @items = @user.items.includes(:user).order('created_at DESC')
   end
 
+  
+
   def following
     @users = @user.followings
     render 'show_following'
