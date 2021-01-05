@@ -23,7 +23,7 @@
 }
 .item-page-inform{
   text-align: center;
-  margin :10px auto 10px auto;
+  margin :10px auto;
   width : 43vw;
   padding : 7px;
   font-weight : bolder;
@@ -39,4 +39,8 @@
 }
 .tag-item-word{
   padding :7px;
+}
+.item-tag-box{
+  margin-left : 9px;
+  margin-bottom : 7px;
 }

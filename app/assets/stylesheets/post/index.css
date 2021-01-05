@@ -8,7 +8,7 @@
 }
 .header-logo-mark{
   border : 1px solid gray;
-  padding :10px;
+  padding : 10px;
   margin-left : 30px;
   background-color : white;
 }
@@ -70,10 +70,10 @@
   background-color : #dfdfdf;
 }
 .user-action-logout{
-border : 1px solid gray;
-padding : 10px;
-margin-left : 20px;
-background-color : white;
+  border : 1px solid gray;
+  padding : 10px;
+  margin-left : 20px;
+  background-color : white;
 }
 .user-action-logout:hover{
   background-color : #ffff7a;
@@ -107,18 +107,18 @@ background-color : white;
 /*ヘッダーここまで*/
 
 .main-box{
-  display: flex;
-  overflow: scroll;
+  display : flex;
+  overflow : scroll;
   height : 120vh;
 }
 .left-box{
-  height :90vh;
-  width :27vw;
+  height : 90vh;
+  width : 27vw;
   overflow: scroll;
 }
 .center-box{
-  height :90vh;
-  width :46vw;
+  height : 90vh;
+  width : 46vw;
 }
 .post-index{
   border : 1px solid black;
@@ -131,17 +131,15 @@ background-color : white;
 .post-text-created-at{
   margin-bottom : 10px;
   font-size : 18px;
-  word-break: break-all;
+  word-break : break-all;
 }
 .post-text{
-  font-size :16px;
+  font-size : 16px;
   margin-left : 15px;
   margin-bottom : 20px;
 }
 .post-user-nickname-image{
-  margin-left : 10px;
-  margin-bottom : 10px;
-  margin-top : 10px;
+  margin : 10px 0 10px 10px;
   font-size : 17px;
   font-weight : bolder;
   display : flex;
@@ -160,9 +158,7 @@ background-color : white;
   font-size : 15px;
 }
 .post-image{
-  margin-left : auto;
-  margin-right : auto;
-  margin-bottom : 10px;
+  margin : 0px auto 10px auto;
   display : flex;
   justify-content: center;
 }
@@ -186,7 +182,7 @@ background-color : white;
 }
 .post-page-inform{
   text-align: center;
-  margin : 10px auto 10px auto;
+  margin : 10px auto;
   width : 43vw;
   padding : 7px;
   background-color : #bfff7f;
@@ -195,20 +191,16 @@ background-color : white;
 }
 .list-posts{
   border : 1px solid #202020;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top :10px;
-  width :42vw;
+  margin : 10px auto 0 auto;
+  width : 42vw;
   background-color: #f0f8ff;
 }
 .right-box{
-  height :150vh;
-  width :27vw;
+  height : 150vh;
+  width : 27vw;
 }
 .user-profile{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top : 20px;
+  margin : 20px  auto 0 auto;
   height :300px;
   width : 24vw;
   display : flex; 

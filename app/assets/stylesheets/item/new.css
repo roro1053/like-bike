@@ -5,7 +5,6 @@
   padding-top : 20px;
   overflow: scroll;
 }
-/*アイテム投稿フォームここから*/
 .new-item-form{
   border : 1px solid #f7f7f7;
   margin : 10px auto 20px auto;
@@ -28,7 +27,7 @@
   display : flex; 
   margin : 20px auto 10px auto;
 }
-.item-tag-box{
+.item-new-tag-box{
   width : 14vw;
   display : flex; 
   margin : 20px auto 10px auto;
@@ -59,7 +58,3 @@
 .fa-camera{
   margin-left :10px;
 }
-.fa-tag{
-  margin-left :0px;
-}
-/*アイテム投稿フォームここまで*/
