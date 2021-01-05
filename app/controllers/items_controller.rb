@@ -39,7 +39,7 @@ class ItemsController < ApplicationController
   end
 
   def locate
-    @items = Item.locate(params[:keyword])
+    @items = Item.locate(params[:keyword]).includes(:user).order('created_at DESC')
   end
 
   private
