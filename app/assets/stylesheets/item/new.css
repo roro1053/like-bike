@@ -7,7 +7,7 @@
 }
 /*アイテム投稿フォームここから*/
 .new-item-form{
-  border : 1px solid black;
+  border : 1px solid #f7f7f7;
   margin : 10px auto 20px auto;
   width : 80vw;
   height : 124vh;
@@ -25,6 +25,11 @@
 }
 .item-text-box{
   width : 13vw;
+  display : flex; 
+  margin : 20px auto 10px auto;
+}
+.item-tag-box{
+  width : 14vw;
   display : flex; 
   margin : 20px auto 10px auto;
 }
@@ -46,7 +51,15 @@
   font-size : 16px;
   margin-left : 42px;
 }
+.item-tag-sentence{
+  font-weight: bold;
+  font-size : 16px;
+  margin-left : 25px;
+}
 .fa-camera{
   margin-left :10px;
+}
+.fa-tag{
+  margin-left :0px;
 }
 /*アイテム投稿フォームここまで*/

@@ -5,13 +5,9 @@
   padding-top : 20px;
   overflow: scroll;
 }
-
 .new-post-form{
   border : 1px solid #f7f7f7;
-  margin-left : auto;
-  margin-right : auto;
-  margin-top : 20px;
-  margin-bottom : 20px;
+  margin : 20px auto;
   width : 80vw;
   height : 88vh; 
   background-color : #f7f7f7;
@@ -22,7 +18,7 @@
   margin : 0px auto 20px auto;
 }
 .post-btn{
-  padding : 7px 30px 7px 30px;
+  padding : 7px 30px;
   margin : 20px 0px 40px 0px;
   border-style: none;
   cursor: pointer;

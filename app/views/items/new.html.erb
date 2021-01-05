@@ -15,7 +15,6 @@
       </div>
         <%= f.text_area :name, class: "name-box", placeholder:"※最大40字まで", maxlength:"40",rows: "3" %>
       
-
       <div class="item-text-box">
         <div class="item-comment-sentence">コメント</div>
         <div class="item-comment-note-any">任意</div>
@@ -32,7 +31,14 @@
         <p class="item-comment-sentence">クリックしてファイルをアップロード</p>
         <%= f.file_field :image, class: "item-image" %>
       </div>
-      <p>タグをつける</p>
+
+
+      <div class="item-tag-box">
+        <i class="fas fa-tag"></i>
+        <div class="item-tag-sentence">タグをつける</div>
+        <div class="item-comment-note-any">任意</div>
+      </div>
+
       <div><%= f.text_area :word,class: "tag-form", id:'tag-field', placeholder:"最大40字まで",rows:"2",maxlength:"40" %>
         <div id="search-result"></div>
       </div>
