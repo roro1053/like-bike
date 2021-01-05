@@ -44,13 +44,20 @@
   font-weight : bolder;
   font-size : 18px;
 }
+.my-page-top-like{
+  margin :10px auto 10px auto;
+  padding : 7px;
+  width : 43vw;
+  background-color :#ff007f;
+  text-align: center;
+  font-weight : bolder;
+  font-size : 18px;
+}
 .user-details{
   border : 1px solid #e6e6fa;
-  height : 200px;
+  height : 250px;
   width : 23vw;
-  margin-right : 20px;
-  margin-left : 40px;
-  margin-top : 350px;
+  margin : 320px 20px 0 40px;
   position: fixed;
   background-color : #eeeeee;
   text-align : center;

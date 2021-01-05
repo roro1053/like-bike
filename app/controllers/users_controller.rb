@@ -13,7 +13,6 @@ class UsersController < ApplicationController
     @like_posts = @user.liked_posts.includes(:user).order('created_at DESC')
   end
 
-
   def following
     @users = @user.followings
     render 'show_following'

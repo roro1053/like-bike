@@ -23,6 +23,12 @@
         <%= "#{@nickname}さんのアイテムを見る" %>
       </div>
     <% end %>
+    <%= link_to like_user_path do %>
+      <div class="user-show-action">
+        <i class="fas fa-bookmark"></i>
+         <%= "#{@nickname}さんのいいねを見る" %>
+      </div>
+    <% end %>
     <div class="following-follower-count">
       <div class="following-count"><%= link_to "フォロー(#{@user.followings.count})", following_user_path(@user), class: "nav-link" %></div>
       <div class="follower-count"><%= link_to "フォロワー(#{@user.followers.count})", followers_user_path(@user), class: "nav-link" %></div>
