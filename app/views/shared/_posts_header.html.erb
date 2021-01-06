@@ -12,7 +12,7 @@
       </div>
         <% if user_signed_in? %>
           <%= link_to "新規投稿", new_post_path,method: :get,class:"posts-new-action" %>
-          <%= link_to "アイテムを投稿", new_item_path, class:"items-new-action" %>
+          <%= link_to "アイテムを投稿", new_item_path, class:"items-new-action",data: {"turbolinks"=>false} %>
           <%=link_to "ログアウト",  destroy_user_session_path,method: :delete, class: "user-action-logout" %>
         <% else %>
            <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post,class:"btn-header-guest-login" %>

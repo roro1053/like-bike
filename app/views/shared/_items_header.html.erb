@@ -15,7 +15,7 @@
             <%= link_to "新規投稿", new_post_path,method: :get %>
           </div>
           <div class="items-new-action">
-            <%= link_to "アイテムを投稿", new_item_path %>
+            <%= link_to "アイテムを投稿", new_item_path,data: {"turbolinks"=>false} %>
           </div>
           <div class="user-action-logout">
             <%=link_to "ログアウト",  destroy_user_session_path,method: :delete, class: "logout" %>
