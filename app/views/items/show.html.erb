@@ -1,6 +1,6 @@
 <%= render "shared/items_header" %>
 
-<div class="show-box">
+<div class="item-show-box">
   <div class="show-item-content">
     <%= render "shared/home" %>
     <div class="show-user-name"><%= link_to @item.user.nickname,item_user_path(@item.user_id),class:"show-user-nickname" %></div>
@@ -53,8 +53,7 @@
   </div>
 
   <div class="reviews-box">
-    
-      <% if @reviews.present? %>
+    <% if @reviews.present? %>
       <% @reviews.each do |review| %>
         <div class="reviews-index">
           <div class="review-rating-user-nickname">

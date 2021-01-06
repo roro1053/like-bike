@@ -1,4 +1,8 @@
-
+.item-show-box{
+  background-color :  #f0f8ff;
+  height : 155vh;
+  overflow: scroll;
+}
 .show-item-name{
   text-align: center;
   margin : 20px;
