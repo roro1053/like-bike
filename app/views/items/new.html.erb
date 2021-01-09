@@ -39,7 +39,7 @@
         <div class="item-comment-note-any">任意</div>
       </div>
 
-      <div><%= f.text_area :word,class: "tag-form", id:'tag-field', placeholder:"最大40字まで",rows:"2",maxlength:"40" %>
+      <div><%= f.text_field :tag_ids,class: "tag-form", id:'tag-field', placeholder:"最大40字まで",rows:"2",maxlength:"40" %>
         <div id="search-result"></div>
       </div>
       <%= f.submit "投稿する",class: "post-btn" %>
