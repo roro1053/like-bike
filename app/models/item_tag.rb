@@ -12,7 +12,7 @@ class ItemTag
 
   def save
     @item = Item.create(image: image, name: name, text: text, user_id: user_id)
-    tag_list = tag_ids.split(",")
+    tag_list = tag_ids.split(/[[:blank:]]+/).select(&:present?)
     tag_list.each do |tag_name|
       @tag = Tag.where(word: tag_name).first_or_initialize
       @tag.save
