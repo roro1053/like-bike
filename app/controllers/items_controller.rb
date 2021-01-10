@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :destroy,:edit,:update]
 
   def index
     @items = Item.includes(:user).order('created_at DESC')
@@ -40,6 +40,12 @@ class ItemsController < ApplicationController
 
   def locate
     @items = Item.locate(params[:keyword]).includes(:user).order('created_at DESC')
+  end
+
+  def edit
+  end
+
+  def update
   end
 
   private

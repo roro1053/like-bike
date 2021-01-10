@@ -39,8 +39,16 @@
 }
 .tag-item-word{
   padding :7px;
+  border : 1px solid black;
+  margin : 0px 6px;
+  border-radius: 100vh;
+  background-color : blue;
 }
 .item-tag-box{
+  background-color : red;
+  display: flex;
   margin-left : 9px;
   margin-bottom : 7px;
+  word-wrap : break-all;
+  width :39vw;
 }

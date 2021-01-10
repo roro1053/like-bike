@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
   resources :follow_relationships, only: [:create, :destroy]
-  resources :items, only: [:index,:new,:create,:show,:destroy] do
+  resources :items do
     collection do
       get 'search'
     end
