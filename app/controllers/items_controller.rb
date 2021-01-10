@@ -43,9 +43,17 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @tag_list =@item.tags.pluck(:word).join(" ")
   end
 
   def update
+    tag_list = params[:item][:tag_ids].split(/[[:blank:]]+/).select(&:present?)
+    if @item.update_attributes(item_params)
+      @item.save_tags(tag_list)
+      redirect_to @item
+    else
+    render 'edit'
+    end
   end
 
   private

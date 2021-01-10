@@ -1,0 +1,11 @@
+<div>編集ページ</div>
+
+<%= form_with model: @item,  local: true do |f| %>
+
+  <%= f.text_field :tag_ids,value: @tag_list,\
+  placeholder: "タグをつける。複数つけるには','で区切ってください。" %>
+
+  <%= f.submit '更新' %>
+
+<% end %>
+<div><%= link_to "戻る", root_path %></div>

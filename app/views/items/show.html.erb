@@ -28,7 +28,7 @@
   <div class="show-action-item-menu">
     <% if user_signed_in? %>
       <% if current_user.id == @item.user_id %>
-        <div class=""><%= link_to "編集", edit_item_path %></div>
+        <div class=""><%= link_to "編集", edit_item_path(@item) %></div>
         <div class="show-action-item-destroy">
           <%= link_to item_path(@item.id), method: :delete ,class:"show-action-item-destroy" do %>
             <i class="far fa-trash-alt"></i>
