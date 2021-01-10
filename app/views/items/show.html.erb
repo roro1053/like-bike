@@ -8,9 +8,11 @@
       <div class="show-item-name"><%= @item.name %></div>
       <div class="show-post-text"><%= @item.text %></div>
       <div class="show-post-created-at"><%= l @item.created_at %></div>
-      <% @item.tags.each do |tag| %>
-        <div class="show-item-tag-word"><%= tag.word %></div>
-      <% end %>  
+      <div class="show-item-tag-box">
+        <% @item.tags.each do |tag| %>
+          <div class="show-item-tag-word"><%= tag.word %></div>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="review-text-box">アイテムの評価
@@ -28,9 +30,14 @@
   <div class="show-action-item-menu">
     <% if user_signed_in? %>
       <% if current_user.id == @item.user_id %>
-        <div class=""><%= link_to "編集", edit_item_path(@item) %></div>
+        <div class="show-action-item-edit">
+          <%= link_to edit_item_path(@item),method: :get,class:"show-action-item-edit" do %>
+            <i class="fas fa-tag"></i>
+            タグを編集
+          <% end %>
+        </div>
         <div class="show-action-item-destroy">
-          <%= link_to item_path(@item.id), method: :delete ,class:"show-action-item-destroy" do %>
+          <%= link_to item_path(@item.id), method: :delete,class:"show-action-item-destroy"  do %>
             <i class="far fa-trash-alt"></i>
             削除
           <% end %>
