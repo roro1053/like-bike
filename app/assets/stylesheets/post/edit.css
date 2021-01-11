@@ -7,12 +7,9 @@
 }
 .edit-form{
   border : 1px solid gray;
-  margin-right : auto;
-  margin-left : auto;
-  margin-top : 20px; 
+  margin :20px auto 0 auto;
   width : 80vw; 
-  height : 80vh;
-  overflow: scroll;
+  height : 83vh;
   background-color : #f2f2f2;
 }
 .text-box{

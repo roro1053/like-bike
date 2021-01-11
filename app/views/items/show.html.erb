@@ -31,7 +31,7 @@
     <% if user_signed_in? %>
       <% if current_user.id == @item.user_id %>
         <div class="show-action-item-edit">
-          <%= link_to edit_item_path(@item),method: :get,class:"show-action-item-edit" do %>
+          <%= link_to edit_item_path(@item), method: :get,class:"show-action-item-edit" do %>
             <i class="fas fa-tag"></i>
             タグを編集
           <% end %>
@@ -46,18 +46,13 @@
      <% end %>
   </div>
 
-  <%= link_to items_path do %>
-    <p class="back-home-btn">
-      <i class="fas fa-arrow-left"></i>
-      アイテム一覧に戻る
-    </p>
-  <% end %>
+  <%= render "shared/items" %>
 
   <%= render "reviews/form", review: @review, item: @item %>
 
   <div class="review-list-box">
-      <i class="far fa-comment-dots"></i>
-      <h4 class="review-list">レビューの一覧</h4>
+    <i class="far fa-comment-dots"></i>
+    <h4 class="review-list">レビューの一覧</h4>
   </div>
 
   <div class="reviews-box">
@@ -85,10 +80,5 @@
       <% end %>
     <% end %>
   </div>
-  <%= link_to items_path do %>
-    <p class="back-home-btn">
-      <i class="fas fa-arrow-left"></i>
-      アイテム一覧に戻る
-    </p>
-  <% end %>
+  <%= render "shared/home" %>
 </div>
