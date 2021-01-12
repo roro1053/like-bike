@@ -1,0 +1,27 @@
+<%= render "shared/items_header" %>
+   
+  <div class="item-edit-content">
+  <%= render "shared/home" %>
+    <div class="item-name-text-edit">
+      <div class="show-item-name"><%= @item.name %></div>
+      <div class="show-post-text"><%= @item.text %></div>
+    </div>
+    <% if @item.image.attached? %>
+      <div class="show-item-image"><%= image_tag @item.image.variant(resize: '700x700'), class: "show-image" if @item.image.attached? %></div>
+    <% end %>
+    <div class="item-edit-form">
+      <div class="items-edit-page">タグを編集</div>
+      <div class="item-edit-tag">複数のタグをつける際は空白で区切って下さい</div>
+      <%= form_with model: @item, local: true do |f| %>
+
+        <%= f.text_field :tag_ids,value: @tag_list,\
+        placeholder: "タグをつける。複数つけるには','で区切ってください。",rows:"2",class: "edit-tag-form" %>
+
+        <div>
+          <%= f.submit '更新',class:"update-btn" %>
+        </div>
+
+      <% end %>
+    </div>
+   <%= render "shared/items" %>
+  </div>

@@ -7,7 +7,7 @@
 <div class="new-item-box">
   <%= render "shared/home" %>
   <div class="new-item-form">
-    <%= form_with model: @item, url:  items_path,  local: true do |f| %>
+    <%= form_with model: @item, url:  items_path, local: true do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
       <div class="item-text-box">
         <div class="item-comment-sentence">名前</div>
@@ -39,7 +39,7 @@
         <div class="item-comment-note-any">任意</div>
       </div>
 
-      <div><%= f.text_area :word,class: "tag-form", id:'tag-field', placeholder:"最大40字まで",rows:"2",maxlength:"40" %>
+      <div><%= f.text_field :tag_ids,class: "tag-form", id:'tag-field', placeholder:"複数のタグをつける際は空白で区切って下さい。最大40字まで",rows:"2",maxlength:"40" %>
         <div id="search-result"></div>
       </div>
       <%= f.submit "投稿する",class: "post-btn" %>

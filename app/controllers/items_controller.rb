@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :destroy,:edit,:update]
 
   def index
     @items = Item.includes(:user).order('created_at DESC')
@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = ItemTag.new(item_params)
+    @item = ItemTag.new(itemtags_params)
     if @item.valid?
       @item.save
       redirect_to items_path(@item)
@@ -42,6 +42,20 @@ class ItemsController < ApplicationController
     @items = Item.locate(params[:keyword]).includes(:user).order('created_at DESC')
   end
 
+  def edit
+    @tag_list =@item.tags.pluck(:word).join(" ")
+  end
+
+  def update
+    tag_list = params[:item][:tag_ids].split(/[[:blank:]]+/).select(&:present?)
+    if @item.update_attributes(item_params)
+      @item.save_tags(tag_list)
+      redirect_to @item
+    else
+    render 'edit'
+    end
+  end
+
   private
 
   def set_item
@@ -49,10 +63,10 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item_tag).permit(:name, :text, :image, :word).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :text, :image).merge(user_id: current_user.id)
   end
 
-  def item_tag_params
-    params.require(:item_tag).permit(:name)
+  def itemtags_params
+    params.require(:item_tag).permit(:name,:text,:image,:tag_ids).merge(user_id: current_user.id)
   end
 end

@@ -38,9 +38,16 @@
   margin : 20px;
 }
 .tag-item-word{
-  padding :7px;
+  padding :7px 7px;
+  border : 1px solid black;
+  margin-right :5px;
+  border-radius: 100vh;
+  background-color : #00ff00;
+  text-align :center;
 }
 .item-tag-box{
-  margin-left : 9px;
+  display: flex;
+  margin-left : 4px;
   margin-bottom : 7px;
+  width :40vw;
 }

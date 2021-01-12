@@ -1,0 +1,34 @@
+.edit-tag-form{
+  width : 30vw;
+  margin : 20px auto 10px auto;
+  padding : 20px; 
+}
+.items-edit-page{
+  margin-top:20px;
+  font-size : 18px;
+  font-weight: bold;
+}
+.item-edit-content{
+  background-color : #f0f8ff;
+  height : 82vh;
+  overflow: scroll;
+  text-align: center;
+  padding-top : 20px; 
+}
+.item-edit-form{
+  border : 1px solid gray;
+  margin :20px auto 0 auto;
+  width : 80vw; 
+  height : 34vh;
+  background-color : #f2f2f2;
+}
+.item-name-text-edit{
+  width : 55vw;
+  margin : 0px auto 18px auto;
+  padding : 1px;
+  background-color : white;
+}
+.item-edit-tag{
+  margin-top : 7px;
+  color : #696969;
+}

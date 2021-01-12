@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   
   with_options presence: true do
     validates :name
-    validates :image
+    #validates :image
   end
 
   validates :name,length: { maximum: 40 }
@@ -31,6 +31,21 @@ class Item < ApplicationRecord
       Item.joins(:tags).where('text LIKE(?) OR name LIKE(?) OR word LIKE(?)', "%#{locate}%", "%#{locate}%", "%#{locate}%")
     else
       Item.all
+    end
+  end
+
+  def save_tags(saveitem_tags)
+    current_tags = self.tags.pluck(:word) unless self.tags.nil?
+    old_tags = current_tags - saveitem_tags
+    new_tags = saveitem_tags - current_tags
+
+    old_tags.each do |old_name|
+      self.tags.delete Tag.find_by(word: old_name)
+    end
+
+    new_tags.each do |new_name|
+      item_tag = Tag.find_or_create_by(word: new_name)
+      self.tags << item_tag
     end
   end
 end
