@@ -65,9 +65,6 @@
 .user-details:hover{
   background-color : white;
 }
-.item-page-inform{
-  background-color : #ff00ff;
-}
 .following-follower-count{
   display: flex;
   justify-content: space-between;

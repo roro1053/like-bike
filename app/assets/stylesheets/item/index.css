@@ -28,6 +28,16 @@
   padding : 7px;
   font-weight : bolder;
   font-size : 18px;
+  background-color : #ff00ff;
+}
+.item-tag-inform{
+  text-align: center;
+  margin :10px auto;
+  width : 43vw;
+  padding : 7px;
+  font-weight : bolder;
+  font-size : 18px;
+  background-color : #00fa9a;
 }
 .item-name{
   margin-left : 20px;

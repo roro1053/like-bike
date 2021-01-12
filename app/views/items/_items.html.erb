@@ -6,6 +6,9 @@
 
   <div class="center-box">
     <div class="item-page-inform">アイテム一覧</div>
+    <% if params[:word].present? %>
+      <div class="item-tag-inform">タグ<%= "「#{@tag.word}」を含むアイテム" %></div>
+    <% end %>
     <%= render "shared/list_items" %>
   </div>
 
