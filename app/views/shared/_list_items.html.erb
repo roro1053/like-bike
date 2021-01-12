@@ -25,9 +25,9 @@
       <% end %>
       <div class="item-tag-box">
         <% item.tags.each do |tag| %>
-          
+          <%= link_to items_path(word: tag) do %>
             <div class="tag-item-word"><%= tag.word %></div>
-          
+          <% end %>
         <% end%>
       </div>
       <div class="action-menu">

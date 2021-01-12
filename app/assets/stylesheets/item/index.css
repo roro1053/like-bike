@@ -55,6 +55,9 @@
   background-color : #00ff00;
   text-align :center;
 }
+.tag-item-word:hover{
+  background-color : red;
+}
 .item-tag-box{
   display: flex;
   margin-left : 4px;
