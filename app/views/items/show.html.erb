@@ -10,7 +10,9 @@
       <div class="show-post-created-at"><%= l @item.created_at %></div>
       <div class="show-item-tag-box">
         <% @item.tags.each do |tag| %>
+          <%= link_to items_path(word: tag) do %>
           <div class="show-item-tag-word"><%= tag.word %></div>
+          <% end %>
         <% end %>
       </div>
     </div>

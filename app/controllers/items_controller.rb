@@ -3,7 +3,12 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy,:edit,:update]
 
   def index
+    if params[:word].present?
+      @tag = Tag.find(params[:word])
+      @items = @tag.items.order(created_at: :desc)
+    else
     @items = Item.includes(:user).order('created_at DESC')
+    end
   end
 
   def new
