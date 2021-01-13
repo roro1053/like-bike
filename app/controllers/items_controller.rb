@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
       @tag = Tag.find(params[:word])
       @items = @tag.items.order(created_at: :desc)
     else
-    @items = Item.includes(:user).order('created_at DESC')
+      @items = Item.includes(:user).order('created_at DESC')
     end
   end
 
