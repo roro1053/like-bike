@@ -50,5 +50,19 @@ RSpec.describe "Follows", type: :system do
       #フォローボタンが存在しないことを確認する
       expect(page).to have_no_selector('.follow-to-btn')
     end
+    it " 自分のマイページにフォローボタンが表示されない" do
+      #トップページに遷移する
+      visit root_path
+      #ユーザー1でログインする
+      visit new_user_session_path
+      fill_in 'user_email', with: @user1.email
+      fill_in 'user_password', with: @user1.password
+      find('input[name="commit"]').click
+      expect(current_path).to eq root_path
+      #ユーザー1のユーザーページに遷移する
+      visit user_path(@user1)
+      #フォローボタンがあることを確認する
+      expect(page).to have_no_selector('.follow-to-btn')
+    end
   end
 end
