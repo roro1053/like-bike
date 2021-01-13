@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Tags", type: :system do
+RSpec.describe "タグの編集", type: :system do
   before do
     @user = FactoryBot.create(:user)
     @item = FactoryBot.create(:item)
@@ -69,5 +69,65 @@ RSpec.describe "Tags", type: :system do
       #タグを編集するボタンが存在しないことを確認する
       expect(page).to have_no_content ("タグを編集")
     end
+  end
+end
+
+RSpec.describe "タグの絞り込み検索", type: :system do
+  before do
+    @item1 = FactoryBot.create(:item)
+    @item2 = FactoryBot.create(:item)
+  end
+  it "タグをクリックすると絞り込み検索を行う（一覧、詳細）" do
+    #アイテム1を投稿したユーザーでログインする
+    visit new_user_session_path
+    fill_in 'user_email', with: @item1.user.email
+    fill_in 'user_password', with: @item1.user.password
+    find('input[name="commit"]').click
+    expect(current_path).to eq root_path
+    #アイテム一覧ぺージに遷移する
+    visit items_path
+    #アイテム1と2が存在することを確認する
+    expect(page).to have_content("#{@item1.name}")
+    expect(page).to have_content("#{@item2.name}")
+    #アイテム詳細ページに遷移する
+    visit item_path(@item1)
+    expect(page).to have_content("#{@item1.name}")
+    expect(page).to have_content("#{@item1.text}")
+    expect(page).to have_content ("タグを編集")
+    #タグ編集ページに遷移する
+    visit edit_item_path(@item1)
+    #入力フォームに入力する
+    fill_in 'item_tag_ids', with: "tag"
+    #更新する
+    expect{
+      click_button('更新')
+    }.to change { Tag.count }.by(1)
+    #アイテム詳細ページに遷移することを確認する
+    expect(current_path).to eq item_path(@item1)
+    #編集したタグが存在することを確認する
+    expect(page).to have_content ("tag")
+    #タグをクリックする
+    click_on('tag')
+    #アイテム一覧ページに遷移することを確認する
+    expect(current_path).to eq items_path
+    #タグが存在することを確認する
+    expect(page).to have_content ("tag")
+    #絞り込み検索が行われている（アイテム2が存在しない）ことを確認する
+    expect(page).to have_content("#{@item1.name}") 
+    expect(page).to have_no_content("#{@item2.name}") 
+    #アイテム一覧ページに遷移する
+    visit items_path
+    expect(page).to have_content("#{@item1.name}") 
+    expect(page).to have_content("#{@item2.name}") 
+    #タグをクリックする
+    click_on('tag')
+    #アイテム一覧ページに遷移することを確認する
+    expect(current_path).to eq items_path
+    #タグが存在することを確認する
+    expect(page).to have_content ("tag")
+    #絞り込み検索が行われている（アイテム2が存在しない）ことを確認する
+    expect(page).to have_content "タグ「tag」を含むアイテム"
+    expect(page).to have_content("#{@item1.name}") 
+    expect(page).to have_no_content("#{@item2.name}") 
   end
 end
