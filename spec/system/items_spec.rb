@@ -62,8 +62,7 @@ RSpec.describe "Items", type: :system do
     #フォームに入力し、送信する
     fill_in 'item_tag_name', with: ""
     fill_in "item_tag_text",with: ""
-    fill_in "tag-field",with: ""
-     # 送信してもItemモデルのカウントが変わらないことを確認する
+    # 送信してもItemモデルのカウントが変わらないことを確認する
      expect{
       click_button('投稿する')
     }.to change { Item.count }.by(0)
@@ -71,7 +70,7 @@ RSpec.describe "Items", type: :system do
     expect(current_path).to eq "/items"
     #投稿に失敗するとエラーメッセージが表示される
     expect(page).to have_content "name.blank"
-    expect(page).to have_content "image.blank"
+    #expect(page).to have_content "image.blank"
   end
  end
 end
