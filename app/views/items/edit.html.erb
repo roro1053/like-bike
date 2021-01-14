@@ -15,7 +15,7 @@
       <%= form_with model: @item, local: true do |f| %>
 
         <%= f.text_field :tag_ids,value: @tag_list,\
-        placeholder: "タグをつける。複数つけるには','で区切ってください。",rows:"2",class: "edit-tag-form" %>
+        placeholder: "例: メーカー クロスバイク 2020年モデル",rows:"2",class: "edit-tag-form" %>
 
         <div>
           <%= f.submit '更新',class:"update-btn" %>
