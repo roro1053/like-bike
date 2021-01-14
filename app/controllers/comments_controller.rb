@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     else
       @post = @comment.post
       @comments = @post.comments
-      render  'posts/show'
+      render 'posts/show'
     end
   end
 

@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :tag do
-    word { "text" }
+    word { 'text' }
   end
 end

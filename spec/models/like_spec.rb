@@ -7,7 +7,7 @@ RSpec.describe Like, type: :model do
 
   describe 'いいねする' do
     context 'いいねできる' do
-      it "投稿にいいねできる" do
+      it '投稿にいいねできる' do
         expect(@like).to be_valid
       end
     end

@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_item, only: [:show, :destroy,:edit,:update]
+  before_action :set_item, only: [:show, :destroy, :edit, :update]
 
   def index
     if params[:word].present?
@@ -52,7 +52,7 @@ class ItemsController < ApplicationController
       redirect_to action: :index
       nil
     end
-    @tag_list =@item.tags.pluck(:word).join(" ")
+    @tag_list = @item.tags.pluck(:word).join(' ')
   end
 
   def update
@@ -61,7 +61,7 @@ class ItemsController < ApplicationController
       @item.save_tags(tag_list)
       redirect_to @item
     else
-    render 'edit'
+      render 'edit'
     end
   end
 
@@ -76,6 +76,6 @@ class ItemsController < ApplicationController
   end
 
   def itemtags_params
-    params.require(:item_tag).permit(:name,:text,:image,:tag_ids).merge(user_id: current_user.id)
+    params.require(:item_tag).permit(:name, :text, :image, :tag_ids).merge(user_id: current_user.id)
   end
 end

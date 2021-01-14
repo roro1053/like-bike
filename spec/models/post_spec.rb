@@ -29,18 +29,18 @@ RSpec.describe Post, type: :model do
         @post.image = nil
         @post.text = ''
         @post.valid?
-        expect(@post.errors.full_messages).to include("Text translation missing: ja.activerecord.errors.models.post.attributes.text.blank")
+        expect(@post.errors.full_messages).to include('Text translation missing: ja.activerecord.errors.models.post.attributes.text.blank')
       end
       it 'imageが存在せず、textが151文字以上だと投稿できない' do
         @post.image = nil
         @post.text = '1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901'
         @post.valid?
-        expect(@post.errors.full_messages).to include("Text translation missing: ja.activerecord.errors.models.post.attributes.text.too_long")
+        expect(@post.errors.full_messages).to include('Text translation missing: ja.activerecord.errors.models.post.attributes.text.too_long')
       end
       it 'imageは存在するが、textが151文字以上だと投稿できない' do
         @post.text = '1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901'
         @post.valid?
-        expect(@post.errors.full_messages).to include("Text translation missing: ja.activerecord.errors.models.post.attributes.text.too_long")
+        expect(@post.errors.full_messages).to include('Text translation missing: ja.activerecord.errors.models.post.attributes.text.too_long')
       end
     end
   end
