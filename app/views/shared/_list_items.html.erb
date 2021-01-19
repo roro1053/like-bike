@@ -33,7 +33,12 @@
       <div class="action-menu">
         <% if user_signed_in? %>
           <% if current_user.id == item.user_id %>
-            <div class="action-edit"></div>
+            <div class="action-edit">
+              <%= link_to edit_item_path(item), method: :get,class:"show-action-item-edit" do %>
+                <i class="fas fa-tag"></i>
+                タグを編集
+              <% end %>
+            </div>
             <%= link_to  item_path(item.id), method: :delete do %>
               <div class="action-destroy">
                 <i class="far fa-trash-alt"></i>
