@@ -21,7 +21,7 @@
         <div class="post-image">
           <%= image_tag item.image.variant(resize: '550x500'), class: "post-img" if item.image.attached? %>
         </div>
-        <div class="item-text-index"><%= item.text %></div>
+        <div class="item-text-index"><%= simple_format item.text %></div>
       <% end %>
       <div class="item-tag-box">
         <% item.tags.each do |tag| %>

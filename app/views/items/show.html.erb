@@ -67,7 +67,7 @@
               <div class="review-user-nickname"><%= review.user.nickname %></div>
             <% end %>
           </div>
-          <div class="review-item-text"><%= review.text %></div>
+          <div class="review-item-text"><%= simple_format review.text %></div>
           <% if user_signed_in? %>
             <% if current_user.id == review.user_id %>
               <div class="reviews-destroy-action">
