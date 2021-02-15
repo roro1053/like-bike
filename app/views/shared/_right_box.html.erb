@@ -15,25 +15,25 @@
             <%= link_to edit_user_registration_path(current_user.id),method: :get do %>
               <div class="user-menu-edit-user">
               <i class="fas fa-user-edit"></i>
-                <div class="user-menu-profile">プロフィールを編集</div>
+                <div class="user-menu-profile rb-txt">プロフィールを編集</div>
               </div>
             <% end %>
             <%= link_to user_path(current_user.id) do %>
               <div class="user-menu-edit-user">
                 <i class="far fa-file"></i>
-                <div class="user-menu-profile">投稿を見る</div>
+                <div class="user-menu-profile rb-txt">投稿を見る</div>
               </div>
             <% end %>
             <%= link_to item_user_path(current_user.id) do %>
               <div class="user-menu-edit-user">
                 <i class="fas fa-glasses"></i>
-                <div class="user-menu-profile">アイテムを見る</div>
+                <div class="user-menu-profile rb-txt">アイテムを見る</div>
               </div>
             <% end %>
             <%= link_to like_user_path(current_user.id) do %>
               <div class="user-menu-edit-user">
                 <i class="far fa-bookmark"></i>
-                <div class="user-menu-profile">いいねを見る</div>
+                <div class="user-menu-profile rb-txt">いいねを見る</div>
               </div>
             <% end %>
           </li>

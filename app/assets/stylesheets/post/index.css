@@ -263,6 +263,8 @@ ul {
 .far{
   margin-right :7px;
 }
+
+
 /*フッターここから*/
 .top-page-footer{
   text-align: center;
@@ -271,3 +273,68 @@ ul {
   color :white;
 }
 /*フッターここまで*/
+
+@media (max-width: 1024px) {
+  .header-logo-mark{
+    width : 71px;
+    font-size : 12px;
+  }
+  .posts-lists{
+    width : 70px;
+    font-size : 12px;
+    margin-left : 20px;
+  }
+  .items-lists{
+    font-size : 12px;
+    width : 93px;
+    margin-left : 20px;
+  }
+  .search-input{
+    width : 30vw;
+    margin-left : 20px;
+    padding : 10px;
+    background-color : #dcdcdc;
+  }
+  .search-btn{
+    margin-left : 10px;
+  }
+  .posts-new-action{
+    width : 70px;
+    font-size : 12px;
+    margin-left : 20px;
+  }
+  .items-new-action{
+    width : 105px;
+    font-size : 12px;
+    margin-left : 20px;
+  }
+  .user-action-logout{
+    width : 82px;
+    margin-left : 20px;
+    font-size : 12px;
+  }
+  .btn-header-guest-login{
+    font-size : 12px; 
+    width : 99px;
+    margin-left : 20px; 
+  }
+  .user-action-login{
+    font-size : 12px; 
+    width : 69px;
+    margin-left : 20px;
+  }
+  .user-action-new{
+    font-size : 12px; 
+    width : 94px;
+    margin-left : 20px;
+  }
+  .post-created-at{
+    margin-left : 226px; 
+  }
+  .user-menu-edit-user{
+    width :14vw;
+  }
+  .rb-txt{
+    font-size : 12px;
+  }
+}
