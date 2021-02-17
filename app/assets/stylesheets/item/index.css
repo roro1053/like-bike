@@ -71,3 +71,19 @@
 .action-edit-item:hover{
   color : blue;
 }
+@media (max-width: 1024px){
+  .post-img{
+    width : 400px;
+  }
+  .tag-item-word{
+    font-size : 10px;
+    padding :5px 4px;
+    margin-right :5px;
+  }
+  .item-review-star-rating{
+    margin : 0 10px 20px 325px;
+    position : relative;
+    width : 5em;
+    height : 1em;
+  }
+}
