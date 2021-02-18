@@ -71,17 +71,18 @@
   margin : 10px 10px 20px 10px;
 }
 .following-count{
-  margin-left : 30px;
+  width : 125px;
+  margin-left : 20px;
   padding : 7px;
 }
 .follower-count{
+  width : 140px;
   margin-right : 30px;
   padding : 7px;
 }
 .following-display-text{
   width : 11vw;
-  margin-right : auto;
-  margin-left : auto;
+  margin : 0px auto;
   border-radius: 100vh;
 }
 .following-btn{
@@ -132,4 +133,9 @@
 }
 .following-display-text:hover .following-display-hover{
   display: inline;
+}
+@media (max-width: 1024px) {
+  .user-details{
+    height : 200px;
+  }
 }

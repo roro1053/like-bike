@@ -66,3 +66,17 @@
   margin-left : 4px;
   margin-bottom : 7px;
 }
+@media (max-width: 1024px) {
+  .user-show-action{
+    font-size :11px;
+  }
+  .following-count{
+    font-size : 11px;
+  }
+  .follower-count{
+    font-size : 11px;
+  }
+  .follow-btn{
+    font-size : 10px;
+  }
+}
