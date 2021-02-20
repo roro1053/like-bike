@@ -404,4 +404,10 @@ ul {
     margin-left : 5px;
     padding : 6px;
   }
+  .rb-txt{
+    font-size : 9px;
+  }
+  .post-created-at{
+    margin-left : 48px;
+  }
 }

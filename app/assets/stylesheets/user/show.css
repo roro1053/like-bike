@@ -139,3 +139,17 @@
     height : 200px;
   }
 }
+@media (max-width: 599px) {
+  .following-follower{
+    display : block;
+  }
+  .current-user-following{
+    font-size : 10px;
+    margin-bottom : 5px;
+    margin-left : 0px;
+  }
+  .current-user-follower{
+    font-size : 10px;
+    margin-right : 0px;
+  }
+}
