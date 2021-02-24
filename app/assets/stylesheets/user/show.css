@@ -152,4 +152,22 @@
     font-size : 10px;
     margin-right : 0px;
   }
+  .post-user-img{
+    width : 40px;
+  }
+  .user-name-info-text{
+    font-size : 9px;
+  }
+  .user-profile-name{
+    font-size : 9px;
+  }
+  .user-profile-info-text{
+    font-size : 9px;
+  }
+  .user-profile-text{
+    font-size : 9px;
+  }
+  .user-profile-box{
+    margin-left : 20px;
+  }
 }

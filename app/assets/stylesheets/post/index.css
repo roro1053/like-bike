@@ -410,4 +410,17 @@ ul {
   .post-created-at{
     margin-left : 48px;
   }
+  .action-edit{
+    width : 63px;
+    font-size : 12px;
+  }
+  .action-destroy{
+    width : 60px;
+    font-size : 12px;
+  }
+  .posts-like-btn{
+    width : 51px;
+    font-size : 12px;
+  }
+
 }

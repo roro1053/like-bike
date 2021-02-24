@@ -34,9 +34,14 @@
 .follower-user-img{
   margin : 10px;
 }
-.follower-user-perofile{
+.follower-user-profile{
   padding : 7px;
   margin : 10px;
 }
 
 /*フォロワーここまで*/
+@media (max-width: 599px) {
+  .my-page-top-follower{
+    width : 39vw;
+  }
+}
