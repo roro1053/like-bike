@@ -170,4 +170,21 @@
   .user-profile-box{
     margin-left : 20px;
   }
+  .user-details{
+    margin-left : 20px;
+  }
+  .user-show-action{
+    padding : 0px;
+    font-size : 8px;
+    margin : 10px 0;
+  }
+  .following-follower-count{
+    display : block;
+  }
+  .following-count{
+    margin-left : 0px;
+  }
+  .following-display-text{
+    margin-left : 5px;
+  }
 }
