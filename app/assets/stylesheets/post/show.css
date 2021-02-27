@@ -98,13 +98,13 @@
 .show-commnet-lists{
   width :13vw;
   margin : 20px auto;
-  text-align : center;
   display :flex;
   align-items : center;
   font-size :20px;
 }
 .comments-list{
   margin-left :10px;
+  text-align: center;
 }
 .comment-index{
   margin : 20px;
@@ -181,4 +181,22 @@
 }
 .comment-text-info{
   margin : 10px;
+}
+@media (max-width: 599px) {
+  .show-post-text-created-at{
+    height : 120px;
+    font-size : 9px;
+  }
+  .item-image{
+    margin-left : 115px;
+  }
+  .show-commnet-lists{
+    width : 35vw;
+  }
+  .comment-created-at{
+    margin : 5px 10px 0px 170px;
+   }
+   .comment-destroy{
+    margin-left :233px;
+  }
 }
