@@ -20,13 +20,12 @@
       <% end %>
 
       <div class="field">
-        <div class="input-information-note">
+        <div class="new-password">
           <%= f.label :新しいパスワード, class:"input-information" %><br />
           <div class="comment-note-any">任意</div>
-          <i>(変更しない場合は空欄)</i>
         </div>
         <%= f.password_field :password, autocomplete: "new-password", placeholder:"6文字以上の半角英字と数字",class:"input-form"  %><br />
-        <div class="review-comment-note">※英字と数字の両方を含め設定して下さい</div>
+        <div class="review-comment-note">※変更しない場合は空欄</div>
       </div>
 
       <div class="field">
@@ -38,11 +37,11 @@
       </div>
 
       <div class="field">
-        <div class="input-information-note">
+        <div class="current-password">
           <%= f.label :現在のパスワード, class:"input-information" %><br />
           <div class="comment-note">必須</div>
-          <i>(変更には現在のパスワードが必要です)</i>
         </div>
+        <i>(変更には現在のパスワードが必要です)</i><br />
         <%= f.password_field :current_password, autocomplete: "current-password",class:"input-form"  %>
       </div>
     
@@ -69,8 +68,6 @@
         </div>
         <%= f.file_field :image, class: "item-image" %>
       </div>
-
-
       <div class="devise-action-edit-btn">
         <%= f.submit "プロフィールを更新する", class:"edit-user-profile-btn" %>
       </div>

@@ -43,6 +43,16 @@
   display : flex;  
   margin : 0px auto 10px auto;
 }
+.new-password{
+  width : 30vw;
+  display : flex;  
+  margin : 0px auto 10px auto;
+}
+.current-password{
+  width : 30vw;
+  display : flex;  
+  margin : 0px auto 10px auto;
+}
 .comment-note{
   padding : 2px 5px;
   color :white;
@@ -63,4 +73,22 @@
  }
 .edit-user-profile-btn:hover{
   background-color : #007fff;
+}
+@media (max-width: 599px) {
+  .input-information-note{
+    width : 45vw;
+/*     background-color : red; */
+  }
+  .new-password{
+    width : 37vw;
+  }
+  .comment-note-any{
+    width : 60px;
+  }
+  .comment-note{
+    width : 60px;
+  }
+  .current-password{
+    width : 37vw;
+  }
 }
