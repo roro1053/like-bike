@@ -4,10 +4,10 @@
   <div class="show-item-content">
     <%= render "shared/home" %>
     <div class="show-user-name"><%= link_to @item.user.nickname,item_user_path(@item.user_id),class:"show-user-nickname" %></div>
-    <div class="show-post-text-created-at">
+    <div class="item-show-post-text-created-at">
       <div class="show-item-name"><%= @item.name %></div>
       <div class="show-post-text"><%= @item.text %></div>
-      <div class="show-post-created-at"><%= l @item.created_at %></div>
+      <div class="item-show-post-created-at"><%= l @item.created_at %></div>
       <div class="show-item-tag-box">
         <% @item.tags.each do |tag| %>
           <%= link_to items_path(word: tag) do %>

@@ -16,6 +16,12 @@
 .user-show-action:hover{
   color :blue;
 }
+.item-show-post-text-created-at{
+  margin : 20px;
+  padding-top : 10px;
+  padding-bottom : 7px;
+  background-color : #fefefe;
+}
 .show-item-tag-word{
   padding :7px 16px;
   border : 1px solid black;
@@ -24,12 +30,16 @@
   background-color : #98fb98;
   text-align :center;
 }
+.item-show-post-created-at{
+  margin : 20px 20px 20px 800px;
+  font-weight: lighter;
+  font-size : 12px;
+}
 .show-item-tag-word:hover{
   background-color : #00ff00;
 }
 .show-item-content{
-  
-  margin : 20px auto 20px auto;
+  margin : 20px auto;
   width : 70vw;
   height : 48vh;
 }
@@ -63,6 +73,7 @@
 }
 .show-item-tag-box{
   display: flex;
+  flex-wrap : wrap;
   margin-left : 4px;
   margin-bottom : 7px;
 }
@@ -79,13 +90,25 @@
   .follow-btn{
     font-size : 10px;
   }
-}
-@media (max-width: 1024px) {
   .show-item-tag-word{
     padding :7px 3px;
     margin-right :3px;
   }
   .show-image{
     width : 66vw;
+  }
+}
+@media (max-width: 599px) {
+  .item-show-post-text-created-at{
+    height : 180px;
+    font-size : 9px;
+  }
+  .item-show-post-created-at{
+    margin : 20px 20px 20px 220px;
+  }
+  .show-item-tag-word{
+    padding :7px 12px;
+    margin-right :3px;
+    margin-bottom : 5px;
   }
 }
