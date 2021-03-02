@@ -4,8 +4,7 @@
   overflow: scroll;
 }
 .show-content{
-  border : 1px solid gray;
-  margin : 20px auto 20px auto;
+  margin : 20px auto ;
   width : 70vw; 
   height : 37vh;
   border : 1px solid black;
@@ -46,9 +45,7 @@
 .show-post-image{
   width :60vw;
   height : 55vh;
-  margin-right : auto;
-  margin-left : auto;
-  margin-top : 20px;
+  margin : 20px auto 0px auto;
   display : flex;
 }
 .item-post-image{
@@ -181,6 +178,18 @@
 }
 .comment-text-info{
   margin : 10px;
+}
+
+@media (max-width: 1024px){
+  .show-post-created-at{
+    margin-left : 520px;
+  }
+  .show-commnet-lists{
+    width : 17vw;
+  }
+  .comment-created-at{
+    margin-left : 400px;
+  }
 }
 @media (max-width: 599px) {
   .show-post-text-created-at{
