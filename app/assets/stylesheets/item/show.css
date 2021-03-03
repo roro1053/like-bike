@@ -95,7 +95,11 @@
     margin-right :3px;
   }
   .show-image{
-    width : 66vw;
+    width : 65vw;
+    margin : 0px auto;
+  }
+  .item-show-post-created-at{
+    margin-left : 523px;
   }
 }
 @media (max-width: 599px) {
