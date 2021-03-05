@@ -23,12 +23,12 @@
   margin : 0 auto 10px auto;
 }
 .item-text-box{
-  width : 35vw;
+  width : 13vw;
   display : flex; 
   margin : 20px auto 10px auto;
 }
 .item-new-tag-box{
-  width : 35vw;
+  width : 15vw;
   display : flex; 
   margin : 20px auto 10px auto;
 }
@@ -64,5 +64,13 @@
   }
   .item-new-tag-box{
     width : 20vw;
+  }
+}
+@media (max-width: 599px) {
+  .item-text-box{
+    width : 35vw;
+  }
+  .item-new-tag-box{
+    width : 35vw;
   }
 }
