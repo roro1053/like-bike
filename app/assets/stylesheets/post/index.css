@@ -408,7 +408,8 @@ ul {
     font-size : 9px;
   }
   .post-created-at{
-    margin-left : 48px;
+    margin-left : 80px;
+    font-size : 12px;
   }
   .action-edit{
     width : 63px;
